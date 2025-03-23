@@ -1,13 +1,25 @@
-"use server"
-
 import { ReactNode } from 'react';
+import { Montserrat } from 'next/font/google'
+import { ThemeProvider } from '@mui/material';
+import theme from './theme';
 
-export default async function RootLayout({ children }: { children: ReactNode }) {
+const montserrat = Montserrat({
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+  subsets: ['latin'],
+  // display: 'swap',
+})
+
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="ru">
-      <body style={{ margin: 0 }}>
-        {children}
-      </body>
+    <html lang="ru" className={montserrat.className}>
+      <head>
+      </head>
+      <ThemeProvider theme={theme}>
+        <body style={{ margin: 0 }}>
+          {children}
+        </body>
+      </ThemeProvider>
     </html>
   );
 }
