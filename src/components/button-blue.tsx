@@ -3,8 +3,9 @@
 import { Box, Button, Modal, Typography } from "@mui/material";
 import { useState } from "react";
 
-interface ButtonBlueProps {
+interface ButtonModalOpenProps {
   text: string;
+  orange?: boolean;
   sx?: any;
 }
 
@@ -21,7 +22,7 @@ const style = {
   gap: '20px',
 };
 
-export default function ButtonBlue({ text, sx }: ButtonBlueProps) {
+export default function ButtonModalOpen({ text, orange, sx }: ButtonModalOpenProps) {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -31,18 +32,19 @@ export default function ButtonBlue({ text, sx }: ButtonBlueProps) {
         onClick={handleOpen}
         variant="contained"
         sx={{
-          width: '180px',
-          height: '56px',
-          bgcolor: '#1144AA',
+          width: orange ? '199px' : '180px',
+          height: orange ? '52px' : '56px',
+          bgcolor: orange ? '#FFA700' : '#1144AA',
           boxShadow: 'none',
 
           textTransform: 'none',
-          fontSize: '20px', 
+          fontSize: orange ? '18px' : '20px',
           fontWeight: 700, 
-          lineHeight: '24px',
+          lineHeight: orange ? '20px' : '24px',
 
           '&:hover': {
-            bgcolor: '#184AAC',
+            bgcolor: orange ? '#FF7B00' : '#184AAC',
+            boxShadow: 'none',
           },
           ...sx,
         }}

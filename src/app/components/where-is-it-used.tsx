@@ -6,7 +6,7 @@ import dashboard from '../../../public/images/where-is-it-used.svg'
 
 export default async function WhereIsItUsed() {
   return (
-    <Box sx={{ display: 'flex', height: '590px', bgcolor: "#fff" }}>
+    <Box sx={{ maxWidth: '1440px', mx: 'auto', display: 'flex', height: '590px', bgcolor: "#fff" }}>
 
       <Box sx={{ minWidth: '704px' }}>
         <Box sx={{ display: 'flex', mb: '80px', mt: '120px' }}>

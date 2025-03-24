@@ -3,13 +3,13 @@
 import { Box, Typography } from "@mui/material";
 import Image from 'next/image';
 
-interface ButtonBlueProps {
+interface TableCardProps {
   text: string;
   src: string;
   sx?: any;
 }
 
-export default function TableCard({ text, src, sx }: ButtonBlueProps) {
+export default function TableCard({ text, src, sx }: TableCardProps) {
   return (   
     <Box sx={{ width: '256px', mr: '40px', ...sx }}>
       <Box sx={{ display: 'flex', height: '100px', width: '100px', flexDirection: 'column' }}>

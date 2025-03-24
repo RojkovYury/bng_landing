@@ -1,7 +1,6 @@
 'use server'
 
-import { Box, Typography } from "@mui/material";
-import Image from 'next/image';
+import { Box } from "@mui/material";
 import table1 from '../../../public/images/table-1.svg'
 import table2 from '../../../public/images/table-2.svg'
 import table3 from '../../../public/images/table-3.svg'
@@ -16,7 +15,7 @@ import TableCard from "@/components/table-card";
 
 export default async function Table() {
   return (
-    <Box sx={{ height: '784px', display: 'flex', flexDirection: 'column' }}>
+    <Box sx={{ maxWidth: '1440px', mx: 'auto', height: '784px', display: 'flex', flexDirection: 'column' }}>
       <Box sx={{ mt: '180px', mb: '84px', display: 'flex' }}>
         <TableCard
           src={table1}

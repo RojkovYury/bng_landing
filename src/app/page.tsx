@@ -1,5 +1,13 @@
 'use server'
 
+/*
+TODO
+
+WhereIsItUsed - png vs svg ?
+WhoIsItFor - bg
+
+*/
+
 import { Box } from "@mui/material";
 import Header from "./components/header";
 import DeveloperSignUp from "./components/developer-sign-up";
@@ -18,7 +26,7 @@ import Footer from "./components/footer";
 
 export default async function Main() {
   return (
-    <Box sx={{ maxWidth: '1440px', mx: 'auto' }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column' }}>
       <Header />
       <DeveloperSignUp />
       <Box sx={{ height: '40px', bgcolor: "#1144AA" }} />

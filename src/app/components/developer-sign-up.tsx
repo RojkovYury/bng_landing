@@ -1,13 +1,13 @@
 'use server'
 
-import ButtonBlue from "@/components/button-blue";
 import { Box, Typography } from "@mui/material";
 import Image from 'next/image';
 import developer from '../../../public/images/developer-sign-up.svg'
+import ButtonModalOpen from "@/components/button-blue";
 
 export default async function DeveloperSignUp() {
   return (
-    <Box sx={{ height: '813px', bgcolor: "#fff", display: 'flex' }}>
+    <Box sx={{ maxWidth: '1440px', mx: 'auto', height: '813px', bgcolor: "#fff", display: 'flex' }}>
 
       <Box sx={{ minWidth: '482px' }}>
         
@@ -23,7 +23,7 @@ export default async function DeveloperSignUp() {
           <Typography sx={{ fontSize: '24px', lineHeight: '32px' }}>программирования C# в Туле</Typography>
         </Box>
 
-        <ButtonBlue text="Записаться" sx={{ mb: '160px' }} />
+        <ButtonModalOpen text="Записаться" sx={{ mb: '160px' }} />
         
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <Box sx={{ display: 'flex', mr: '64px' }}>
