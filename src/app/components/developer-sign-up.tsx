@@ -3,7 +3,7 @@
 import { Box, Typography } from "@mui/material";
 import Image from 'next/image';
 import developer from '../../../public/images/developer-sign-up.svg'
-import ButtonModalOpen from "@/components/button-blue";
+import ButtonModalOpen from "@/components/button-modal-open";
 
 export default async function DeveloperSignUp() {
   return (

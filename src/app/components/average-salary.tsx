@@ -3,7 +3,7 @@
 import { Box, Typography } from "@mui/material";
 import Image from 'next/image';
 import background from '../../../public/images/average-salary-bg.svg'
-import ButtonModalOpen from "@/components/button-blue";
+import ButtonModalOpen from "@/components/button-modal-open";
 import AverageSalaryRow from "@/components/average-salary-row";
 
 export default async function AverageSalary() {

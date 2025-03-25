@@ -1,4 +1,4 @@
-'use client';
+'use client'; // переименовать?
 
 import { Box, Button, Modal, Typography } from "@mui/material";
 import { useState } from "react";
@@ -32,6 +32,7 @@ export default function ButtonModalOpen({ text, orange, sx }: ButtonModalOpenPro
         onClick={handleOpen}
         variant="contained"
         sx={{
+          borderRadius: '8px',
           width: orange ? '199px' : '180px',
           height: orange ? '52px' : '56px',
           bgcolor: orange ? '#FFA700' : '#1144AA',
