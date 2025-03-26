@@ -20,7 +20,7 @@ import WhoIsItFor from "./components/who-is-it-for";
 import TrainingCenterProgram from "./components/training-center-program";
 import StudentWillMaster from "./components/student-will-master";
 import OurMentors from "./components/our-mentors";
-import CourseFee from "./components/course-fee";
+import CourseCost from "./components/course-cost";
 import Faq from "./components/faq";
 import Contacts from "./components/contacts";
 import Footer from "./components/footer";
@@ -39,7 +39,7 @@ export default async function Main() {
       <TrainingCenterProgram />
       <StudentWillMaster />
       <OurMentors />
-      <CourseFee />
+      <CourseCost />
       <Faq />
       <Contacts />
       <Footer />
