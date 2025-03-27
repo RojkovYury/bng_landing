@@ -7,6 +7,7 @@ WhereIsItUsed - png vs svg ?
 WhoIsItFor - bg
 Скачать подробный план - кнопка?
 Программа нашего учебного центра - что-то открыто по умолчанию?
+Положение о персональных данных - link
 */
 
 import { Box } from "@mui/material";
