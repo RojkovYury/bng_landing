@@ -1,18 +1,15 @@
 'use client'; // ?
 
-import { Box, Checkbox, TextField, Typography } from "@mui/material";
-import ButtonDownload from "./button-download";
-import ButtonModalOpen from "./button-modal-open";
+import { Box, Button, Checkbox, TextField, Typography } from "@mui/material";
 
 interface SignUpContainerProps {
-  text?: string;
+  text: string;
   sx?: any;
 }
 
 export default function SignUpContainer({ text, sx }: SignUpContainerProps) {
   return (   
-    <Box sx={{ display: 'flex', flexDirection: 'column', width: '370px', height: '356px', p: '40px', bgcolor: '#fff', borderRadius: '20px', ...sx }}>
-      
+    <Box sx={{ position: 'relative', display: 'flex', flexDirection: 'column', bgcolor: '#fff', borderRadius: '20px', ...sx }}>
       <Typography sx={{ fontSize: '24px', fontWeight: 700, lineHeight: '32px', mb: '40px' }}>
         {text}
       </Typography>
@@ -20,19 +17,36 @@ export default function SignUpContainer({ text, sx }: SignUpContainerProps) {
       <TextField
         label="Имя"
         variant="outlined"
-        sx={{  mb: '20px' }}
+        sx={{ mb: '20px', height: '52px', borderRadius: '8px' }}
       />
 
       <TextField
         variant="outlined"
-        sx={{  mb: '40px' }}
+        sx={{ mb: '40px', height: '52px', borderRadius: '8px' }}
       />
 
-      <ButtonModalOpen
-        text="Отправить"
-        orange
-        sx={{ width: '100%' }}
-      />
+      <Button
+        variant="contained"
+        sx={{
+          borderRadius: '8px',
+          width: '100%',
+          height: '52px',
+          bgcolor: '#FFA700',
+          boxShadow: 'none',
+
+          textTransform: 'none',
+          fontSize: '18px',
+          fontWeight: 700, 
+          lineHeight: '20px',
+
+          '&:hover': {
+            bgcolor: '#FF7B00',
+            boxShadow: 'none',
+          },
+        }}
+      >
+        Отправить
+      </Button>
 
       <Box sx={{ display: 'flex', mt: '20px' }}>
         <Checkbox />
@@ -40,7 +54,6 @@ export default function SignUpContainer({ text, sx }: SignUpContainerProps) {
           Нажимая кнопку “Отправить”, я соглашаюсь с положением о персональных данных и даю согласие на их обработку и хранение
         </Typography>
       </Box>
-
     </Box>
   )
 }
