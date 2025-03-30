@@ -12,7 +12,7 @@ WhoIsItFor - bg
 import { Box, Typography } from "@mui/material";
 import Header from "./components/header";
 import DeveloperSignUp from "./components/developer-sign-up";
-// import SignUpMobile from "./components/sign-up-mobile";
+import SignUpMobile from "./components/sign-up-mobile";
 import WhereIsItUsed from "./components/where-is-it-used";
 import Table from "./components/table";
 import AverageSalary from "./components/average-salary";
@@ -34,7 +34,8 @@ export default async function Main() {
       */}
 
       <DeveloperSignUp />
-      <Box sx={{ height: '40px', bgcolor: "#1144AA" }} />
+      <Box sx={{ height: '40px', bgcolor: "#1144AA", display: { xs: 'none', sm: 'none', md: 'flex', lg: 'flex', xl: 'flex' } }} />
+      <SignUpMobile />
       {/*
       
       <WhereIsItUsed />
@@ -49,7 +50,7 @@ export default async function Main() {
       <Contacts />
       <Footer />
       */}
-      <Box sx={{ position: 'fixed', zIndex: 999, top: '900px', left: '10px', bgcolor: '#fff', borderRadius: '20px', border: '1px solid lightgrey' }}>
+      <Box sx={{ position: 'fixed', zIndex: 999, top: '100px', left: '10px', bgcolor: '#fff', borderRadius: '20px', border: '2px solid lightgrey' }}>
         <Typography sx={{ fontSize: '48px', my: '10px', mx: '20px', display: { xs: 'flex', sm: 'none', md: 'none', lg: 'none', xl: 'none' } }}>
           XS 0px - 599px
         </Typography>
@@ -69,4 +70,4 @@ export default async function Main() {
     </Box>
   )
 }
-{/* <SignUpMobile /> */}
+{/*  */}
