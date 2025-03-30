@@ -27,8 +27,8 @@ export default function ClientMenuModal() {
           sx={{
             position: 'relative',
             display: 'flex',
-            height: { xs: '28px', sm: '48px', md: '48px', lg: '48px', xl: '48px' },
-            width: { xs: '28px', sm: '48px', md: '48px', lg: '48px', xl: '48px' },
+            height: { xs: '28px', sm: '28px', md: '48px', lg: '48px', xl: '48px' },
+            width: { xs: '28px', sm: '28px', md: '48px', lg: '48px', xl: '48px' },
           }}
         >
           <Image src={menu} alt="menu" layout="fill" objectFit="contain" />

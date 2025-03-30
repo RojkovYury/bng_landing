@@ -1,4 +1,4 @@
-'use client'; // переименовать?
+'use client';
 
 import { Box, Button, Modal, Typography } from "@mui/material";
 import { useState } from "react";
@@ -33,16 +33,23 @@ export default function ButtonModalOpen({ text, orange, sx }: ButtonModalOpenPro
         variant="contained"
         sx={{
           borderRadius: '8px',
-          width: orange ? '199px' : '180px',
-          height: orange ? '52px' : '56px',
+          width: orange
+            ? '199px'
+            : { xs: '160px', sm: '160px', md: '180px', lg: '180px', xl: '180px' },
+          height: orange
+            ? '52px'
+            : { xs: '50px', sm: '50px', md: '56px', lg: '56px', xl: '56px' },
           bgcolor: orange ? '#FFA700' : '#1144AA',
           boxShadow: 'none',
 
           textTransform: 'none',
-          fontSize: orange ? '18px' : '20px',
+          fontSize: orange
+            ? '18px'
+            : { xs: '18px', sm: '18px', md: '20px', lg: '20px', xl: '20px' },
           fontWeight: 700, 
-          lineHeight: orange ? '20px' : '24px',
-
+          lineHeight: orange 
+            ? '20px'
+            : { xs: '22px', sm: '22px', md: '24px', lg: '24px', xl: '24px' },
           '&:hover': {
             bgcolor: orange ? '#FF7B00' : '#184AAC',
             boxShadow: 'none',

@@ -21,7 +21,7 @@ export default async function Header() {
         display: 'flex',
         justifyContent: 'space-between',
         overflow: 'hidden',
-        mt: { xs: '13px', sm: '20px', md: '20px', lg: '20px', xl: '20px' },
+        mt: { xs: '13px', sm: '13px', md: '20px', lg: '20px', xl: '20px' },
         mx: 'auto',
         width: '100%',
         maxWidth: '1440px',
@@ -31,15 +31,15 @@ export default async function Header() {
         sx={{
           display: 'flex',
           alignItems: 'center',
-          ml: { xs: '16px', sm: '20px', md: '20px', lg: '20px', xl: '0px' },
+          ml: { xs: '16px', sm: '16px', md: '20px', lg: '20px', xl: '0px' },
         }}
       >
         <Box
           sx={{
             position: 'relative',
             display: 'flex',
-            width: { xs: '53px', sm: '92px', md: '92px', lg: '92px', xl: '92px' },
-            height: { xs: '44px', sm: '77px', md: '77px', lg: '77px', xl: '77px' },
+            width: { xs: '53px', sm: '53px', md: '92px', lg: '92px', xl: '92px' },
+            height: { xs: '44px', sm: '44px', md: '77px', lg: '77px', xl: '77px' },
             mr: { xs: '24px', sm: '24px', md: '24px', lg: '24px', xl: '24px' },
           }}
         >
@@ -47,9 +47,9 @@ export default async function Header() {
         </Box>
         <Typography
           sx={{
-            fontSize: { xs: '12px', sm: '16px', md: '16px', lg: '16px', xl: '16px' },
-            lineHeight: { xs: '12px', sm: '16px', md: '16px', lg: '16px', xl: '16px' },
-            maxWidth: { xs: '126px', sm: '168px', md: '168px', lg: '168px', xl: '168px' },
+            fontSize: { xs: '12px', sm: '12px', md: '16px', lg: '16px', xl: '16px' },
+            lineHeight: { xs: '12px', sm: '12px', md: '16px', lg: '16px', xl: '16px' },
+            maxWidth: { xs: '126px', sm: '126px', md: '168px', lg: '168px', xl: '168px' },
             fontWeight: 400,
           }}
         >
@@ -110,7 +110,7 @@ export default async function Header() {
         sx={{
           display: { xs: 'flex', sm: 'flex', md: 'flex', lg: 'flex', xl: 'none' },
           alignItems: 'center',
-          mr: { xs: '8px', sm: '12px', md: '12px', lg: '12px', xl: '0px' }, // - IconButton padding (8px)
+          mr: { xs: '8px', sm: '8px', md: '12px', lg: '12px', xl: '0px' }, // - IconButton padding (8px)
         }}
       >
         <ClientMenuModal />

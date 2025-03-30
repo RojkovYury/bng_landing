@@ -111,10 +111,8 @@ export default async function DeveloperSignUp() {
       >
         <Box
           sx={{
-            // border: '1px solid green',
             display: 'flex',
             position: 'absolute',
-            // position: 'relative',
             width: { xs: '450px', sm: '100%', md: '1140px', lg: '1140px', xl: '1140px' },
             height: { xs: '303px', sm: '100%', md: '768px', lg: '768px', xl: '768px' },
             bottom: 0,
@@ -127,25 +125,3 @@ export default async function DeveloperSignUp() {
     </Box>
   )
 }
-
-/*
-          width={1140}
-          height={768}
-*/
-
-/*
-        <Box
-            sx={{
-              position: 'absolute',
-              display: 'flex',
-              // width: { xs: '53px', sm: '92px', md: '92px', lg: '92px', xl: '92px' },
-              // height: { xs: '44px', sm: '77px', md: '77px', lg: '77px', xl: '77px' },
-              // mr: { xs: '24px', sm: '24px', md: '24px', lg: '24px', xl: '24px' },
-              height: '100%',
-              width: '1140px'
-            }}
-          >
-          <Image src={developer} alt="developer" layout="fill" objectFit="contain" />
-        </Box> 
-
-*/
