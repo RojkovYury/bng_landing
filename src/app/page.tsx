@@ -49,7 +49,7 @@ export default async function Main() {
       <Contacts />
       <Footer />
       */}
-      <Box sx={{ position: 'fixed', zIndex: 999, top: '200px', left: '10px', bgcolor: '#fff', borderRadius: '20px', border: '1px solid lightgrey' }}>
+      <Box sx={{ position: 'fixed', zIndex: 999, top: '900px', left: '10px', bgcolor: '#fff', borderRadius: '20px', border: '1px solid lightgrey' }}>
         <Typography sx={{ fontSize: '48px', my: '10px', mx: '20px', display: { xs: 'flex', sm: 'none', md: 'none', lg: 'none', xl: 'none' } }}>
           XS 0px - 599px
         </Typography>
