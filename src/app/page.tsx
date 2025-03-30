@@ -27,15 +27,15 @@ import Footer from "./components/footer";
 
 export default async function Main() {
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', position: 'relative' }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', position: 'relative', overflow: 'hidden' }}>
       <Header />
       {/*
         Что просиходит по клику на сам номер? (Виден только на десктопе)
       */}
 
-      {/*
       <DeveloperSignUp />
       <Box sx={{ height: '40px', bgcolor: "#1144AA" }} />
+      {/*
       
       <WhereIsItUsed />
       <Table />
