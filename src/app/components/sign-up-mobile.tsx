@@ -22,8 +22,8 @@ export default async function SignUpMobile() {
           display: 'flex',
           flexDirection: 'column',
           width: '100%',
-          mr: { xs: '16px', sm: 'auto' },
-          ml: { xs: '16px', sm: 'auto' },
+          mr: 'auto',
+          ml: 'auto',
           my: '32px',
         }}
       >

@@ -36,9 +36,9 @@ export default async function Main() {
       <DeveloperSignUp />
       <Box sx={{ height: '40px', bgcolor: "#1144AA", display: { xs: 'none', sm: 'none', md: 'flex', lg: 'flex', xl: 'flex' } }} />
       <SignUpMobile />
+      <WhereIsItUsed />
       {/*
       
-      <WhereIsItUsed />
       <Table />
       <AverageSalary />
       <WhoIsItFor />
