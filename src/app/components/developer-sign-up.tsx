@@ -43,17 +43,18 @@ export default async function DeveloperSignUp() {
         bgcolor: "#fff",
         display: 'flex',
         flexDirection: { xs: 'column', sm: 'column', md: 'column', lg: 'row', xl: 'row' },
+        alignItems: { xs: 'center', sm: 'center', md: 'inherit', lg: 'inherit', xl: 'inherit' },
       }}
     >
       <Box
         sx={{
-          minWidth: { xs: '406px', sm: '406px', md: '406px', lg: '482px', xl: '482px' },
-          mr: { xs: '0px', sm: 'auto', md: '0px', lg: '0px', xl: '58px' },
-          ml: { xs: '16px', sm: 'auto', md: '20px', lg: '20px', xl: '0px' },
+          minWidth: { xs: '0', sm: '0', md: '406px', lg: '482px', xl: '482px' },
+          mr: { xs: '20px', sm: '0px', md: '0px', lg: '0px', xl: '58px' },
+          ml: { xs: '20px', sm: '0px', md: '20px', lg: '20px', xl: '0px' },
           mt: { xs: '32px', sm: '32px', md: '130px', lg: '182px', xl: '182px' },
         }}
       > 
-        <Box sx={{ display: 'flex', mb: { xs: '20px', sm: '20px', md: '32px', lg: '32px', xl: '32px' } }}>
+        <Box sx={{ display: 'flex', mb: { xs: '20px', sm: '20px', md: '32px', lg: '32px', xl: '32px' }, mx: { xs: '0px', sm: '0px' } }}>
           <Typography sx={{ ...titleTypography, color: '#FFA700' }}>C#&nbsp;</Typography>
           <Typography sx={{ ...titleTypography }}> - разработчик</Typography>
         </Box>
@@ -103,20 +104,26 @@ export default async function DeveloperSignUp() {
       <Box
         sx={{
           display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
           position: 'relative',
           height: '100%',
-          width: '100%',
+          width: { xs: '450px', sm: '100%', md: '100%', lg: '100%', xl: '100%' },
           maxWidth: '1140px',
         }}
       >
         <Box
           sx={{
             display: 'flex',
-            position: 'absolute',
+            justifyContent: 'center',
+            // alignItems: 'center',
+            position: { xs: 'absolute', sm: 'absolute', md: 'absolute', lg: 'absolute', xl: 'absolute' },
             width: { xs: '450px', sm: '100%', md: '1140px', lg: '1140px', xl: '1140px' },
             height: { xs: '303px', sm: '100%', md: '768px', lg: '768px', xl: '768px' },
+            // width: 'auto', // Устанавливаем ширину как автоматическую
+            // aspectRatio: '16 / 11',
             bottom: 0,
-            left: { xs: '-40px', sm: '0px', md: '300px', lg: '-130px', xl: '0px' },
+            left: { xs: '0px', sm: '0px', md: '300px', lg: '-130px', xl: '0px' },
           }}
         >
           <Image src={developer} alt="developer" layout="fill" objectFit="contain" />

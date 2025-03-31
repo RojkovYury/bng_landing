@@ -18,7 +18,7 @@ export default async function SignUpMobile() {
       <Box
         sx={{
           position: 'relative',
-          maxWidth: '350px',
+          maxWidth: '343px',
           display: 'flex',
           flexDirection: 'column',
           width: '100%',

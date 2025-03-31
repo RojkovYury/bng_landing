@@ -35,6 +35,7 @@ export default async function WhereIsItUsed() {
           maxWidth: { xs: '343px', sm: '343px', md: '704px', lg: 'inherit', xl: 'inherit' },
           minWidth: { xs: 'inherit', sm: 'inherit', md: '704px', lg: '650px', xl: '704px' },
           mt: { xs: '0px', sm: '0px', md: '0px', lg: '92px', xl: '92px' },
+          mr: { xs: '0px', sm: '0px', md: '0px', lg: '0px', xl: '32px' },
         }}
         >
         <Box
@@ -48,12 +49,22 @@ export default async function WhereIsItUsed() {
           <Typography sx={{ ...titleTypography, color: '#FFA700' }}>язык С#</Typography>
         </Box>
 
-        <Box sx={{ mb: '20px' }}>
+        <Box
+          sx={{
+            maxWidth: { xs: '310px', sm: '310px', md: '704px', lg: '704px', xl: '704px' },
+            mb: '20px',
+          }}
+        >
           <Typography sx={{ ...textTypography }}>На C# разрабатывают высоконагруженные веб-сайты,</Typography>
           <Typography sx={{ ...textTypography }}>мобильные и настольные приложения, а также игры</Typography>
         </Box>
 
-        <Box sx={{ mb: { xs: '40px', sm: '40px', md: '64px', lg: '64px', xl: '64px' } }}>
+        <Box
+          sx={{
+            maxWidth: { xs: '310px', sm: '310px', md: '704px', lg: '704px', xl: '704px' },
+            mb: { xs: '40px', sm: '40px', md: '64px', lg: '64px', xl: '64px' },
+          }}
+        >
           <Typography sx={{ ...textTypography, fontWeight: 500 }}>
             Освоив этот язык, вы сможете создавать все это и претендовать на высокооплачиваемую работу
           </Typography>
@@ -68,6 +79,7 @@ export default async function WhereIsItUsed() {
           height: { xs: '229px', sm: '229px', md: '470px', lg: '470px', xl: '470px' },
           maxWidth: { xs: '343px', sm: '343px', md: '704px', lg: 'inherit', xl: 'inherit' },
           mr: { xs: '0px', sm: '0px', md: '0px', lg: '20px', xl: '20px' },
+          left: { xs: '0px', sm: '0px', md: '-40px', lg: '0px', xl: '0px' },
         }}
       >
         <Image src={dashboard} alt="dashboard" layout="fill" objectFit="contain" />
