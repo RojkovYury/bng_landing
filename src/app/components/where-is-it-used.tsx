@@ -26,8 +26,8 @@ export default async function WhereIsItUsed() {
         mt: { xs: '64px', sm: '64px', md: '80px', lg: '80px', xl: '120px' },
         width: '100%',
         display: 'flex',
-        flexDirection: { xs: 'column', sm: 'column', md: 'column', lg: 'row', xl: 'row' },
         alignItems: 'center',
+        flexDirection: { xs: 'column', sm: 'column', md: 'column', lg: 'row', xl: 'row' },
       }}
     >
       <Box

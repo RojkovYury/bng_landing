@@ -23,7 +23,7 @@ export default async function Table() {
         mr: { xs: 'auto', sm: 'auto', md: 'auto', lg: '20px', xl: 'auto' },
         ml: { xs: 'auto', sm: 'auto', md: 'auto', lg: '20px', xl: 'auto' },
         mt: { xs: '80px', sm: '80px', md: '180px', lg: '180px', xl: '180px' },
-        mb: '164px',
+        mb: { xs: '80px', sm: '80px', md: '164px', lg: '164px', xl: '164px' }, // -16px для скролла
         width: { xs: '100%', sm: '100%', md: 'unset', lg: 'unset', xl: 'unset' },
       }}
     >
