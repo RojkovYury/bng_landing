@@ -38,9 +38,9 @@ export default async function Main() {
       <SignUpMobile />
       <WhereIsItUsed />
       <Table />
+      <AverageSalary />
       {/*
       
-      <AverageSalary />
       <WhoIsItFor />
       <TrainingCenterProgram />
       <StudentWillMaster />

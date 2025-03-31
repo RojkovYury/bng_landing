@@ -13,8 +13,8 @@ export default function TableCard({ text, src, sx }: TableCardProps) {
   return (   
     <Box
       sx={{
-        width: { xs: '150px', sm: '150px', md: '150px', lg: '256px', xl: '256px' },
-        mr: { xs: '16px', sm: '16px', md: '16px', lg: '40px', xl: '40px' },
+        width: { xs: '140px', sm: '140px', md: '140px', lg: '256px', xl: '256px' },
+        mr: { xs: '16px', sm: '26px', md: '26px', lg: '40px', xl: '40px' },
         ...sx,
       }}
     >
@@ -24,6 +24,7 @@ export default function TableCard({ text, src, sx }: TableCardProps) {
           position: 'relative',
           width: { xs: '64px', sm: '64px', md: '64px', lg: '100px', xl: '100px' },
           height: { xs: '64px', sm: '64px', md: '64px', lg: '100px', xl: '100px' },
+          mb: { xs: '16px', sm: '16px', md: '16px', lg: '20px', xl: '20px' },
         }}
       >
         <Image src={src} alt="" layout="fill" objectFit="contain" />

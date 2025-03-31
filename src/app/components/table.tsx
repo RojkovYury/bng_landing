@@ -17,34 +17,34 @@ export default async function Table() {
   return (
     <Box
       sx={{
+        display: 'flex',
+        position: 'relative',
         maxWidth: '1440px',
-        minWidth: '900px',
-        mr: { xs: '0px', sm: 'auto', md: 'auto', lg: '20px', xl: 'auto' },
-        ml: { xs: '0px', sm: 'auto', md: 'auto', lg: '20px', xl: 'auto' },
-        // height: '784px',
-        // display: 'flex',
-        overflowX: { xs: 'auto', md: 'hidden' },
+        mr: { xs: 'auto', sm: 'auto', md: 'auto', lg: '20px', xl: 'auto' },
+        ml: { xs: 'auto', sm: 'auto', md: 'auto', lg: '20px', xl: 'auto' },
+        mt: { xs: '80px', sm: '80px', md: '180px', lg: '180px', xl: '180px' },
+        mb: '164px',
+        width: { xs: '100%', sm: '100%', md: 'unset', lg: 'unset', xl: 'unset' },
       }}
     >
-
       <Box
         sx={{
           display: 'flex',
+          position: 'relative',
           flexDirection: 'column',
           alignItems: { xs: 'center', sm: 'center', md: 'center', lg: 'unset', xl: 'unset' },
-          width: '100%',
-          flexWrap: 'nowrap',
-          overflow: { xs: 'auto', md: 'hidden' },
+          width: { xs: '900px', sm: '900px', md: '100%', lg: '100%', xl: '100%' },
+          flexWrap: { xs: 'wrap', md: 'nowrap' },
+          overflowX: 'auto',
+          overflowY: 'hidden',
+          scrollbarColor: "#C9D3E8 #FFF",
         }}
       >
-
-
-
         <Box
           sx={{
             display: 'flex',
-            mt: '180px',
             mb: { xs: '16px', sm: '16px', md: '84px', lg: '84px', xl: '84px' },
+            ml: { xs: '16px', sm: '16px', md: '0px', lg: '0px', xl: '0px' },
           }}
         >
           <TableCard src={table1} text="Настоящее очное обучение с преподавателем"/>
@@ -57,7 +57,8 @@ export default async function Table() {
         <Box
           sx={{
             display: 'flex',
-            mb: '180px',
+            mb: '16px',
+            ml: { xs: '16px', sm: '16px', md: '0px', lg: '0px', xl: '0px' },
           }}
         >
           <TableCard src={table6} text="Выбор темы проекта под индивидуальные пожелания и интересы"/>
