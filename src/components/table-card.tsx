@@ -11,17 +11,29 @@ interface TableCardProps {
 
 export default function TableCard({ text, src, sx }: TableCardProps) {
   return (   
-    <Box sx={{ width: '256px', mr: '40px', ...sx }}>
-      <Box sx={{ display: 'flex', height: '100px', width: '100px', flexDirection: 'column' }}>
-        <Image
-          layout="responsive"
-          src={src}
-          alt={src}
-          width={100}
-          height={100}
-        />
+    <Box
+      sx={{
+        width: { xs: '150px', sm: '150px', md: '150px', lg: '256px', xl: '256px' },
+        mr: { xs: '16px', sm: '16px', md: '16px', lg: '40px', xl: '40px' },
+        ...sx,
+      }}
+    >
+      <Box
+        sx={{
+          display: 'flex',
+          position: 'relative',
+          width: { xs: '64px', sm: '64px', md: '64px', lg: '100px', xl: '100px' },
+          height: { xs: '64px', sm: '64px', md: '64px', lg: '100px', xl: '100px' },
+        }}
+      >
+        <Image src={src} alt="" layout="fill" objectFit="contain" />
       </Box>
-      <Typography sx={{ fontSize: '16px', lineHeight: '20px' }}>
+      <Typography
+        sx={{
+          fontSize: { xs: '14px', sm: '14px', md: '14px', lg: '16px', xl: '16px' },
+          lineHeight: { xs: '16px', sm: '16px', md: '16px', lg: '20px', xl: '20px' },
+        }}
+      >
         {text}
       </Typography>
     </Box>
