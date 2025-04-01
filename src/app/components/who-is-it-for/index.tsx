@@ -1,20 +1,36 @@
 'use server'
 
-import WhoIsItForCard from "@/components/who-is-it-for-card";
+import WhoIsItForCard from "@/app/components/who-is-it-for/components/who-is-it-for-card";
 import { Box, Typography } from "@mui/material";
-import outIt from '../../../public/images/who-is-it-for-out.png'
-import student from '../../../public/images/who-is-it-for-stud.png'
-import inIt from '../../../public/images/who-is-it-for-in.png'
+import outIt from '../../../../public/images/who-is-it-for-out.png'
+import student from '../../../../public/images/who-is-it-for-stud.png'
+import inIt from '../../../../public/images/who-is-it-for-in.png'
+
+const titleTypography = {
+  fontSize: { xs: '32px', sm: '32px', md: '32px', lg: '48px', xl: '48px' },
+  lineHeight: { xs: '40px', sm: '40px', md: '40px', lg: '56px', xl: '56px' },
+  fontWeight: 700,
+}
 
 export default async function WhoIsItFor() {
   return (
     <>
-      <Box sx={{ maxWidth: '1440px', mx: 'auto', position: 'relative', display: 'flex', zIndex: 2, flexDirection: 'column', mt: '180px' }}>
+      <Box
+        sx={{
+          maxWidth: '1440px',
+          mx: 'auto',
+          position: 'relative',
+          display: 'flex',
+          zIndex: 2,
+          flexDirection: 'column',
+          mt: '180px',
+        }}
+      >
         <Box sx={{ display: 'flex', mb: '80px' }}>
-          <Typography sx={{ fontSize: '48px', fontWeight: 700, lineHeight: '56px', color: '#FFA700' }}>
+          <Typography sx={{...titleTypography, color: '#FFA700' }}>
             Для кого&nbsp;
           </Typography>
-          <Typography sx={{ fontSize: '48px', fontWeight: 700, lineHeight: '56px' }}>
+          <Typography sx={{...titleTypography }}>
             предназначен мастер-класс
           </Typography>
         </Box>

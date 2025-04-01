@@ -45,9 +45,9 @@ export default async function Main() {
       <WhereIsItUsed />
       <Table />
       <AverageSalary />
+      <WhoIsItFor />
       {/*
       
-      <WhoIsItFor />
       <TrainingCenterProgram />
       <StudentWillMaster />
       <OurMentors />

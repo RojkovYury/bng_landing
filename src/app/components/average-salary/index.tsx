@@ -19,6 +19,7 @@ export default async function AverageSalary() {
         ml: { xs: '16px', sm: '16px', md: '20px', lg: 'auto', xl: 'auto' },
         borderRadius: '40px',
         bgcolor: '#F2F5F9',
+        overflow: 'hidden',
       }}
     >
       <Box sx={{ position: 'absolute', zIndex: 2, top: '0px', right: '0px', display: { xs: 'none', sm: 'none', md: 'flex', lg: 'flex', xl: 'flex' }, height: '100%', alignItems: 'start' }}>
@@ -108,5 +109,3 @@ export default async function AverageSalary() {
     </Box>
   )
 }
-
-// <Box sx={{ position: 'absolute', zIndex: 1, height: '100%', width: '100%', backgroundColor: '#F2F5F9' }} />
