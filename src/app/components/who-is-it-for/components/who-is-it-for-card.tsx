@@ -1,4 +1,4 @@
-'use client';
+'use client'; // ????
 
 import { Box, Typography } from "@mui/material";
 import Image, { StaticImageData } from 'next/image';
@@ -20,49 +20,44 @@ export default function WhoIsItForCard({ title, text, src, mr }: WhoIsItForCardP
         bgcolor: '#fff',
         borderBottomLeftRadius: '32px',
         borderBottomRightRadius: '32px',
+        width: '459px',
       }}
     >
-      
       <Box
         sx={{
           display: 'flex',
-          height: '359px',
-          width: '459px',
-          flexDirection: 'column',
-          mb: '32px',
+          position: 'relative',
+          aspectRatio: '16 / 13',
+          mb: { xs: '24px', sm: '24px', md: '24px', lg: '32px', xl: '32px' },
         }}
       >
-        <Image
-          layout="responsive"
-          src={src}
-          alt=''
-          width={459}
-          height={359}
-        />
+        <Image src={src} alt="" layout="fill" objectFit="contain" />
       </Box>
 
-      <Typography
-        sx={{ 
-          fontSize: '24px',
-          lineHeight: '32px',
-          fontWeight: 700,
-          mb: '20px',
-          px: '20px',
-        }}
-      >
-        {title}
-      </Typography>
+      <Box>
+        <Typography
+          sx={{ 
+            fontSize: { xs: '16px', sm: '16px', md: '16px', lg: '24px', xl: '24px' },
+            lineHeight: { xs: '22px', sm: '22px', md: '22px', lg: '32px', xl: '32px' },
+            fontWeight: 700,
+            mb: { xs: '12px', sm: '12px', md: '12px', lg: '20px', xl: '20px' },
+            px: { xs: '16px', sm: '16px', md: '16px', lg: '20px', xl: '20px' },
+          }}
+        >
+          {title}
+        </Typography>
 
-      <Typography
-        sx={{
-          fontSize: '18px',
-          lineHeight: '24px',
-          mb: '32px',
-          px: '20px',
-        }}
-      >
-        {text}
-      </Typography>
+        <Typography
+          sx={{
+            fontSize: { xs: '14px', sm: '14px', md: '14px', lg: '18px', xl: '18px' },
+            lineHeight: { xs: '20px', sm: '20px', md: '20px', lg: '24px', xl: '24px' },
+            mb: { xs: '24px', sm: '24px', md: '24px', lg: '32px', xl: '32px' },
+            px: { xs: '16px', sm: '16px', md: '16px', lg: '20px', xl: '20px' },
+          }}
+        >
+          {text}
+        </Typography>
+      </Box>
 
     </Box>
   )

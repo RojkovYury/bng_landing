@@ -18,15 +18,16 @@ export default async function WhoIsItFor() {
       <Box
         sx={{
           maxWidth: '1440px',
-          mx: 'auto',
           position: 'relative',
           display: 'flex',
           zIndex: 2,
           flexDirection: 'column',
-          mt: '180px',
+          mt: { xs: '80px', sm: '80px', md: '80px', lg: '180px', xl: '180px' },
+          mr: { xs: '20px', sm: '20px', md: '20px', lg: '20px', xl: 'auto' },
+          ml: { xs: '20px', sm: '20px', md: '20px', lg: '20px', xl: 'auto' },
         }}
       >
-        <Box sx={{ display: 'flex', mb: '80px' }}>
+        <Box sx={{ display: 'flex', mb: { xs: '32px', sm: '32px', md: '32px', lg: '80px', xl: '80px' }, flexDirection: { xs: 'column', sm: 'column', md: 'column', lg: 'row', xl: 'row' } }}>
           <Typography sx={{...titleTypography, color: '#FFA700' }}>
             Для кого&nbsp;
           </Typography>
@@ -35,7 +36,13 @@ export default async function WhoIsItFor() {
           </Typography>
         </Box>
 
-        <Box sx={{ width: '100%', display: 'flex', justifyContent: 'space-between', zIndex: 2, mb: '80px' }}>
+        <Box
+          sx={{
+            display: 'flex',
+            zIndex: 2,
+            mb: '80px',
+          }}
+        >
           <WhoIsItForCard
             title='Специалистам вне IT'
             text='Недовольны своим нынешним доходом? Программирование — это удобный путь в прибыльную и быстро развивающуюся IT-индустрию'
