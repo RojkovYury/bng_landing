@@ -1,6 +1,10 @@
-'use client'; // ?
+'use client';
 
-import { Box, Button, Checkbox, TextField, Typography } from "@mui/material";
+import { Box, Button, Checkbox, Link, Typography } from "@mui/material";
+import { useState } from "react";
+import SingUpInputPhone from "./sign-up-input-phone";
+import SingUpInputName from "./sign-up-input-name";
+import SingUpInputCheckbox from "./sign-up-input-checkbox";
 
 interface SignUpContainerProps {
   text: string;
@@ -8,35 +12,52 @@ interface SignUpContainerProps {
 }
 
 export default function SignUpContainer({ text, sx }: SignUpContainerProps) {
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [check, setCheck] = useState(false);
   return (   
-    <Box sx={{ position: 'relative', display: 'flex', flexDirection: 'column', bgcolor: '#fff', borderRadius: '20px', ...sx }}>
-      <Typography sx={{ fontSize: '24px', fontWeight: 700, lineHeight: '32px', mb: '40px' }}>
+    <Box
+      sx={{
+        // width: '100%',
+        width: { xs: '100%', sm: '100%', md: '370px', lg: '370px', xl: '370px' },
+        maxWidth: { xs: '304px', sm: '304px', md: '370px', lg: '370px', xl: '370px' },
+        height: { xs: 'inherit', sm: 'inherit', md: '356px', lg: '356px', xl: '356px' },
+        position: 'relative',
+        display: 'flex',
+        flexDirection: 'column',
+        bgcolor: '#fff',
+        borderRadius: '20px',
+        px: { xs: '20px', sm: '20px', md: '40px', lg: '40px', xl: '40px' },
+        py: { xs: '20px', sm: '20px', md: '40px', lg: '40px', xl: '40px' },
+        ...sx,
+      }}
+    >
+      <Typography
+        sx={{
+          fontSize: { xs: '16px', sm: '16px', md: '24px', lg: '24px', xl: '24px' },
+          lineHeight: { xs: '20px', sm: '20px', md: '32px', lg: '32px', xl: '32px' },
+          fontWeight: 700,
+          mb: { xs: '32px', sm: '32px', md: '40px', lg: '40px', xl: '40px' },
+        }}
+      >
         {text}
       </Typography>
 
-      <TextField
-        label="Имя"
-        variant="outlined"
-        sx={{ mb: '20px', height: '52px', borderRadius: '8px' }}
-      />
-
-      <TextField
-        variant="outlined"
-        sx={{ mb: '40px', height: '52px', borderRadius: '8px' }}
-      />
+      <SingUpInputName value={name} setValue={setName} />
+      <SingUpInputPhone value={phone} setValue={setPhone} />
 
       <Button
         variant="contained"
         sx={{
           borderRadius: '8px',
           width: '100%',
-          height: '52px',
+          height: { xs: '44px', sm: '44px', md: '52px', lg: '52px', xl: '52px' },
+          minHeight: { xs: '44px', sm: '44px', md: '52px', lg: '52px', xl: '52px' },
           bgcolor: '#FFA700',
           boxShadow: 'none',
 
           textTransform: 'none',
-          fontSize: '18px',
-          fontWeight: 700, 
+          fontSize: { xs: '16px', sm: '16px', md: '18px', lg: '18px', xl: '18px' },
           lineHeight: '20px',
 
           '&:hover': {
@@ -48,10 +69,30 @@ export default function SignUpContainer({ text, sx }: SignUpContainerProps) {
         Отправить
       </Button>
 
-      <Box sx={{ display: 'flex', mt: '20px' }}>
-        <Checkbox />
-        <Typography sx={{ fontSize: '14px', fontWeight: 400, lineHeight: '16px' }}>
-          Нажимая кнопку “Отправить”, я соглашаюсь с положением о персональных данных и даю согласие на их обработку и хранение
+      <Box
+        sx={{
+          display: 'flex',
+          mt: '20px',
+          // mb: '40px',
+        }}
+      >
+        <SingUpInputCheckbox checked={check} setChecked={setCheck} sx={{ mr: '12px' }}/>
+        <Typography
+          sx={{
+            fontSize: { xs: '12px', sm: '12px', md: '14px', lg: '14px', xl: '14px' },
+            lineHeight: { xs: '16px', sm: '16px', md: '16px', lg: '16px', xl: '16px' },
+            fontWeight: 400,
+          }}
+        >
+          Нажимая кнопку “Отправить”, я соглашаюсь с&nbsp;
+          <Link
+            href="/"
+            underline="hover"
+            sx={{ color: '#1144AA' }}
+          >
+            положением о персональных данных
+          </Link>
+          &nbsp;и даю согласие на их обработку и хранение
         </Typography>
       </Box>
     </Box>

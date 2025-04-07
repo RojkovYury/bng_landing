@@ -35,10 +35,6 @@ export default async function Main() {
     }}
   >
       <Header />
-      {/*
-        Что просиходит по клику на сам номер? (Виден только на десктопе)
-      */}
-
       <DeveloperSignUp />
       <Box sx={{ height: '40px', bgcolor: "#1144AA", display: { xs: 'none', sm: 'none', md: 'flex', lg: 'flex', xl: 'flex' } }} />
       <SignUpMobile />
@@ -47,9 +43,9 @@ export default async function Main() {
       <AverageSalary />
       <WhoIsItFor />
       <TrainingCenterProgram />
+      <StudentWillMaster />
       
        {/*
-      <StudentWillMaster />
       <OurMentors />
       <CourseCost />
       <Faq />
