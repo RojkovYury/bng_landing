@@ -43,9 +43,9 @@ export default async function Main() {
       <WhoIsItFor />
       <TrainingCenterProgram />
       <StudentWillMaster />
+      <OurMentors />
       
        {/*
-      <OurMentors />
       <CourseCost />
       <Faq />
       <Contacts />
