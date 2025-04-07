@@ -2,12 +2,13 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Box } from "@mui/material";
-import outIt from '../../../../../public/images/who-is-it-for-out.png'
-import student from '../../../../../public/images/who-is-it-for-stud.png'
-import inIt from '../../../../../public/images/who-is-it-for-in.png'
-import WhoIsItForMobileCard from "./who-is-it-for-mobile-card";
+import mentor1 from '../../../../../public/images/our-mentors-1.png'
+import mentor2 from '../../../../../public/images/our-mentors-2.png'
+import mentor3 from '../../../../../public/images/our-mentors-3.png'
+import OurMentorMobileCard from "./our-mentors-mobile-card";
 
-export default function WhoIsItForMobileCards() {
+
+export default function OurMentorMobileCards() {
   /*
   Тут не самые очевидные решения со скроллом, но иначе он работает с артефактами.
   Карточки не должны иметь стандартные отступы: по классике, мы делаем один вправо на Х,
@@ -18,9 +19,9 @@ export default function WhoIsItForMobileCards() {
   */
   const [currentCardSelected, setIsLastOneSelected] = useState(1);
   const [currentCardScroll, setCurrentCardScroll] = useState(1);
-  const cardRef1 = useRef(null);
-  const cardRef2 = useRef(null);
-  const cardRef3 = useRef(null);
+  const cardRefMentor1 = useRef(null);
+  const cardRefMentor2 = useRef(null);
+  const cardRefMentor3 = useRef(null);
 
   const scrollToCard = (ref: any) => {
     if (ref.current) {
@@ -38,15 +39,15 @@ export default function WhoIsItForMobileCards() {
 
   useEffect(() => {
     if (currentCardSelected === 1) {
-      scrollToCard(cardRef1);
+      scrollToCard(cardRefMentor1);
       setCurrentCardScroll(1);
     }
     if (currentCardSelected === 2) {
-      scrollToCard(cardRef2);
+      scrollToCard(cardRefMentor2);
       setCurrentCardScroll(2);
     }
     if (currentCardSelected === 3) {
-      scrollToCard(cardRef3);
+      scrollToCard(cardRefMentor3);
       setCurrentCardScroll(3);
     }
   }, [currentCardSelected]);
@@ -55,19 +56,19 @@ export default function WhoIsItForMobileCards() {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          if (entry.target === cardRef1.current) {
+          if (entry.target === cardRefMentor1.current) {
             setCurrentCardScroll(1);
-          } else if (entry.target === cardRef2.current) {
+          } else if (entry.target === cardRefMentor2.current) {
             setCurrentCardScroll(2);
-          } else if (entry.target === cardRef3.current) {
+          } else if (entry.target === cardRefMentor3.current) {
             setCurrentCardScroll(3);
           }
         }
       });
     }, { threshold: 0.5 });
-    if (cardRef1.current) observer.observe(cardRef1.current);
-    if (cardRef2.current) observer.observe(cardRef2.current);
-    if (cardRef3.current) observer.observe(cardRef3.current);
+    if (cardRefMentor1.current) observer.observe(cardRefMentor1.current);
+    if (cardRefMentor2.current) observer.observe(cardRefMentor2.current);
+    if (cardRefMentor3.current) observer.observe(cardRefMentor3.current);
     return () => {
       observer.disconnect();
     };
@@ -86,36 +87,39 @@ export default function WhoIsItForMobileCards() {
           msOverflowStyle: 'none',
         }}
       >
-        <Box ref={cardRef1} sx={{ display: 'flex', }}>
-          <WhoIsItForMobileCard
-            title='Специалистам вне IT'
-            text='Недовольны своим нынешним доходом? Программирование — это удобный путь в прибыльную и быстро развивающуюся IT-индустрию'
-            src={outIt}
+        <Box ref={cardRefMentor1} sx={{ display: 'flex', }}>
+          <OurMentorMobileCard
+            title='Дмитрий'
+            subTitle='FullStack Dev, TeamLead'
+            text='Ведущий разработчик, TeamLead. Преподаватель программирования с 8-летним опытом.'
+            src={mentor1}
             ml="20px"
             mr="16px"
           />
         </Box>
-        <Box ref={cardRef2} sx={{ display: 'flex', }}>
-          <WhoIsItForMobileCard
-            title='Студентам'
-            text='Освойте престижную профессию еще в процессе обучения. Начните строить карьеру раньше своих сверстников'
-            src={student}
+        <Box ref={cardRefMentor2} sx={{ display: 'flex', }}>
+          <OurMentorMobileCard
+            title='Сергей'
+            subTitle='TeamLead, Architect, FullStack Dev'
+            text='Основатель Академии, директор компании по разработке ПО, архитектор программных систем с 16-летним опытом.'
+            src={mentor2}
             mr="16px"
             ml="16px"
           />
         </Box>
-        <Box ref={cardRef3} sx={{ display: 'flex', }}>
-          <WhoIsItForMobileCard
-            title='IT специалистам'
-            text='Уже работаете программистом? Повысьте свои навыки, изучите востребованный язык С#, чтобы претендовать на более высокую зарплату'
-            src={inIt}
+        <Box ref={cardRefMentor3} sx={{ display: 'flex', }}>
+          <OurMentorMobileCard
+            title='Марина'
+            subTitle='C# Senior Dev, TeamLead'
+            text='Ведущий российский разработчик и наставник. Ведущий ментор и специалист по обучению новых сотрудников.'
+            src={mentor3}
             ml="16px"
             mr="20px"
           />
         </Box>
       </Box>
 
-      <Box sx={{ display: 'flex', mb: '20px' }}>
+      <Box sx={{ display: 'flex', mb: '60px' }}>
         <Box
           onClick={() => setIsLastOneSelected(1)}
           sx={{

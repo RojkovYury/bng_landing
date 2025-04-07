@@ -21,8 +21,6 @@ export default function WhoIsItForMobileCard({ title, text, src, mr, ml }: WhoIs
         width: '280px',
         ml: ml,
         mr: mr,
-        // mr: mr ? '20px' : '0px',
-        // ml: '32px',
       }}
     >
       <Box sx={{ display: 'flex', position: 'relative', width: '280px', height: '217px', mb: '24px' }}>
@@ -36,7 +34,6 @@ export default function WhoIsItForMobileCard({ title, text, src, mr, ml }: WhoIs
          {text}
         </Typography>
       </Box>
-
     </Box>
   )
 }

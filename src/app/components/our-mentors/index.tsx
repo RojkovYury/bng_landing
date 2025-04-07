@@ -6,6 +6,7 @@ import { Box, Typography } from "@mui/material";
 import mentor1 from '../../../../public/images/our-mentors-1.png'
 import mentor2 from '../../../../public/images/our-mentors-2.png'
 import mentor3 from '../../../../public/images/our-mentors-3.png'
+import OurMentorMobileCards from "./components/our-mentors-mobile-cards";
 
 const titleTypography = {
   fontSize: { xs: '32px', sm: '32px', md: '32px', lg: '48px', xl: '48px' },
@@ -67,7 +68,7 @@ export default async function OurMentors() {
         <OurMentorsCard
           title='Сергей'
           subTitle='TeamLead, Architect, FullStack Dev'
-          text='Основатель Академии, директор компании по разработке ПО, архитектор программных систем в 16-летним опытом.'
+          text='Основатель Академии, директор компании по разработке ПО, архитектор программных систем с 16-летним опытом.'
           src={mentor2}
           mr
         />
@@ -80,8 +81,8 @@ export default async function OurMentors() {
       </Box>
 
       {/* Mobile cards */}
-      <Box sx={{ zIndex: 2, display: { xs: 'block', sm: 'block', md: 'none', lg: 'none', xl: 'none' } }}>
-        Ололо
+      <Box sx={{ display: { xs: 'block', sm: 'block', md: 'none', lg: 'none', xl: 'none' } }}>
+        <OurMentorMobileCards />
       </Box>
 
     </Box>
