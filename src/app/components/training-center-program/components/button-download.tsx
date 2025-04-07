@@ -29,7 +29,7 @@ export default function ButtonDownload() {
           '&:hover': {
             color: '#FFFFFF',
             bgcolor: '#FF7B00',
-            border: 'none',
+            border: '2px solid #FF7B00',
             boxShadow: 'none',
           },
         }}
