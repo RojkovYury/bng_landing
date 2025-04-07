@@ -35,8 +35,7 @@ export default async function Table() {
           alignItems: { xs: 'center', sm: 'center', md: 'center', lg: 'unset', xl: 'unset' },
           width: { xs: '900px', sm: '900px', md: '100%', lg: '100%', xl: '100%' },
           flexWrap: { xs: 'wrap', md: 'nowrap' },
-          overflowX: 'auto',
-          overflowY: 'hidden',
+          overflow: 'auto',
           scrollbarColor: "#C9D3E8 #FFF",
         }}
       >
