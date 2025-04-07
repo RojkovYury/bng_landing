@@ -5,10 +5,11 @@ interface WhoIsItForMobileCardProps {
   title?: string;
   text?: string;
   src: StaticImageData;
-  mr?: boolean;
+  mr?: string;
+  ml?: string;
 }
 
-export default function WhoIsItForMobileCard({ title, text, src, mr }: WhoIsItForMobileCardProps) {
+export default function WhoIsItForMobileCard({ title, text, src, mr, ml }: WhoIsItForMobileCardProps) {
   return (   
     <Box
       sx={{
@@ -18,8 +19,10 @@ export default function WhoIsItForMobileCard({ title, text, src, mr }: WhoIsItFo
         borderBottomLeftRadius: '32px',
         borderBottomRightRadius: '32px',
         width: '280px',
-        mr: mr ? '20px' : '0px',
-        ml: '32px',
+        ml: ml,
+        mr: mr,
+        // mr: mr ? '20px' : '0px',
+        // ml: '32px',
       }}
     >
       <Box sx={{ display: 'flex', position: 'relative', width: '280px', height: '217px', mb: '24px' }}>
