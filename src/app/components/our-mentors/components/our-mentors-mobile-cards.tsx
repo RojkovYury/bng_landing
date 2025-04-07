@@ -17,7 +17,7 @@ export default function OurMentorMobileCards() {
   currentCardScroll - отслеживаем текущую карту по скроллу, threshold: 0.5 - сколько должно войти
   в область видимости для назначения. При изменении currentCardSelected так же принудительно меняем currentCardScroll.
   */
-  const [currentCardSelected, setIsLastOneSelected] = useState(1);
+  const [currentCardSelected, setIsLastOneSelected] = useState(0);
   const [currentCardScroll, setCurrentCardScroll] = useState(1);
   const cardRefMentor1 = useRef(null);
   const cardRefMentor2 = useRef(null);

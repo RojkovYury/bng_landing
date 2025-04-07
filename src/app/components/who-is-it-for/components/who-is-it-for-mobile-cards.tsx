@@ -16,7 +16,7 @@ export default function WhoIsItForMobileCards() {
   currentCardScroll - отслеживаем текущую карту по скроллу, threshold: 0.5 - сколько должно войти
   в область видимости для назначения. При изменении currentCardSelected так же принудительно меняем currentCardScroll.
   */
-  const [currentCardSelected, setIsLastOneSelected] = useState(1);
+  const [currentCardSelected, setIsLastOneSelected] = useState(0);
   const [currentCardScroll, setCurrentCardScroll] = useState(1);
   const cardRef1 = useRef(null);
   const cardRef2 = useRef(null);
