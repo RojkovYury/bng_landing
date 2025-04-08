@@ -37,8 +37,17 @@ export default async function CourseCost() {
         </Typography>
       </Box>
 
-      <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', width: '100%', bgcolor: '#F2F5F9', borderRadius: '20px', overflow: 'hidden' }}>
-        
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          width: '100%',
+          bgcolor: '#F2F5F9',
+          borderRadius: '20px',
+          overflow: 'hidden',
+        }}
+      >
         <Box
           sx={{
             display: 'flex',
