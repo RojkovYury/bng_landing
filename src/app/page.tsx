@@ -38,9 +38,9 @@ export default async function Main() {
       <OurMentors />
       <CourseCost />
       <Faq />
+      <Contacts />
       
        {/*
-      <Contacts />
       <Footer />
       */}
       <Box sx={{ position: 'fixed', zIndex: 999, top: '100px', left: '10px', bgcolor: '#fff', borderRadius: '20px', border: '2px solid lightgrey' }}>
