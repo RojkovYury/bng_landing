@@ -54,8 +54,8 @@ export default function TrainingCenterProgramAccordion({ index, title, text, daf
               }}
             >
               {expanded 
-                ? (<RemoveOutlinedIcon sx={{ color: '#1144AA', fontSize: '45px' }} />)
-                : (<AddOutlinedIcon sx={{ color: '#FFFFFF', fontSize: '45px' }} />)}
+                ? (<RemoveOutlinedIcon sx={{ color: '#1144AA', fontSize: '46px' }} />)
+                : (<AddOutlinedIcon sx={{ color: '#FFFFFF', fontSize: '46px' }} />)}
             </Box>
           }
           aria-controls="panel1-content"

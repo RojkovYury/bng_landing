@@ -9,19 +9,35 @@ interface FaqAccordionProps {
   title: string;
   text?: string;
   sx?: any;
+  dafaultExpanded?: boolean;
 }
 
-export default function FaqAccordion({ title, text, sx }: FaqAccordionProps) {
-  const [expanded, setExpanded] = useState(false);
+export default function FaqAccordion({ title, text, dafaultExpanded, sx }: FaqAccordionProps) {
+  const [expanded, setExpanded] = useState(dafaultExpanded);
   const handleChange = () => (__event: any, isExpanded: boolean) => {
     setExpanded(isExpanded);
   };
   return (
-    <Box sx={{ borderRadius: '20px', overflow: 'hidden', maxWidth: '660px', mb: '40px', ...sx }}>
+    <Box
+      sx={{
+        borderRadius: { xs: '12px', sm: '12px', md: '20px', lg: '20px', xl: '20px' },
+        overflow: 'hidden',
+        // width: '100%',
+        // maxWidth: '660px', // ??
+        ...sx,
+      }}
+    >
       <Accordion
         expanded={expanded === true}
         onChange={handleChange()}
-        sx={{ width: '100%' }}
+        sx={{ 
+          width: '100%',
+          '& #panel1-header': {
+              pr: { xs: '0px', sm: '0px', md: '4px', lg: '4px', xl: '4px' },
+              py: '8px',
+            },
+        }}
+        disableGutters
       >
         <AccordionSummary
           disableTouchRipple
@@ -30,8 +46,8 @@ export default function FaqAccordion({ title, text, sx }: FaqAccordionProps) {
               sx={{
                 mr: expanded ? '0px' : '16px',
                 ml: expanded ? '16px' : '0px',
-                width: '46px',
-                height: '46px',
+                width: { xs: '34px', sm: '34px', md: '46px', lg: '46px', xl: '46px' },
+                height: { xs: '34px', sm: '34px', md: '46px', lg: '46px', xl: '46px' },
                 borderRadius: '8px',
                 backgroundColor: expanded ? '#F2F5F9' : '#FFA700',
                 display: 'flex',
@@ -44,40 +60,60 @@ export default function FaqAccordion({ title, text, sx }: FaqAccordionProps) {
               }}
             >
               {expanded 
-                ? (<RemoveOutlinedIcon sx={{ color: '#1144AA', fontSize: '45px' }} />)
-                : (<AddOutlinedIcon sx={{ color: '#FFFFFF', fontSize: '45px' }} />)}
+                ? (<RemoveOutlinedIcon sx={{ color: '#1144AA', fontSize: { xs: '34px', sm: '34px', md: '46px', lg: '46px', xl: '46px' } }} />)
+                : (<AddOutlinedIcon sx={{ color: '#FFFFFF', fontSize: { xs: '34px', sm: '34px', md: '46px', lg: '46px', xl: '46px' } }} />)}
             </Box>
           }
           aria-controls="panel1-content"
           id="panel1-header"
           sx={{
-            borderRadius: '20px', 
+            borderRadius: '20px',
             '& .MuiAccordionSummary-expandIconWrapper': {
               transition: 'none',
             },
             '& .MuiAccordionSummary-content, Mui-expanded': {
-              my: '12px'
-            }
+              my: '12px',
+            },
           }}
           disableRipple
         >
           <Box
             sx={{
-              py: '20px',
-              pl: '24px', // 40 - 16 // 16 на AccordionSummary
+              py: { xs: '4px', sm: '4px', md: '7px', lg: '7px', xl: '7px' },
+              pl: { xs: '0px', sm: '0px', md: '24px', lg: '24px', xl: '24px' }, // 40 - 16 // 16 на AccordionSummary
               borderRadius: '20px',
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
             }}
           >
-            <Typography sx={{ fontSize: '24px', fontWeight: 500, lineHeight: '32px', mr: '40px' }}>
+            <Typography
+              sx={{
+                fontSize: { xs: '16px', sm: '16px', md: '24px', lg: '24px', xl: '24px' },
+                lineHeight: { xs: '20px', sm: '20px', md: '32px', lg: '32px', xl: '32px' },
+                fontWeight: 500,
+                mr: { xs: '16px', sm: '16px', md: '40px', lg: '40px', xl: '40px' },
+              }}
+            >
               {title}
             </Typography>
           </Box>
         </AccordionSummary>
-        <AccordionDetails sx={{ borderRadius: '20px', pl: '40px', pr: '100px', mb: '24px' }}>
-          <Typography sx={{ fontSize: '18px', fontWeight: 400, lineHeight: '24px' }}>
+        <AccordionDetails
+          sx={{
+            borderRadius: '20px',
+            pl: { xs: '16px', sm: '16px', md: '40px', lg: '40px', xl: '40px' },
+            pr: { xs: '16px', sm: '100px', md: '100px', lg: '100px', xl: '100px' },
+            mb: '24px',
+          }}
+        >
+          <Typography
+            sx={{
+              fontSize: { xs: '14px', sm: '14px', md: '18px', lg: '18px', xl: '18px' },
+              lineHeight: { xs: '20px', sm: '20px', md: '24px', lg: '24px', xl: '24px' },
+              fontWeight: 400,
+            }}
+          >
             {text}
           </Typography>
         </AccordionDetails>
