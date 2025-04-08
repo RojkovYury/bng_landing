@@ -1,13 +1,5 @@
 'use server'
 
-/*
-TODO
-WhereIsItUsed - png vs svg ?
-WhoIsItFor - bg
-Программа нашего учебного центра - что-то открыто по умолчанию?
-Положение о персональных данных - link
-*/
-
 import { Box, Typography } from "@mui/material";
 import Header from "./components/header";
 import DeveloperSignUp from "./components/developer-sign-up";
