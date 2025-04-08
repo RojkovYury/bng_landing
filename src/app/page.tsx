@@ -44,13 +44,13 @@ export default async function Main() {
       <TrainingCenterProgram />
       <StudentWillMaster />
       <OurMentors />
+      <CourseCost />
       
        {/*
-      <CourseCost />
       <Faq />
       <Contacts />
       <Footer />
-     
+      */}
       <Box sx={{ position: 'fixed', zIndex: 999, top: '100px', left: '10px', bgcolor: '#fff', borderRadius: '20px', border: '2px solid lightgrey' }}>
         <Typography sx={{ fontSize: '48px', my: '10px', mx: '20px', display: { xs: 'flex', sm: 'none', md: 'none', lg: 'none', xl: 'none' } }}>
           XS 0px - 599px
@@ -68,7 +68,7 @@ export default async function Main() {
           XL 1480px - inf
         </Typography>
       </Box>
-    */}
+    
     </Box>
   )
 }
