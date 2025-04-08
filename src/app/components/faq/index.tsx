@@ -1,23 +1,32 @@
 'use server'
 
 import FaqAccordion from "@/components/faq-accordion";
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
+import CourseCostTitle from "./components/faq-title";
 
 export default async function Faq() {
   return (
-    <Box sx={{ maxWidth: '1440px', width: '100%', mx: 'auto', mt: '180px', display: 'flex', flexDirection: 'column' }}>
-      
-      <Box sx={{ display: 'flex', mb: '80px' }}>
-        <Typography sx={{ fontSize: '48px', fontWeight: 700, lineHeight: '56px' }}>
-          Часто задаваемые&nbsp;
-        </Typography>
-        <Typography sx={{ fontSize: '48px', fontWeight: 700, lineHeight: '56px', color: '#FFA700' }}>
-          вопросы
-        </Typography>
-      </Box>
-
-      <Box sx={{ display: 'flex', mb: '180px', width: '100%', bgcolor: '#F2F5F9', borderRadius: '40px', py: '40px' }}>
-        
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        mx: 'auto',
+        maxWidth: '1440px',
+        width: '100%',
+      }}
+    >
+      <CourseCostTitle />
+      <Box
+        sx={{
+          display: 'flex',
+          mb: '180px',
+          width: '100%',
+          bgcolor: '#F2F5F9',
+          borderRadius: '40px',
+          py: '40px',
+          // mx: { xs: '16px', sm: '16px', md: '20px', lg: '20px', xl: '0px' },
+        }}
+      >
         <Box>
           <FaqAccordion
             title="Что такое C# и почему стоит его изучать?"
@@ -53,11 +62,7 @@ export default async function Faq() {
             sx={{ mr: '40px', mb: '0px' }}
           />
         </Box>
-
-
-
       </Box>
-
     </Box>
   )
 }

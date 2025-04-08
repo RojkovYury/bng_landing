@@ -37,9 +37,9 @@ export default async function Main() {
       <StudentWillMaster />
       <OurMentors />
       <CourseCost />
+      <Faq />
       
        {/*
-      <Faq />
       <Contacts />
       <Footer />
       */}
