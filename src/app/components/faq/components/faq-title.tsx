@@ -13,6 +13,7 @@ export default async function CourseCostTitle() {
     <Box
       sx={{
         display: 'flex',
+        flexDirection: { xs: 'column', sm: 'row', md: 'row', lg: 'row', xl: 'row' },
         mt: { xs: '80px', sm: '80px', md: '80px', lg: '180px', xl: '180px' },
         mb: { xs: '32px', sm: '32px', md: '32px', lg: '80px', xl: '80px' },
         width: { xs: 'calc(100% - 32px)', sm: 'calc(100% - 32px)', md: 'calc(100% - 40px)', lg: 'calc(100% - 40px)', xl: 'calc(100% - 40px)' },

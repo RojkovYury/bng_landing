@@ -18,7 +18,6 @@ export default function SignUpContainer({ text, sx }: SignUpContainerProps) {
   return (   
     <Box
       sx={{
-        // width: '100%',
         width: { xs: '100%', sm: '100%', md: '370px', lg: '370px', xl: '370px' },
         maxWidth: { xs: '304px', sm: '304px', md: '370px', lg: '370px', xl: '370px' },
         height: { xs: 'inherit', sm: 'inherit', md: '356px', lg: '356px', xl: '356px' },
@@ -73,13 +72,12 @@ export default function SignUpContainer({ text, sx }: SignUpContainerProps) {
         sx={{
           display: 'flex',
           mt: '20px',
-          // mb: '40px',
         }}
       >
         <SingUpInputCheckbox checked={check} setChecked={setCheck} sx={{ mr: '12px' }}/>
         <Typography
           sx={{
-            fontSize: { xs: '12px', sm: '12px', md: '14px', lg: '14px', xl: '14px' },
+            fontSize: { xs: '12px', sm: '12px', md: '13px', lg: '13px', xl: '13px' }, // 14 !
             lineHeight: { xs: '16px', sm: '16px', md: '16px', lg: '16px', xl: '16px' },
             fontWeight: 400,
           }}

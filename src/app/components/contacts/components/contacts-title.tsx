@@ -13,6 +13,7 @@ export default async function ContactsTitle() {
     <Box
       sx={{
         display: 'flex',
+        flexDirection: { xs: 'column', sm: 'row', md: 'row', lg: 'row', xl: 'row' },
         mb: { xs: '32px', sm: '32px', md: '32px', lg: '80px', xl: '80px' },
         width: { xs: 'calc(100% - 32px)', sm: 'calc(100% - 32px)', md: 'calc(100% - 40px)', lg: 'calc(100% - 40px)', xl: 'calc(100% - 40px)' },
         mx: { xs: '16px', sm: '16px', md: '20px', lg: '20px', xl: '0px' },
