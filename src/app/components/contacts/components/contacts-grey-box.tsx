@@ -21,9 +21,13 @@ export default async function ContactsGreyBox({ src, text, sx, textSx }: Contact
         py: { xs: '16px', sm: '16px', md: '16px', lg: '16px', xl: '20px' },
         bgcolor: '#F2F5F9',
         borderRadius: '8px',
-        cursor: 'pointer', // !!
-        width: { xs: 'calc(100% - 28px)', sm: 'calc(100% - 28px)', md: 'calc(100% - 12px)', lg: '100%', xl: '100%' },
+        cursor: 'pointer',
+        width: { xs: 'calc(100% - 28px)', sm: 'calc(100% - 28px)', md: 'calc(100% - 20px)', lg: '100%', xl: '100%' },
         textWrap: { xs: 'wrap', sm: 'nowrap', md: 'nowrap', lg: 'nowrap', xl: 'nowrap' },
+        transition: 'background-color 0.3s ease',
+        '&:hover': {
+          bgcolor: '#d0d5db',
+        },
         ...sx,
       }}
     >
