@@ -7,6 +7,7 @@ import CourseCostTitle from "./components/faq-title";
 export default async function Faq() {
   return (
     <Box
+      id="faq"
       sx={{
         display: 'flex',
         flexDirection: 'column',

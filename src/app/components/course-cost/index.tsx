@@ -9,6 +9,7 @@ import CourseCostTitle from "./components/course-cost-title";
 export default async function CourseCost() {
   return (
     <Box
+      id="price"
       sx={{
         display: 'flex',
         flexDirection: 'column',

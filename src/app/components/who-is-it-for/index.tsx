@@ -13,6 +13,7 @@ export default async function WhoIsItFor() {
   return (
     <>
       <Box
+        id="forWhom"
         sx={{
           maxWidth: '1440px',
           position: 'relative',

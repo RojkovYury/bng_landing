@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { Box, Drawer, IconButton, Typography } from "@mui/material";
 import menu from '../../../../../public/icons/menu.svg'
 import close from '../../../../../public/icons/close.svg'
-import ClientOpenModal from "./client-open-modal";
+import ClientOpenModal from "./header-open-modal";
 
 const typographyStyle = {
   fontSize: '14px',
@@ -13,12 +13,22 @@ const typographyStyle = {
   fontWeight: 600,
   lineHeight: '20px',
   textWrap: 'nowrap',
+  cursor: 'pointer',
 }
 
-export default function ClientMenuModal() {
+export default function HeaderMenuModal() {
   const [openMenu, setOpenMenu] = useState(false);
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpenMenu(newOpen);
+  };
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
   };
   return (
     <Box sx={{ display: 'flex' }}>
@@ -71,25 +81,25 @@ export default function ClientMenuModal() {
             </Box>
 
             <Box>
-              <Typography sx={{ ...typographyStyle }}>
+              <Typography sx={{ ...typographyStyle }} onClick={() => scrollToSection('advantages')}>
                 ПРЕИМУЩЕСТВА
               </Typography>
-              <Typography sx={{ ...typographyStyle }}>
+              <Typography sx={{ ...typographyStyle }} onClick={() => scrollToSection('forWhom')}>
                 ДЛЯ КОГО
               </Typography>
-              <Typography sx={{ ...typographyStyle }}>
+              <Typography sx={{ ...typographyStyle }} onClick={() => scrollToSection('program')}>
                 ПРОГРАММА
               </Typography>
-              <Typography sx={{ ...typographyStyle }}>
+              <Typography sx={{ ...typographyStyle }} onClick={() => scrollToSection('mentors')}>
                 НАСТАВНИКИ
               </Typography>
-              <Typography sx={{ ...typographyStyle }}>
+              <Typography sx={{ ...typographyStyle }} onClick={() => scrollToSection('price')}>
                 ЦЕНА
               </Typography>
-              <Typography sx={{ ...typographyStyle }}>
+              <Typography sx={{ ...typographyStyle }} onClick={() => scrollToSection('faq')}>
                 FAQ
               </Typography>
-              <Typography sx={{ ...typographyStyle, mb: '0px' }}>
+              <Typography sx={{ ...typographyStyle, mr: '0px' }} onClick={() => scrollToSection('contacts')}>
                 КОНТАКТЫ
               </Typography>
             </Box>

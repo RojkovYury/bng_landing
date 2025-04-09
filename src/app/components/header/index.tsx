@@ -3,16 +3,9 @@
 import { Box, Typography } from "@mui/material";
 import Image from 'next/image';
 import logo from '../../../../public/logo.svg'
-import ClientOpenModal from "./components/client-open-modal";
-import ClientMenuModal from "./components/client-menu-modal";
-
-const typographyStyle = {
-  fontSize: '16px',
-  mr: '28px',
-  fontWeight: 600,
-  lineHeight: '20px',
-  textWrap: 'nowrap',
-}
+import HeaderOpenModal from "./components/header-open-modal";
+import HeaderMenuModal from "./components/header-menu-modal";
+import HeaderScrollTo from "./components/header-scroll-to";
 
 export default async function Header() {
   return (
@@ -71,29 +64,9 @@ export default async function Header() {
               info@bng-it.ru
             </Typography>
           </Box>
-          <Box sx={{ display: 'flex' }}>
-            <Typography sx={{ ...typographyStyle }}>
-              ПРЕИМУЩЕСТВА
-            </Typography>
-            <Typography sx={{ ...typographyStyle }}>
-              ДЛЯ КОГО
-            </Typography>
-            <Typography sx={{ ...typographyStyle }}>
-              ПРОГРАММА
-            </Typography>
-            <Typography sx={{ ...typographyStyle }}>
-              НАСТАВНИКИ
-            </Typography>
-            <Typography sx={{ ...typographyStyle }}>
-              ЦЕНА
-            </Typography>
-            <Typography sx={{ ...typographyStyle }}>
-              FAQ
-            </Typography>
-            <Typography sx={{ ...typographyStyle, mr: '0px' }}>
-              КОНТАКТЫ
-            </Typography>
-          </Box>
+          
+          <HeaderScrollTo />
+
         </Box>
 
         <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '64px' }}>
@@ -102,7 +75,7 @@ export default async function Header() {
               +7 (933) 028 35 25
             </a>
           </Typography>
-          <ClientOpenModal />
+          <HeaderOpenModal />
         </Box>
       </Box>
 
@@ -113,7 +86,7 @@ export default async function Header() {
           mr: { xs: '8px', sm: '8px', md: '12px', lg: '12px', xl: '0px' }, // - IconButton padding (8px)
         }}
       >
-        <ClientMenuModal />
+        <HeaderMenuModal />
       </Box>
     </Box>
   )

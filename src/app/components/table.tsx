@@ -16,6 +16,7 @@ import TableCard from "@/components/table-card";
 export default async function Table() {
   return (
     <Box
+      id="advantages"
       sx={{
         display: 'flex',
         position: 'relative',

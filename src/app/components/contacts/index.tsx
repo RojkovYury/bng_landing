@@ -1,7 +1,6 @@
 'use server'
 
-import { Box, Typography } from "@mui/material";
-import Image from 'next/image';
+import { Box } from "@mui/material";
 import location from '../../../../public/icons/contacts-icon-location.svg'
 import mail from '../../../../public/icons/contacts-icon-mail.svg'
 import phone from '../../../../public/icons/contacts-icon-phone.svg'
@@ -13,15 +12,16 @@ import ContactsMap from "./components/contacts-map";
 export default async function Contacts() {
   return (
     <Box
-    sx={{
-      display: 'flex',
-      flexDirection: 'column',
-      mx: 'auto',
-      maxWidth: '1440px',
-      width: '100%',
-      mb: { xs: '64px', sm: '64px', md: '80px', lg: '80px', xl: '80px' },
-    }}
-  >
+      id="contacts"
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        mx: 'auto',
+        maxWidth: '1440px',
+        width: '100%',
+        mb: { xs: '64px', sm: '64px', md: '80px', lg: '80px', xl: '80px' },
+      }}
+    >
       <ContactsTitle />
       <Box
         sx={{

@@ -17,6 +17,7 @@ const titleTypography = {
 export default async function OurMentors() {
   return (
     <Box
+      id="mentors"
       sx={{
         maxWidth: '1440px',
         position: 'relative',

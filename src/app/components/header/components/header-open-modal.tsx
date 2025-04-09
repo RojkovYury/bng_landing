@@ -18,7 +18,7 @@ const style = {
   outline: 'none',
 };
 
-export default function ClientOpenModal() {
+export default function HeaderOpenModal() {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);

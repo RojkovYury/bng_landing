@@ -9,6 +9,7 @@ import TrainingCenterProgramBg from "./components/training-center-program-bg";
 export default async function TrainingCenterProgram() {
   return (
     <Box
+      id="program"
       sx={{
         display: 'flex',
         flexDirection: 'column',
