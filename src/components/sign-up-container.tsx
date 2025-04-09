@@ -1,6 +1,6 @@
 'use client';
 
-import { Box, Button, Checkbox, Link, Typography } from "@mui/material";
+import { Box, Button, Link, Typography } from "@mui/material";
 import { useState } from "react";
 import SingUpInputPhone from "./sign-up-input-phone";
 import SingUpInputName from "./sign-up-input-name";

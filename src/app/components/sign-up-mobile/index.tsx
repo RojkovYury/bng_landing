@@ -1,10 +1,17 @@
-'use server'
+'use client';
 
-import { Box, Button, Checkbox, TextField, Typography } from "@mui/material";
+import { Box, Button, Checkbox, Link, Typography } from "@mui/material";
 import Image from 'next/image';
-import bg from '../../../public/images/sign-up-mobile-bg.png'
+import bg from '../../../../public/images/sign-up-mobile-bg.png'
+import { useState } from "react";
+import SingUpMobileInputName from "./components/sign-up-mobile-input-name";
+import SingUpMobileInputPhone from "./components/sign-up-mobile-input-phone";
+import SingUpMobileCheckbox from "./components/sign-up-mobile-checkbox";
 
-export default async function SignUpMobile() {
+export default function SignUpMobile() {
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [check, setCheck] = useState(false);
   return (
     <Box
       sx={{
@@ -42,48 +49,43 @@ export default async function SignUpMobile() {
             или получить бесплатную консультацию
           </Typography>
 
-          <input
-            type="text"
-            placeholder="Имя"
-            style={{
-              height: '40px',
-              padding: '12px 16px',
-              fontSize: '14px',
-              fontWeight: 400,
-              lineHeight: '16px',
-              border: '1px solid #798EBC',
-              borderRadius: '8px',
-              boxSizing: 'border-box',
-              outline: 'none',
-              fontFamily: '__Montserrat_47416d',
-              marginBottom: '20px',
-            }}
-          />
+          <SingUpMobileInputName value={name} setValue={setName} />
+          <SingUpMobileInputPhone value={phone} setValue={setPhone} />
 
-          <input
-            type="text"
-            placeholder=""
-            style={{
-              height: '40px',
-              padding: '12px 16px',
-              fontSize: '14px',
-              fontWeight: 400,
-              lineHeight: '16px',
-              border: '1px solid #798EBC',
-              borderRadius: '8px',
-              boxSizing: 'border-box',
-              outline: 'none',
-              marginBottom: '32px',
-              fontFamily: '__Montserrat_47416d',
+
+          <Box
+            sx={{
+              display: 'flex',
+              mb: '12px',
             }}
-          />
-          
-          <Box sx={{ display: 'flex', pb: '12px' }}>
-            <Checkbox sx={{ color: '#B3B9C3' }}/>
-            <Typography sx={{ fontSize: '12px', fontWeight: 400, lineHeight: '16px', color: '#F2F5F9' }}>
-              Нажимая кнопку “Отправить”, я соглашаюсь с положением о персональных данных и даю согласие на их обработку и хранение
+          >
+            <SingUpMobileCheckbox checked={check} setChecked={setCheck} sx={{ mr: '12px' }} />
+            <Typography
+              sx={{
+                fontSize: '12px',
+                lineHeight: '16px',
+                fontWeight: 400,
+                color: '#F2F5F9',
+              }}
+            >
+              Нажимая кнопку “Отправить”, я соглашаюсь с&nbsp;
+              <Link
+                href="/"
+                underline="hover"
+                sx={{
+                  color: '#FFFFFF',
+                  textDecoration: 'underline',
+                  fontWeight: 500,
+                }}
+              >
+                положением о персональных данных
+              </Link>
+              &nbsp;и даю согласие на их обработку и хранение
             </Typography>
           </Box>
+
+
+
 
           <Button
             variant="contained"
