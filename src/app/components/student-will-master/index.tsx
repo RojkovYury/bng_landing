@@ -81,7 +81,7 @@ export default async function StudentWillMaster() {
               width: '100%',
               flexWrap: 'wrap',
               overflow: 'auto',
-              scrollbarColor: "#C9D3E8 #FFF",
+              scrollbarColor: "#C9D3E8 #1144AA",
               mt: '20px',
               mb: '40px',
             }}
