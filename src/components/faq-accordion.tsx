@@ -22,8 +22,6 @@ export default function FaqAccordion({ title, text, dafaultExpanded, sx }: FaqAc
       sx={{
         borderRadius: { xs: '12px', sm: '12px', md: '20px', lg: '20px', xl: '20px' },
         overflow: 'hidden',
-        // width: '100%',
-        // maxWidth: '660px', // ??
         ...sx,
       }}
     >

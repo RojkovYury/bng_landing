@@ -31,7 +31,13 @@ export default function TrainingCenterProgramAccordion({ index, title, text, daf
       <Accordion
         expanded={expanded === true}
         onChange={handleChange()}
-        sx={{ width: '100%' }}
+        sx={{ 
+          width: '100%',
+          '& #panel1-header': {
+              pr: { xs: '0px', sm: '0px', md: '4px', lg: '4px', xl: '4px' },
+            },
+        }}
+        disableGutters
       >
         <AccordionSummary
           disableTouchRipple
@@ -40,8 +46,8 @@ export default function TrainingCenterProgramAccordion({ index, title, text, daf
               sx={{
                 mr: expanded ? '0px' : '16px',
                 ml: expanded ? '16px' : '0px',
-                width: '46px',
-                height: '46px',
+                width: { xs: '34px', sm: '34px', md: '46px', lg: '46px', xl: '46px' },
+                height: { xs: '34px', sm: '34px', md: '46px', lg: '46px', xl: '46px' },
                 borderRadius: '8px',
                 backgroundColor: expanded ? '#F2F5F9' : '#FFA700',
                 display: 'flex',
@@ -54,8 +60,8 @@ export default function TrainingCenterProgramAccordion({ index, title, text, daf
               }}
             >
               {expanded 
-                ? (<RemoveOutlinedIcon sx={{ color: '#1144AA', fontSize: '46px' }} />)
-                : (<AddOutlinedIcon sx={{ color: '#FFFFFF', fontSize: '46px' }} />)}
+                ? (<RemoveOutlinedIcon sx={{ color: '#1144AA', fontSize: { xs: '34px', sm: '34px', md: '46px', lg: '46px', xl: '46px' } }} />)
+                : (<AddOutlinedIcon sx={{ color: '#FFFFFF', fontSize: { xs: '34px', sm: '34px', md: '46px', lg: '46px', xl: '46px' } }} />)}
             </Box>
           }
           aria-controls="panel1-content"
@@ -64,7 +70,6 @@ export default function TrainingCenterProgramAccordion({ index, title, text, daf
             borderRadius: '20px', 
             '& .MuiAccordionSummary-expandIconWrapper': {
               transition: 'none',
-              mx: '-12px',
             },
             '& .MuiAccordionSummary-content, Mui-expanded': {
               my: '12px'
@@ -74,7 +79,7 @@ export default function TrainingCenterProgramAccordion({ index, title, text, daf
         >
           <Box
             sx={{
-              py: '8px',
+              py: { xs: '4px', sm: '4px', md: '7px', lg: '7px', xl: '7px' },
               pr: '0px',
               pl: { xs: '0px', sm: '0px', md: '24px', lg: '24px', xl: '24px' },
               borderRadius: '20px',
