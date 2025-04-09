@@ -2,7 +2,7 @@
 
 import { Box, Typography } from "@mui/material";
 import TrainingCenterProgramAccordion from "./components/training-center-program-accordion";
-import ButtonDownload from "./components/button-download";
+import TrainingCenterProgramButtonDownload from "./components/training-center-program-button-download";
 
 const titleText = {
   fontSize: { xs: '32px', sm: '32px', md: '48px', lg: '48px', xl: '48px' },
@@ -127,7 +127,7 @@ export default async function TrainingCenterProgram() {
           mx: { xs: '16px', sm: '16px', md: '20px', lg: '20px', xl: '0px' },
         }}
       >
-        <ButtonDownload/>
+        <TrainingCenterProgramButtonDownload/>
         <Box
           sx={{
             borderRadius: '20px',

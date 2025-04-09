@@ -1,11 +1,19 @@
 'use client';
 
-import { Button } from "@mui/material";
+import { Box, Button } from "@mui/material";
 
-export default function ButtonDownload() {
-  const handleClick = () => console.log('Downloading...');
+export default function TrainingCenterProgramButtonDownload() {
+  const handleClick = () => {
+    console.log('Downloading...');
+    const link = document.createElement('a');
+    link.href = '/downloading/training-plan.txt';
+    link.download = 'training-plan.txt';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   return (
-    <a href={'/downloading/training-plan.txt'} download style={{ textDecoration: 'none', display: 'inline-block' }}>
+    <Box sx={{ display: 'inline-block' }}>
       <Button
         onClick={handleClick}
         variant="outlined"
@@ -36,6 +44,6 @@ export default function ButtonDownload() {
       >
         Скачать подробный план
       </Button>
-    </a>
+    </Box>
   )
 }
