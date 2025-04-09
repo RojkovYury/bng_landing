@@ -1,6 +1,6 @@
 'use client';
 
-import { Box, Button, Checkbox, Link, Typography } from "@mui/material";
+import { Box, Button, Link, Typography } from "@mui/material";
 import Image from 'next/image';
 import bg from '../../../../public/images/sign-up-mobile-bg.png'
 import { useState } from "react";
