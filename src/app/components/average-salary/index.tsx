@@ -22,8 +22,19 @@ export default async function AverageSalary() {
         overflow: 'hidden',
       }}
     >
-      <Box sx={{ position: 'absolute', zIndex: 2, top: '0px', right: '0px', display: { xs: 'none', sm: 'none', md: 'flex', lg: 'flex', xl: 'flex' }, height: '100%', alignItems: 'start' }}>
-        <Image layout="responsive" src={background} alt="" width={849} height={842}/>
+      <Box
+        sx={{
+          position: 'absolute',
+          zIndex: 2,
+          top: { xs: 'unset', sm: '-140px', md: '-140px', lg: '-140px', xl: '-140px' },
+          right: { xs: 'unset', sm: '-60px', md: '0px', lg: '0px', xl: '0px' },
+          display: { xs: 'none', sm: 'flex', md: 'flex', lg: 'flex', xl: 'flex' },
+          width: '849px',
+          height: '842px',
+          alignItems: 'start',
+        }}
+      >
+        <Image src={background} alt="" fill/>
       </Box>
 
       <Box
