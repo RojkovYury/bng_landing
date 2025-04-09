@@ -98,8 +98,8 @@ export default async function Header() {
 
         <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '64px' }}>
           <Typography sx={{ textWrap: 'nowrap', fontSize: '18px', fontWeight: 700, lineHeight: '24px', color: '#fff', bgcolor: '#FFA700', borderRadius: '8px', px: '20px', py: '8px' }}>
-            <a href="tel:+74951378079" style={{ textDecoration: 'none', color: 'inherit' }}>  
-              +7 (495) 137-80-79
+            <a href="tel:+79330283525" style={{ textDecoration: 'none', color: 'inherit' }}>  
+              +7 (933) 028 35 25
             </a>
           </Typography>
           <ClientOpenModal />

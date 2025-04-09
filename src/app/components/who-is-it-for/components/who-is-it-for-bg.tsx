@@ -6,7 +6,16 @@ import bgL from '../../../../../public/images/who-is-it-for-bg-left.png';
 export default function WhoIsItForBg() {
   return (   
     <Box sx={{ position: 'relative' }}>
-      <Box sx={{ position: 'absolute', zIndex: 1, width: '100%', height: { xs: '280px', sm: '280px', md: '360px', lg: '360px', xl: '360px' }, bgcolor: '#1144AA', bottom: 0 }}>
+      <Box
+        sx={{
+          position: 'absolute',
+          zIndex: 1,
+          width: '100%',
+          height: { xs: '280px', sm: '280px', md: '360px', lg: '360px', xl: '360px' },
+          bgcolor: '#1144AA',
+          bottom: 0,
+        }}
+      >
         <Box
           sx={{
             position: 'absolute',

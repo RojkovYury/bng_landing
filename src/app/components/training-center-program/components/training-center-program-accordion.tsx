@@ -21,10 +21,12 @@ export default function TrainingCenterProgramAccordion({ index, title, text, daf
   return (
     <Box
       sx={{
+        position: 'relative',
         borderRadius: '20px',
         overflow: 'hidden',
         mx: { xs: '16px', sm: '16px', md: '40px', lg: '40px', xl: '40px' },
         mt: '40px',
+        zIndex: 3,
         ...sx,
       }}
     >
