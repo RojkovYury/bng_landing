@@ -39,9 +39,9 @@ export default async function Main() {
       <CourseCost />
       <Faq />
       <Contacts />
+      <Footer />
       
        {/*
-      <Footer />
       */}
       <Box sx={{ position: 'fixed', zIndex: 999, top: '100px', left: '10px', bgcolor: '#fff', borderRadius: '20px', border: '2px solid lightgrey' }}>
         <Typography sx={{ fontSize: '48px', my: '10px', mx: '20px', display: { xs: 'flex', sm: 'none', md: 'none', lg: 'none', xl: 'none' } }}>

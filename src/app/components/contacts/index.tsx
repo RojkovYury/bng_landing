@@ -50,7 +50,7 @@ export default async function Contacts() {
         />
         <ContactsGreyBox
           src={phone}
-          text="+7 933 028 35 25"
+          text="+7 (933) 028 35 25"
           textSx={{ fontWeight: 700 }}
         />
       </Box>
