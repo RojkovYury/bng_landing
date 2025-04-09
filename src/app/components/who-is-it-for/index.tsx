@@ -5,10 +5,8 @@ import { Box, Typography } from "@mui/material";
 import outIt from '../../../../public/images/who-is-it-for-out.png';
 import student from '../../../../public/images/who-is-it-for-stud.png';
 import inIt from '../../../../public/images/who-is-it-for-in.png';
-import bgR from '../../../../public/images/who-is-it-for-bg-right.png';
-import bgL from '../../../../public/images/who-is-it-for-bg-left.png';
 import WhoIsItForMobileCards from "./components/who-is-it-for-mobile-cards";
-import Image from 'next/image';
+import WhoIsItForBg from "./components/who-is-it-for-bg";
 
 const titleTypography = {
   fontSize: { xs: '32px', sm: '32px', md: '32px', lg: '48px', xl: '48px' },
@@ -75,41 +73,7 @@ export default async function WhoIsItFor() {
         </Box>
 
       </Box>
-      <Box sx={{ position: 'relative' }}>
-        <Box sx={{ position: 'absolute', zIndex: 1, width: '100%', height: { xs: '280px', sm: '280px', md: '360px', lg: '360px', xl: '360px' }, bgcolor: '#1144AA', bottom: 0 }}>
-          <Box
-            sx={{
-              position: 'absolute',
-              zIndex: 2,
-              bottom: '0px',
-              right: '0px',
-              display: { xs: 'none', sm: 'none', md: 'none', lg: 'none', xl: 'flex' },
-              width: '470px',
-              height: '360px',
-            }}
-          >
-            <Image src={bgR} alt="" fill/>
-          </Box>
-          <Box
-            sx={{
-              position: 'absolute',
-              zIndex: 2,
-              bottom: '0px',
-              left: '0px',
-              display: { xs: 'none', sm: 'none', md: 'none', lg: 'none', xl: 'flex' },
-              width: '784px',
-              height: '360px',
-            }}
-          >
-            <Image src={bgL} alt="" fill/>
-          </Box>
-        </Box>
-      
-        
-      
-      </Box>
+      <WhoIsItForBg />
     </>
   )
 }
-
-// , overflow: 'hidden'
