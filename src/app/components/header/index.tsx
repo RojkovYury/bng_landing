@@ -43,7 +43,7 @@ export default async function Header() {
             mr: { xs: '24px', sm: '24px', md: '24px', lg: '24px', xl: '24px' },
           }}
         >
-          <Image src={logo} alt="logo" layout="fill" objectFit="contain" />
+          <Image src={logo} alt="logo" fill />
         </Box>
         <Typography
           sx={{

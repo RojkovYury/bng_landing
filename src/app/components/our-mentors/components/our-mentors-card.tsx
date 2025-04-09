@@ -32,7 +32,7 @@ export default async function OurMentorsCard({ title, subTitle, text, src, mr }:
           aspectRatio: '16 / 12.5',
         }}
       >
-        <Image src={src} alt="" layout="fill" objectFit="contain" />
+        <Image src={src} alt="" fill />
       </Box>
 
       <Box

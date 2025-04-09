@@ -31,7 +31,7 @@ export default function ClientMenuModal() {
             width: { xs: '28px', sm: '28px', md: '48px', lg: '48px', xl: '48px' },
           }}
         >
-          <Image src={menu} alt="menu" layout="fill" objectFit="contain" />
+          <Image src={menu} alt="menu" fill />
         </Box>
       </IconButton>
 
@@ -65,7 +65,7 @@ export default function ClientMenuModal() {
                     width: '24px',
                   }}
                 >
-                  <Image src={close} alt="menu" layout="fill" objectFit="contain" />
+                  <Image src="" alt="menu" fill />
                 </Box>
               </IconButton>
             </Box>

@@ -116,17 +116,14 @@ export default async function DeveloperSignUp() {
           sx={{
             display: 'flex',
             justifyContent: 'center',
-            // alignItems: 'center',
             position: { xs: 'absolute', sm: 'absolute', md: 'absolute', lg: 'absolute', xl: 'absolute' },
             width: { xs: '450px', sm: '100%', md: '1140px', lg: '1140px', xl: '1140px' },
             height: { xs: '303px', sm: '100%', md: '768px', lg: '768px', xl: '768px' },
-            // width: 'auto', // Устанавливаем ширину как автоматическую
-            // aspectRatio: '16 / 11',
             bottom: 0,
             left: { xs: '0px', sm: '0px', md: '300px', lg: '-130px', xl: '0px' },
           }}
         >
-          <Image src={developer} alt="developer" layout="fill" objectFit="contain" />
+          <Image src={developer} alt="developer" fill />
         </Box>
       </Box>
     </Box>

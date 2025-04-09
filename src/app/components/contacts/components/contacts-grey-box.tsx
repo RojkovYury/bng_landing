@@ -38,7 +38,7 @@ export default async function ContactsGreyBox({ src, text, sx, textSx }: Contact
           mr: { xs: '12px', sm: '12px', md: '20px', lg: '16px', xl: '20px' },
         }}
       >
-        <Image src={src} alt="" layout="fill" objectFit="contain" />
+        <Image src={src} alt="" fill />
       </Box>
       <Typography
         sx={{

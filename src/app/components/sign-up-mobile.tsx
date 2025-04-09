@@ -120,7 +120,7 @@ export default async function SignUpMobile() {
             zIndex: 0,
           }}
         >
-          <Image src={bg} alt="" layout="fill" objectFit="contain" />
+          <Image src={bg} alt="" fill />
         </Box>
       </Box>
     </Box>

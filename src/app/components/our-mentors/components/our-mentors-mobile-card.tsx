@@ -31,7 +31,7 @@ export default function OurMentorMobileCard({ title, subTitle, text, src, mr, ml
           aspectRatio: '16 / 12.5',
         }}
       >
-        <Image src={src} alt="" layout="fill" objectFit="contain" />
+        <Image src={src} alt="" fill />
       </Box>
 
       <Box

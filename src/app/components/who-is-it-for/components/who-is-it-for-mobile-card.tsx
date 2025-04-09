@@ -24,7 +24,7 @@ export default function WhoIsItForMobileCard({ title, text, src, mr, ml }: WhoIs
       }}
     >
       <Box sx={{ display: 'flex', position: 'relative', width: '280px', height: '217px', mb: '24px' }}>
-        <Image src={src} alt="" layout="fill" objectFit="contain" />
+        <Image src={src} alt="" fill />
       </Box>
       <Box>
         <Typography sx={{ fontSize: '16px', lineHeight: '22px', fontWeight: 700, mb: '12px', px: '16px' }}>

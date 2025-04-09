@@ -82,7 +82,7 @@ export default async function WhereIsItUsed() {
           left: { xs: '0px', sm: '0px', md: '-40px', lg: '0px', xl: '0px' },
         }}
       >
-        <Image src={dashboard} alt="dashboard" layout="fill" objectFit="contain" />
+        <Image src={dashboard} alt="dashboard" fill />
       </Box>
     </Box>
   )

@@ -27,7 +27,7 @@ export default function TableCard({ text, src, sx }: TableCardProps) {
           mb: { xs: '16px', sm: '16px', md: '16px', lg: '20px', xl: '20px' },
         }}
       >
-        <Image src={src} alt="" layout="fill" objectFit="contain" />
+        <Image src={src} alt="" fill />
       </Box>
       <Typography
         sx={{

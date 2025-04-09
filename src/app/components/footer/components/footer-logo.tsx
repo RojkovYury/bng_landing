@@ -15,19 +15,14 @@ export default async function FooterLogo() {
     >
       <Box
         sx={{
+          position: 'relative',
           display: 'flex',
-          height: { xs: '53px', sm: '80px', md: '80px', lg: '80px', xl: '80px' },
           width: { xs: '44px', sm: '96px', md: '96px', lg: '96px', xl: '96px' },
+          height: { xs: '53px', sm: '80px', md: '80px', lg: '80px', xl: '80px' },
           mr: { xs: '16px', sm: '24px', md: '24px', lg: '24px', xl: '24px' },
         }}
       >
-        <Image
-          layout="responsive"
-          src={logo}
-          alt={logo}
-          width={96}
-          height={80}
-        />
+        <Image src={logo} alt="logo" fill />
       </Box>
       <Typography
         sx={{

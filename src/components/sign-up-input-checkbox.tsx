@@ -38,7 +38,7 @@ export default function SingUpInputCheckbox({ checked, setChecked, blue, sx }: S
           userSelect: 'none',
         }}
       >
-        <Image src={checkboxIcon} alt="" layout="fill" objectFit="contain" />
+        <Image src={checkboxIcon} alt="" fill />
       </Box>
 
     </Box>

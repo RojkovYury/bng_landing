@@ -31,7 +31,7 @@ export default async function WhoIsItForCard({ title, text, src, mr }: WhoIsItFo
           mb: { md: '24px', lg: '32px', xl: '32px' },
         }}
       >
-        <Image src={src} alt="" layout="fill" objectFit="contain" />
+        <Image src={src} alt="" fill />
       </Box>
 
       <Box>
