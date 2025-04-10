@@ -1,17 +1,19 @@
 'use client';
 
-import { Box, Button, Link, Typography } from "@mui/material";
+import { Box, Button, IconButton, Link, Typography } from "@mui/material";
 import { useState } from "react";
 import SingUpInputPhone from "./sign-up-input-phone";
 import SingUpInputName from "./sign-up-input-name";
 import SingUpInputCheckbox from "./sign-up-input-checkbox";
+import CloseIcon from '@mui/icons-material/Close';
 
 interface SignUpContainerProps {
   text: string;
   sx?: any;
+  onClose?: any;
 }
 
-export default function SignUpContainer({ text, sx }: SignUpContainerProps) {
+export default function SignUpContainer({ text, sx, onClose }: SignUpContainerProps) {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [check, setCheck] = useState(false);
@@ -93,6 +95,21 @@ export default function SignUpContainer({ text, sx }: SignUpContainerProps) {
           &nbsp;и даю согласие на их обработку и хранение
         </Typography>
       </Box>
+
+      {onClose && (
+        <IconButton
+          onClick={onClose}
+          sx={{
+            position: 'absolute',
+            width: '40px',
+            height: '40px',
+            right: '12px',
+            top: '12px',
+          }}
+        >
+          <CloseIcon sx={{ width: '40px', height: '40px', color: 'rgba(121, 142, 188, 1)' }}/>
+        </IconButton>
+      )}
     </Box>
   )
 }

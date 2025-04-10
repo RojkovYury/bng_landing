@@ -10,8 +10,7 @@ const style = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   bgcolor: '#fff',
-  width: '410px',
-  p: '40px',
+  p: '0px',
   borderRadius: '20px',
   gap: '20px',
   border: 'none',
@@ -49,7 +48,7 @@ export default function HeaderOpenModal() {
         onClose={handleClose}
       >
         <Box sx={{ ...style }}>
-          <SignUpContainer text="Заказать звонок"/>
+          <SignUpContainer text="Заказать звонок" onClose={handleClose}/>
         </Box>
       </Modal>
     </Box>
