@@ -60,6 +60,7 @@ export default async function CourseCostWhiteBoxs() {
       <Box
         sx={{
           ...boxContainer,
+          mr: '0px',
           maxWidth: { xs: '252px', sm: '302px', md: 'unset', lg: 'unset', xl: 'unset' },
         }}
       >
