@@ -1,7 +1,9 @@
 'use client';
 
-import { Box, Button, Modal, Typography } from "@mui/material";
+import { Button } from "@mui/material";
 import { useState } from "react";
+import SingUpModal from "./sign-up-modal";
+import SingUpDrawer from "./sign-up-drawer";
 
 interface ButtonModalOpenProps {
   text: string;
@@ -9,23 +11,9 @@ interface ButtonModalOpenProps {
   sx?: any;
 }
 
-const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  bgcolor: '#fff',
-  width: '450px',
-  height: '436px',
-  p: '40px',
-  borderRadius: '20px',
-  gap: '20px',
-};
-
 export default function ButtonModalOpen({ text, orange, sx }: ButtonModalOpenProps) {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
   return (
     <>
       <Button
@@ -59,18 +47,9 @@ export default function ButtonModalOpen({ text, orange, sx }: ButtonModalOpenPro
       >
         {text}
       </Button>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={{ ...style }}>
-          <Typography>
-            Записаться на курс
-          </Typography>
-        </Box>
-      </Modal>
+
+      <SingUpModal open={open} setOpen={setOpen} rootSx={{ display: { xs: 'none', sm: 'flex', md: 'flex', lg: 'flex', xl: 'flex' } }} />
+      <SingUpDrawer open={open} setOpen={setOpen} rootSx={{ display: { xs: 'flex', sm: 'none', md: 'none', lg: 'none', xl: 'none' } }}/>
     </>
   )
 }

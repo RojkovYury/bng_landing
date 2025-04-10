@@ -13,38 +13,32 @@ interface SingUpModalProps {
 export default function SingUpModal({ open, setOpen, rootSx }: SingUpModalProps) {
   const handleClose = () => setOpen(false);
   return (
-    <Box
+    <Modal
+      open={open}
+      onClose={handleClose}
       sx={{
-        display: 'flex',
+        ...rootSx,
       }}
     >
-      <Modal
-        open={open}
-        onClose={handleClose}
+      <Box
         sx={{
-          ...rootSx,
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          bgcolor: '#fff',
+          p: '0px',
+          borderRadius: '20px',
+          gap: '20px',
+          border: 'none',
+          outline: 'none',
         }}
       >
-        <Box
-          sx={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            bgcolor: '#fff',
-            p: '0px',
-            borderRadius: '20px',
-            gap: '20px',
-            border: 'none',
-            outline: 'none',
-          }}
-        >
-          <SignUpContainer
-            text="Заказать звонок"
-            onClose={handleClose}
-          />
-        </Box>
-      </Modal>
-    </Box>
+        <SignUpContainer
+          text="Заказать звонок"
+          onClose={handleClose}
+        />
+      </Box>
+    </Modal>
   )
 }
