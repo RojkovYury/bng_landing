@@ -5,8 +5,8 @@ import Image from 'next/image';
 import { Box, Drawer, IconButton, Typography } from "@mui/material";
 import menu from '../../../../../public/icons/menu.svg'
 import close from '../../../../../public/icons/close.svg'
-import HeaderOpenModal from "./header-open-modal";
 import SingUpModal from "@/components/sign-up-modal";
+import SingUpDrawer from "@/components/sign-up-drawer";
 
 const typographyStyle = {
   fontSize: '14px',
@@ -23,7 +23,8 @@ export default function HeaderMenuModal() {
 
   const [openModale, setOpenModale] = useState(false);
   const handleOpenModale = () => setOpenModale(true);
-  const handleCloseModale = () => setOpenModale(false);
+
+  const [openDrawer, setOpenDrawer] = useState(false);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -142,13 +143,16 @@ export default function HeaderMenuModal() {
                 </Typography>
               </Box>
 
-              <HeaderOpenModal />
+              <SingUpModal open={false} setOpen={undefined} />
 
             </Box>
           </Box>
         </Box>
       </Drawer>
-      <SingUpModal open={openModale} setOpen={setOpenModale} />
+      
+      <SingUpDrawer open={openModale} setOpen={setOpenModale} />
     </Box>
   )
 }
+// <SingUpModal open={openModale} setOpen={setOpenModale} />
+// <SingUpDrawer open={openModale} setOpen={setOpenModale} />
