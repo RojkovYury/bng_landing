@@ -6,10 +6,11 @@ import SignUpContainer from "@/components/sign-up-container";
 interface SingUpDrawerProps {
   open: boolean;
   setOpen: any;
+  rootSx: any;
   // text?: string;
 }
 
-export default function SingUpDrawer({ open, setOpen }: SingUpDrawerProps) {
+export default function SingUpDrawer({ open, setOpen, rootSx }: SingUpDrawerProps) {
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen);
   };
@@ -22,6 +23,7 @@ export default function SingUpDrawer({ open, setOpen }: SingUpDrawerProps) {
       disableSwipeToOpen={true}
       // keepMounted
       sx={{
+        ...rootSx,
         '& .MuiDrawer-paperAnchorBottom': {
           borderTopLeftRadius: '20px',
           borderTopRightRadius: '20px',

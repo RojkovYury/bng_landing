@@ -24,8 +24,6 @@ export default function HeaderMenuModal() {
   const [openModale, setOpenModale] = useState(false);
   const handleOpenModale = () => setOpenModale(true);
 
-  const [openDrawer, setOpenDrawer] = useState(false);
-
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) { element.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
@@ -149,10 +147,9 @@ export default function HeaderMenuModal() {
           </Box>
         </Box>
       </Drawer>
-      
-      <SingUpDrawer open={openModale} setOpen={setOpenModale} />
+
+      <SingUpModal open={openModale} setOpen={setOpenModale} rootSx={{ display: { xs: 'none', sm: 'flex', md: 'flex', lg: 'flex', xl: 'flex' } }} />
+      <SingUpDrawer open={openModale} setOpen={setOpenModale} rootSx={{ display: { xs: 'flex', sm: 'none', md: 'none', lg: 'none', xl: 'none' } }}/>
     </Box>
   )
 }
-// <SingUpModal open={openModale} setOpen={setOpenModale} />
-// <SingUpDrawer open={openModale} setOpen={setOpenModale} />

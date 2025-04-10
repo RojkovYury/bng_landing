@@ -6,10 +6,11 @@ import SignUpContainer from "@/components/sign-up-container";
 interface SingUpModalProps {
   open: boolean;
   setOpen: any;
+  rootSx?: any;
   // text?: string;
 }
 
-export default function SingUpModal({ open, setOpen }: SingUpModalProps) {
+export default function SingUpModal({ open, setOpen, rootSx }: SingUpModalProps) {
   const handleClose = () => setOpen(false);
   return (
     <Box
@@ -20,6 +21,9 @@ export default function SingUpModal({ open, setOpen }: SingUpModalProps) {
       <Modal
         open={open}
         onClose={handleClose}
+        sx={{
+          ...rootSx,
+        }}
       >
         <Box
           sx={{

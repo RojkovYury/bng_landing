@@ -20,7 +20,7 @@ export default function SignUpContainer({ text, sx, onClose }: SignUpContainerPr
   return (   
     <Box
       sx={{
-        width: { xs: '100%', sm: '100%', md: '370px', lg: '370px', xl: '370px' },
+        // width: { xs: '100%', sm: '100%', md: '370px', lg: '370px', xl: '370px' },
         maxWidth: { xs: '304px', sm: '304px', md: '370px', lg: '370px', xl: '370px' },
         height: { xs: 'inherit', sm: 'inherit', md: '356px', lg: '356px', xl: '356px' },
         position: 'relative',
