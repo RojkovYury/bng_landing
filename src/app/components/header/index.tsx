@@ -1,8 +1,6 @@
 'use server'
 
 import { Box, Typography } from "@mui/material";
-import Image from 'next/image';
-import logo from '../../../../public/logo.svg'
 import HeaderOpenModal from "./components/header-open-modal";
 import HeaderMenuModal from "./components/header-menu-modal";
 import HeaderScrollTo from "./components/header-scroll-to";
@@ -37,9 +35,8 @@ export default async function Header() {
               info@bng-it.ru
             </Typography>
           </Box>
-          
-          <HeaderScrollTo />
 
+          <HeaderScrollTo />
         </Box>
 
         <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '64px' }}>

@@ -119,7 +119,7 @@ export default function HeaderMenuModal() {
                 </a>
               </Typography>
 
-              <Box sx={{ display: 'flex' }}>
+              <Box sx={{ display: 'flex', mt: '10px' }}>
                 <Typography
                   onClick={handleOpenModale}
                   sx={{
