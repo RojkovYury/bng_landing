@@ -5,7 +5,8 @@ import Image from 'next/image';
 import { Box, Drawer, IconButton, Typography } from "@mui/material";
 import menu from '../../../../../public/icons/menu.svg'
 import close from '../../../../../public/icons/close.svg'
-import ClientOpenModal from "./header-open-modal";
+import HeaderOpenModal from "./header-open-modal";
+import SingUpModal from "@/components/sign-up-modal";
 
 const typographyStyle = {
   fontSize: '14px',
@@ -18,21 +19,20 @@ const typographyStyle = {
 
 export default function HeaderMenuModal() {
   const [openMenu, setOpenMenu] = useState(false);
-  const toggleDrawer = (newOpen: boolean) => () => {
-    setOpenMenu(newOpen);
-  };
+  const toggleMenu = (newOpen: boolean) => () => { setOpenMenu(newOpen); };
+
+  const [openModale, setOpenModale] = useState(false);
+  const handleOpenModale = () => setOpenModale(true);
+  const handleCloseModale = () => setOpenModale(false);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-    }
+    if (element) { element.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
   };
+
   return (
     <Box sx={{ display: 'flex' }}>
-      <IconButton onClick={toggleDrawer(true)}>
+      <IconButton onClick={toggleMenu(true)}>
         <Box
           sx={{
             position: 'relative',
@@ -47,13 +47,13 @@ export default function HeaderMenuModal() {
 
       <Drawer
         open={openMenu}
-        onClose={toggleDrawer(false)}
+        onClose={toggleMenu(false)}
         sx={{
           '& .MuiDrawer-paper ': { width: { xs: '100%', sm: 'inherit', md: 'inherit', lg: 'inherit', xl: 'inherit' } },
         }}
       >
         <Box
-          onClick={toggleDrawer(false)}
+          onClick={toggleMenu(false)}
           sx={{
             mx: '16px',
             mb: '16px',
@@ -66,7 +66,7 @@ export default function HeaderMenuModal() {
         >
           <Box>
             <Box sx={{ width: '100%', display: 'flex', justifyContent: 'end', mb: '24px' }}>
-              <IconButton onClick={toggleDrawer(false)} sx={{ position: 'relative', width: '28px', height: '28px', p: 0 }}>
+              <IconButton onClick={toggleMenu(false)} sx={{ position: 'relative', width: '28px', height: '28px', p: 0 }}>
                 <Box
                   sx={{
                     position: 'relative',
@@ -119,11 +119,36 @@ export default function HeaderMenuModal() {
                   +7 (933) 028 35 25
                 </a>
               </Typography>
-              <ClientOpenModal />
+
+              <Box sx={{ display: 'flex' }}>
+                <Typography
+                  onClick={handleOpenModale}
+                  sx={{
+                    textWrap: 'nowrap',
+                    fontSize: '14px',
+                    fontWeight: 400,
+                    lineHeight: '100%',
+                    color: '#1144AA',
+                    borderBottom: '1px dashed #1144AA',
+                    cursor: 'pointer',
+                    transition: 'border-bottom 0.3s ease, color 0.3s ease',
+                    '&:hover': {
+                      color: '#1b75fc',
+                      borderBottom: '1px dashed #1b75fc',
+                    },
+                  }}
+                >
+                  Заказать звонок
+                </Typography>
+              </Box>
+
+              <HeaderOpenModal />
+
             </Box>
           </Box>
         </Box>
       </Drawer>
+      <SingUpModal open={openModale} setOpen={setOpenModale} />
     </Box>
   )
 }

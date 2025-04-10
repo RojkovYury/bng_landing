@@ -1,14 +1,22 @@
 'use client';
 
-import { useState } from "react";
 import { Box, Modal } from "@mui/material";
 import SignUpContainer from "@/components/sign-up-container";
 
-export default function HeaderOpenModal() {
-  const [open, setOpen] = useState(false);
+interface SingUpModalProps {
+  open: boolean;
+  setOpen: any;
+  // text?: string;
+}
+
+export default function SingUpModal({ open, setOpen }: SingUpModalProps) {
   const handleClose = () => setOpen(false);
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box
+      sx={{
+        display: 'flex',
+      }}
+    >
       <Modal
         open={open}
         onClose={handleClose}
@@ -27,7 +35,10 @@ export default function HeaderOpenModal() {
             outline: 'none',
           }}
         >
-          <SignUpContainer text="Заказать звонок" onClose={handleClose}/>
+          <SignUpContainer
+            text="Заказать звонок"
+            onClose={handleClose}
+          />
         </Box>
       </Modal>
     </Box>
