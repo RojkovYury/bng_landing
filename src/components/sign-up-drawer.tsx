@@ -43,6 +43,7 @@ export default function SingUpDrawer({ open, setOpen, rootSx }: SingUpDrawerProp
         text="Заказать звонок"
         sx={{ mx: 'auto' }}
       />
+      <Box sx={{ width: '100%', height: '200px' }} />
     </SwipeableDrawer>
   )
 }
