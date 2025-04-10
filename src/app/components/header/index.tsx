@@ -13,14 +13,13 @@ export default async function Header() {
         display: 'flex',
         justifyContent: 'space-between',
         overflow: 'hidden',
-        mt: { xs: '13px', sm: '13px', md: '20px', lg: '20px', xl: '20px' },
+        mt: { xs: '13px', sm: '20px', md: '20px', lg: '20px', xl: '20px' },
         mx: 'auto',
         width: '100%',
         maxWidth: '1440px',
       }}
     >
       <HeaderLogo />
-
       <Box
         sx={{
           display: { xs: 'none', sm: 'none', md: 'none', lg: 'none', xl: 'flex' },
@@ -53,7 +52,7 @@ export default async function Header() {
         sx={{
           display: { xs: 'flex', sm: 'flex', md: 'flex', lg: 'flex', xl: 'none' },
           alignItems: 'center',
-          mr: { xs: '8px', sm: '8px', md: '12px', lg: '12px', xl: '0px' }, // - IconButton padding (8px)
+          mr: { xs: '8px', sm: '12px', md: '12px', lg: '12px', xl: '0px' }, // - IconButton padding (8px)
         }}
       >
         <HeaderMenuModal />

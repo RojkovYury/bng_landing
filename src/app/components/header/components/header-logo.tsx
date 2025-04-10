@@ -17,8 +17,8 @@ export default async function HeaderLogo() {
         sx={{
           position: 'relative',
           display: 'flex',
-          width: { xs: '53px', sm: '53px', md: '92px', lg: '92px', xl: '92px' },
-          height: { xs: '44px', sm: '44px', md: '77px', lg: '77px', xl: '77px' },
+          width: { xs: '53px', sm: '92px', md: '92px', lg: '92px', xl: '92px' },
+          height: { xs: '44px', sm: '77px', md: '77px', lg: '77px', xl: '77px' },
           mr: { xs: '24px', sm: '24px', md: '24px', lg: '24px', xl: '24px' },
         }}
       >
@@ -26,9 +26,9 @@ export default async function HeaderLogo() {
       </Box>
       <Typography
         sx={{
-          fontSize: { xs: '12px', sm: '12px', md: '16px', lg: '16px', xl: '16px' },
-          lineHeight: { xs: '12px', sm: '12px', md: '16px', lg: '16px', xl: '16px' },
-          maxWidth: { xs: '126px', sm: '126px', md: '168px', lg: '168px', xl: '168px' },
+          fontSize: { xs: '12px', sm: '16px', md: '16px', lg: '16px', xl: '16px' },
+          lineHeight: { xs: '12px', sm: '16px', md: '16px', lg: '16px', xl: '16px' },
+          maxWidth: { xs: '126px', sm: '168px', md: '168px', lg: '168px', xl: '168px' },
           fontWeight: 400,
         }}
       >
