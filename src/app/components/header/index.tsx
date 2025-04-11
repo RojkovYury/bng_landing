@@ -5,7 +5,7 @@ import HeaderOpenModal from "./components/header-open-modal";
 import HeaderMenuModal from "./components/header-menu-modal";
 import HeaderScrollTo from "./components/header-scroll-to";
 import HeaderLogo from "./components/header-logo";
-import HeaderFabButtons from "./components/header-fab-up";
+import HeaderFabUp from "./components/header-fab-up";
 
 export default async function Header() {
   return (
@@ -21,9 +21,11 @@ export default async function Header() {
       }}
     >
       <HeaderLogo />
+      
       <Box
         sx={{
           display: { xs: 'none', sm: 'none', md: 'none', lg: 'none', xl: 'flex' },
+          width: '100%',
         }}
       >
         <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '64px', mr: '48px' }}>
@@ -59,7 +61,7 @@ export default async function Header() {
         <HeaderMenuModal />
       </Box>
 
-      <HeaderFabButtons />
+      <HeaderFabUp />
     </Box>
   )
 }

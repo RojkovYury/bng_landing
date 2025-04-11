@@ -124,7 +124,7 @@ export default function HeaderMenuModal() {
             </Box>
           </Box>
 
-          <Box sx={{ minWidth: '343px', mt: '16px', px: '16px', py: '32px', bgcolor: '#F2F5F9', borderRadius: '20px' }}>
+          <Box sx={{ mt: '16px', px: '16px', py: '32px', bgcolor: '#F2F5F9', borderRadius: '20px' }}>
             <Typography sx={{ fontSize: '14px', fontWeight: 400, lineHeight: '20px', mb: '16px' }}>
               г. Тула, ул. Революции, дом 55, офис 202
             </Typography>
