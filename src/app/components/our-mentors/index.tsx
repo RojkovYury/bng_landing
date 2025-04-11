@@ -7,12 +7,7 @@ import mentor1 from '../../../../public/images/our-mentors-1.png'
 import mentor2 from '../../../../public/images/our-mentors-2.png'
 import mentor3 from '../../../../public/images/our-mentors-3.png'
 import OurMentorMobileCards from "./components/our-mentors-mobile-cards";
-
-const titleTypography = {
-  fontSize: { xs: '32px', sm: '32px', md: '32px', lg: '48px', xl: '48px' },
-  lineHeight: { xs: '40px', sm: '40px', md: '40px', lg: '56px', xl: '56px' },
-  fontWeight: 700,
-}
+import OurMentorsTitle from "./components/our-mentors-title";
 
 export default async function OurMentors() {
   return (
@@ -28,23 +23,7 @@ export default async function OurMentors() {
         ml: { xs: '0px', sm: '0px', md: '20px', lg: '20px', xl: 'auto' },
       }}
     >
-      <Box
-        sx={{
-          display: 'flex',
-          mb: '32px',
-          flexDirection: 'row',
-          mr: { xs: '20px', sm: '20px', md: '0px', lg: '0px', xl: '0px' },
-          ml: { xs: '20px', sm: '20px', md: '0px', lg: '0px', xl: '0px' },
-        }}
-      >
-        <Typography sx={{ ...titleTypography, color: '#FFA700' }}>
-          Наши&nbsp;
-        </Typography>
-        <Typography sx={{ ...titleTypography }}>
-          наставники
-        </Typography>
-      </Box>
-
+      <OurMentorsTitle />
       <Typography
         sx={{
           mb: '80px',
@@ -85,7 +64,6 @@ export default async function OurMentors() {
       <Box sx={{ display: { xs: 'block', sm: 'block', md: 'none', lg: 'none', xl: 'none' } }}>
         <OurMentorMobileCards />
       </Box>
-
     </Box>
   )
 }
