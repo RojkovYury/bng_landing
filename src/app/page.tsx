@@ -22,7 +22,6 @@ export default async function Main() {
       display: 'flex',
       flexDirection: 'column',
       position: 'relative',
-      overflow: 'hidden',
     }}
   >
       <Header />
