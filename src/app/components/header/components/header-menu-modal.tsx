@@ -26,8 +26,11 @@ export default function HeaderMenuModal() {
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
-    if (element) { element.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-  };
+    if (element) {
+        const offsetTop = element.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+    }
+};
 
   return (
     <Box sx={{ display: 'flex' }}>
