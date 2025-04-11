@@ -5,6 +5,7 @@ import HeaderOpenModal from "./components/header-open-modal";
 import HeaderMenuModal from "./components/header-menu-modal";
 import HeaderScrollTo from "./components/header-scroll-to";
 import HeaderLogo from "./components/header-logo";
+import HeaderFabButtons from "./components/header-fab-up";
 
 export default async function Header() {
   return (
@@ -57,6 +58,8 @@ export default async function Header() {
       >
         <HeaderMenuModal />
       </Box>
+
+      <HeaderFabButtons />
     </Box>
   )
 }

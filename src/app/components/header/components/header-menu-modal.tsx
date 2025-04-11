@@ -1,9 +1,10 @@
 'use client';
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from 'next/image';
-import { Box, Drawer, IconButton, Typography } from "@mui/material";
+import { Box, Drawer, Fab, IconButton, Typography } from "@mui/material";
 import menu from '../../../../../public/icons/menu.svg'
+import menuWhite from '../../../../../public/icons/menu-white.svg'
 import close from '../../../../../public/icons/close.svg'
 import SingUpModal from "@/components/sign-up-modal";
 import SingUpDrawer from "@/components/sign-up-drawer";
@@ -28,9 +29,25 @@ export default function HeaderMenuModal() {
     const element = document.getElementById(id);
     if (element) {
         const offsetTop = element.getBoundingClientRect().top + window.pageYOffset;
+        // scrollIntoView не применять, сломает скролл на мобиле из-за глобального overflow: 'hidden'
         window.scrollTo({ top: offsetTop, behavior: 'smooth' });
     }
-};
+  };
+
+  const [showButton, setShowButton] = useState(false);
+  const handleScroll = () => {
+    if (window.scrollY > 150) {
+      setShowButton(true);
+    } else {
+      setShowButton(false);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -153,6 +170,32 @@ export default function HeaderMenuModal() {
 
       <SingUpModal open={openModale} setOpen={setOpenModale} rootSx={{ display: { xs: 'none', sm: 'flex', md: 'flex', lg: 'flex', xl: 'flex' } }} />
       <SingUpDrawer open={openModale} setOpen={setOpenModale} rootSx={{ display: { xs: 'flex', sm: 'none', md: 'none', lg: 'none', xl: 'none' } }}/>
+    
+      <Fab
+        color="primary"
+        onClick={toggleMenu(true)}
+        sx={{
+          position: 'fixed',
+          bottom: '20px',
+          right: '20px',
+          zIndex: 1000,
+          opacity: showButton ? 0.75 : 0,
+          transform: showButton ? 'translateY(0)' : 'translateY(10px)',
+          visibility: showButton ? 'visible' : 'hidden',
+          transition: 'opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease',
+        }}
+      >
+        <Box
+          sx={{
+            position: 'relative',
+            display: 'flex',
+            height: '35px',
+            width: '35px',
+          }}
+        >
+          <Image src={menuWhite} alt="menu" fill />
+        </Box>
+      </Fab>
     </Box>
   )
 }
