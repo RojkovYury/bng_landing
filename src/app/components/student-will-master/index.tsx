@@ -3,6 +3,7 @@
 import SignUpContainer from "@/components/sign-up-container";
 import { Box, Typography } from "@mui/material";
 import StudentWillMasterTag from "./components/student-will-master-tag";
+import StudentWillMasterBg from "./components/student-will-master-bg";
 
 const tagText1 = [
   'Язык C#',
@@ -23,16 +24,18 @@ const tagText3 = [
 
 export default async function StudentWillMaster() {
   return (
-    <Box sx={{ bgcolor: "#1144AA" }}>
+    <Box sx={{ bgcolor: "#1144AA", position: 'relative', zIndex: 3 }}>
       <Box
         sx={{
+          position: 'relative',
           display: 'flex',
           flexDirection: { xs: 'column', sm: 'column', md: 'row', lg: 'row', xl: 'row' },
           mx: 'auto',
           maxWidth: '1440px',
           mt: '64px',
-          mb: '64px',
+          mb: { xs: '32px', sm: '64px', md: '64px', lg: '64px', xl: '64px' },
           width: { xs: '100%', sm: '100%', md: 'unset', lg: 'unset', xl: 'unset' },
+          zIndex: 3,
         }}
       >
         <Box
@@ -106,6 +109,8 @@ export default async function StudentWillMaster() {
           />
         </Box>
       </Box>
+      
+      <StudentWillMasterBg />
     </Box>
   )
 }
