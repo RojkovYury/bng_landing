@@ -10,7 +10,7 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 export default function OurMentorMobileCards() {
-  const [currentCardSelected, setIsLastOneSelected] = useState(1);
+  const [currentCardSelected, setIsLastOneSelected] = useState(0); // 1 не вписывать, иначе на мобиле при открытии useEffect автоматом проскроллит к блоку
   const cardRefMentor1 = useRef(null);
   const cardRefMentor2 = useRef(null);
   const cardRefMentor3 = useRef(null);
@@ -82,7 +82,7 @@ export default function OurMentorMobileCards() {
         <Box
           onClick={() => setIsLastOneSelected(1)}
           sx={{
-            width: currentCardSelected == 1 ? '75%' : '25%',
+            width: (currentCardSelected == 1 || !currentCardSelected) ? '75%' : '25%',
             transformOrigin: 'left',
             display: 'flex',
             alignItems: 'center',
@@ -93,7 +93,7 @@ export default function OurMentorMobileCards() {
             transition: 'width 0.4s ease',
           }}
         >
-          <Box sx={{ width: '100%', height: '4px', borderRadius: '2px', bgcolor: currentCardSelected == 1 ? '#FFA700' : '#C9D3E8' }} />
+          <Box sx={{ width: '100%', height: '4px', borderRadius: '2px', bgcolor: (currentCardSelected == 1 || !currentCardSelected) ? '#FFA700' : '#C9D3E8' }} />
         </Box>
 
         <Box
