@@ -142,7 +142,7 @@ export default function OurMentorMobileCards() {
           left: '10px',
           top: '230px',
           bgcolor: 'rgba(77, 77, 77, 0.4)',
-          opacity: currentCardSelected != 1 ? 1 : 0,
+          opacity: currentCardSelected && currentCardSelected != 1 ? 1 : 0,
           transition: 'background-color 0.3s ease, opacity 0.3s ease',
           p: 0,
           '&:hover': {
@@ -154,7 +154,7 @@ export default function OurMentorMobileCards() {
       </IconButton>
       <IconButton
         onClick={() => {
-          if (currentCardSelected == 1) { setIsLastOneSelected(2) }
+          if (currentCardSelected == 1 || !currentCardSelected) { setIsLastOneSelected(2) }
           if (currentCardSelected == 2) { setIsLastOneSelected(3) }
         }}
         sx={{
