@@ -1,42 +1,73 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { Typography } from '@mui/material';
+import { useEffect, useState } from "react";
+import { Box, Typography } from "@mui/material";
 
-interface CountdownTimerProps {
-  targetDate: Date;
-}
+// Общее время в секундах, начало отсчета с 4 дня 20 : 09 : 56
+const TIMER_DURATION = 4 * 24 * 60 * 60 + 20 * 60 + 9 * 60 + 56;
 
-const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
-  const calculateTimeLeft = () => {
-    const now = new Date();
-    const difference = targetDate.getTime() - now.getTime();
-    let timeLeft = { hours: 0, minutes: 0, seconds: 0 };
-
-    if (difference > 0) {
-      timeLeft = {
-        hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-        minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
-        seconds: Math.floor((difference % (1000 * 60)) / 1000),
-      };
-    }
-    return timeLeft;
-  };
-
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-
+export default function Timer() {
+  const [timeLeft, setTimeLeft] = useState(TIMER_DURATION);
+  
   useEffect(() => {
-    const interval = setInterval(() => {
-      setTimeLeft(calculateTimeLeft());
-    }, 1000);
-    return () => clearInterval(interval);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [targetDate]);
+    // Получаем время начала отсчета из localStorage
+    let startTime = JSON.parse(localStorage.getItem("timerStart") || "null");
+    
+    if (!startTime) {
+      // Если нет значения, сохраняем текущее время + нужную длительность
+      startTime = Date.now() + TIMER_DURATION * 1000;
+      localStorage.setItem("timerStart", JSON.stringify(startTime));
+    } else {
+      // Если значение есть, вычисляем оставшееся время
+      const currentTime = Date.now();
+      const remainingTime = Math.max(0, startTime - currentTime);
+      
+      if (remainingTime < 2 * 24 * 60 * 60 * 1000) {
+        // Если оставшееся меньше 2 дней, сбрасываем таймер
+        startTime = Date.now() + TIMER_DURATION * 1000;
+        localStorage.setItem("timerStart", JSON.stringify(startTime));
+      }
+    }
 
-  const formatTimeUnit = (unit: number) => unit.toString().padStart(2, '0');
+    const updateTimeLeft = () => {
+      const currentTime = Date.now();
+      const newTimeLeft = Math.max(0, Math.floor((startTime - currentTime) / 1000));
+      setTimeLeft(newTimeLeft);
+    };
+
+    const intervalId = setInterval(updateTimeLeft, 1000);
+    return () => clearInterval(intervalId);
+  }, []);
+
+  const days = Math.floor(timeLeft / (24 * 60 * 60));
+  const hours = Math.floor((timeLeft % (24 * 60 * 60)) / (60 * 60));
+  const minutes = Math.floor((timeLeft % (60 * 60)) / 60);
+  const seconds = timeLeft % 60;
 
   return (
-    <div>
+    <Box
+      sx={{
+        display: 'flex',
+        borderRadius: '8px',
+        py: '8px',
+        px: '20px',
+        bgcolor: '#FFA700',
+        width: { xs: '150px', sm: '150px', md: '150px', lg: '165px', xl: '165px' },
+        minWidth: { xs: '150px', sm: '150px', md: '150px', lg: '165px', xl: '165px' },
+      }}
+    >
+      <Typography
+        sx={{
+          fontSize: { xs: '16px', sm: '16px', md: '16px', lg: '18px', xl: '18px' },
+          lineHeight: { xs: '20px', sm: '20px', md: '20px', lg: '24px', xl: '24px' },
+          fontWeight: 400,
+          color: '#F2F5F9',
+          mr: '10px',
+          textWrap: 'nowrap',
+        }}
+      >
+        {days} дня
+      </Typography>
       <Typography
         sx={{
           fontSize: { xs: '16px', sm: '16px', md: '16px', lg: '18px', xl: '18px' },
@@ -45,35 +76,55 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
           color: '#F2F5F9',
         }}
       >
-        {formatTimeUnit(timeLeft.hours)} : {formatTimeUnit(timeLeft.minutes)} : {formatTimeUnit(timeLeft.seconds)}
+        {`${String(hours).padStart(2, '0')} : ${String(minutes).padStart(2, '0')} : ${String(seconds).padStart(2, '0')}`}
       </Typography>
-    </div>
+    </Box>
   );
-};
+}
 
-const Timer = () => {
-  const [targetDate, setTargetDate] = useState<Date | null>(null);
+/*
 
-  useEffect(() => {
-    const storedDate = localStorage.getItem('endTime');
-    const currentDate = new Date();
+'use client';
 
-    if (storedDate) {
-      setTargetDate(new Date(storedDate));
-    } else {
-      const newTargetDate = new Date();
-      newTargetDate.setHours(currentDate.getHours() + 19);
-      newTargetDate.setMinutes(currentDate.getMinutes() + 17);
-      newTargetDate.setSeconds(currentDate.getSeconds() + 41);
-      localStorage.setItem('endTime', newTargetDate.toISOString());
-      setTargetDate(newTargetDate);
-    }
-  }, []);
+import { Box, Typography } from "@mui/material";
 
-  if (!targetDate) {
-    return null;
-  }
-  return <CountdownTimer targetDate={targetDate} />;
-};
+export default function Timer () {
+  return (
+    <Box
+      sx={{
+        display: 'flex',
+        borderRadius: '8px',
+        py: '8px',
+        px: '20px',
+        bgcolor: '#FFA700',
+        width: { xs: '146px', sm: '146px', md: '146px', lg: '160px', xl: '160px' },
+        minWidth: { xs: '146px', sm: '146px', md: '146px', lg: '160px', xl: '160px' },
+      }}
+    >
+      <Typography
+        sx={{
+          fontSize: { xs: '16px', sm: '16px', md: '16px', lg: '18px', xl: '18px' },
+          lineHeight: { xs: '20px', sm: '20px', md: '20px', lg: '24px', xl: '24px' },
+          fontWeight: 400,
+          color: '#F2F5F9',
+          mr: '10px',
+          textWrap: 'nowrap',
+        }}
+      >
+        4 дня
+      </Typography>
+      <Typography
+        sx={{
+          fontSize: { xs: '16px', sm: '16px', md: '16px', lg: '18px', xl: '18px' },
+          lineHeight: { xs: '20px', sm: '20px', md: '20px', lg: '24px', xl: '24px' },
+          fontWeight: 600,
+          color: '#F2F5F9',
+        }}
+      >
+        20 : 21 : 22
+      </Typography>
+    </Box>
+  )
+}
 
-export default Timer;
+*/
