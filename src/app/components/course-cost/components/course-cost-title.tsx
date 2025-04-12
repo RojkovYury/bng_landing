@@ -14,6 +14,7 @@ export default async function CourseCostTitle() {
       sx={{
         display: 'flex',
         mb: { xs: '32px', sm: '32px', md: '80px', lg: '80px', xl: '80px' },
+        flexWrap: 'wrap',
       }}
     >
       <Typography sx={{ ...titleTypography, color: '#FFA700' }}>

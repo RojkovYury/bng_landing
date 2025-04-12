@@ -15,6 +15,7 @@ export default async function OurMentorsTitle() {
         display: 'flex',
         mb: '32px',
         flexDirection: 'row',
+        flexWrap: 'wrap',
         mr: { xs: '20px', sm: '20px', md: '0px', lg: '0px', xl: '0px' },
         ml: { xs: '20px', sm: '20px', md: '0px', lg: '0px', xl: '0px' },
       }}
