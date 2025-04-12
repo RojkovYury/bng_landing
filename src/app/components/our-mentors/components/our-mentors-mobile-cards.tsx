@@ -1,11 +1,13 @@
 'use client'
 
 import { useEffect, useRef, useState } from "react";
-import { Box } from "@mui/material";
+import { Box, IconButton } from "@mui/material";
 import mentor1 from '../../../../../public/images/our-mentors-1.png'
 import mentor2 from '../../../../../public/images/our-mentors-2.png'
 import mentor3 from '../../../../../public/images/our-mentors-3.png'
 import OurMentorMobileCard from "./our-mentors-mobile-card";
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 export default function OurMentorMobileCards() {
   const [currentCardSelected, setIsLastOneSelected] = useState(1);
@@ -42,19 +44,9 @@ export default function OurMentorMobileCards() {
   }, [currentCardSelected]);
 
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-      <Box
-        sx={{
-          display: 'flex',
-          overflow: 'hidden',
-          '&::-webkit-scrollbar': {
-            display: 'none',
-          },
-          scrollbarWidth: 'none',
-          msOverflowStyle: 'none',
-        }}
-      >
-        <Box ref={cardRefMentor1} sx={{ display: 'flex', }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', position: 'relative', zIndex: 3 }}>
+      <Box sx={{ display: 'flex', overflow: 'hidden', zIndex: 2 }} >
+        <Box ref={cardRefMentor1} sx={{ display: 'flex' }}>
           <OurMentorMobileCard
             title='Дмитрий'
             subTitle='FullStack Dev, TeamLead'
@@ -64,7 +56,7 @@ export default function OurMentorMobileCards() {
             mr="16px"
           />
         </Box>
-        <Box ref={cardRefMentor2} sx={{ display: 'flex', }}>
+        <Box ref={cardRefMentor2} sx={{ display: 'flex' }}>
           <OurMentorMobileCard
             title='Сергей'
             subTitle='TeamLead, Architect, FullStack Dev'
@@ -74,7 +66,7 @@ export default function OurMentorMobileCards() {
             ml="16px"
           />
         </Box>
-        <Box ref={cardRefMentor3} sx={{ display: 'flex', }}>
+        <Box ref={cardRefMentor3} sx={{ display: 'flex' }}>
           <OurMentorMobileCard
             title='Марина'
             subTitle='C# Senior Dev, TeamLead'
@@ -136,6 +128,112 @@ export default function OurMentorMobileCards() {
           <Box sx={{ width: '100%', height: '4px', borderRadius: '2px', bgcolor: currentCardSelected == 3 ? '#FFA700' : '#C9D3E8' }} />
         </Box>
       </Box>
+
+      <IconButton
+        onClick={() => {
+          if (currentCardSelected == 2) { setIsLastOneSelected(1) }
+          if (currentCardSelected == 3) { setIsLastOneSelected(2) }
+        }}
+        sx={{
+          position: 'absolute',
+          zIndex: 3,
+          width: '46px',
+          height: '46px',
+          left: '10px',
+          top: '230px',
+          bgcolor: 'rgba(77, 77, 77, 0.4)',
+          opacity: currentCardSelected != 1 ? 1 : 0,
+          transition: 'background-color 0.3s ease, opacity 0.3s ease',
+          p: 0,
+          '&:hover': {
+            bgcolor: 'rgba(77, 77, 77, 0.5)',
+          },
+        }}
+      >
+        <ArrowBackIosNewIcon sx={{ color: '#FFF' }}/>
+      </IconButton>
+      <IconButton
+        onClick={() => {
+          if (currentCardSelected == 1) { setIsLastOneSelected(2) }
+          if (currentCardSelected == 2) { setIsLastOneSelected(3) }
+        }}
+        sx={{
+          position: 'absolute',
+          zIndex: 3,
+          width: '46px',
+          height: '46px',
+          right: '10px',
+          top: '230px',
+          bgcolor: 'rgba(77, 77, 77, 0.4)',
+          opacity: currentCardSelected != 3 ? 1 : 0,
+          transition: 'background-color 0.3s ease, opacity 0.3s ease',
+          p: 0,
+          '&:hover': {
+            bgcolor: 'rgba(77, 77, 77, 0.5)',
+          },
+        }}
+      >
+        <ArrowForwardIosIcon sx={{ color: '#FFF' }}/>
+      </IconButton>
     </Box>
   )
 }
+
+/*
+ <Button
+        onClick={() => {
+          if (currentCardSelected == 2) { setIsLastOneSelected(1) }
+          if (currentCardSelected == 3) { setIsLastOneSelected(2) }
+        }}
+        sx={{
+          position: 'absolute',
+          zIndex: 3,
+          width: '38px',
+          minWidth: '20px',
+          height: '404px',
+          left: '0px',
+          top: '24px',
+          display: 'flex',
+          alignItems: 'center',
+          cursor: 'pointer',
+          bgcolor: 'rgba(77, 77, 77, 0.4)',
+          borderRadius: '0px',
+          opacity: currentCardSelected != 1 ? 1 : 0,
+          transition: 'background-color 0.3s ease, opacity 0.3s ease',
+          p: 0,
+          '&:hover': {
+            bgcolor: 'rgba(77, 77, 77, 0.5)',
+          },
+        }}
+      >
+        <ArrowBackIosNewIcon sx={{ color: '#FFF' }}/>
+      </Button>
+      <Button
+        onClick={() => {
+          if (currentCardSelected == 1) { setIsLastOneSelected(2) }
+          if (currentCardSelected == 2) { setIsLastOneSelected(3) }
+        }}
+        sx={{
+          position: 'absolute',
+          zIndex: 3,
+          width: '38px',
+          minWidth: '20px',
+          height: '404px',
+          right: '0px',
+          top: '24px',
+          display: 'flex',
+          alignItems: 'center',
+          cursor: 'pointer',
+          bgcolor: 'rgba(77, 77, 77, 0.4)',
+          borderRadius: '0px',
+          opacity: currentCardSelected != 3 ? 1 : 0,
+          transition: 'background-color 0.3s ease, opacity 0.3s ease',
+          p: 0,
+          '&:hover': {
+            bgcolor: 'rgba(77, 77, 77, 0.5)',
+          },
+        }}
+      >
+        <ArrowForwardIosIcon sx={{ color: '#FFF' }}/>
+      </Button>
+*/
