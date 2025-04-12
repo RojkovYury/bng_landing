@@ -123,7 +123,7 @@ export default async function DeveloperSignUp() {
             left: { xs: '0px', sm: '0px', md: '300px', lg: '-130px', xl: '0px' },
           }}
         >
-          <Image src={developer} alt="developer" fill />
+          <Image src={developer} alt="developer" fill priority={true} />
         </Box>
       </Box>
     </Box>
