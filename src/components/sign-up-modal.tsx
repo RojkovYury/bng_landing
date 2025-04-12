@@ -7,7 +7,6 @@ interface SingUpModalProps {
   open: boolean;
   setOpen: any;
   rootSx?: any;
-  // text?: string;
 }
 
 export default function SingUpModal({ open, setOpen, rootSx }: SingUpModalProps) {
