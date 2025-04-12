@@ -1,17 +1,17 @@
 'use server'
 
 import { Box } from "@mui/material";
-import table1 from '../../../public/images/table-1.svg'
-import table2 from '../../../public/images/table-2.svg'
-import table3 from '../../../public/images/table-3.svg'
-import table4 from '../../../public/images/table-4.svg'
-import table5 from '../../../public/images/table-5.svg'
-import table6 from '../../../public/images/table-6.svg'
-import table7 from '../../../public/images/table-7.svg'
-import table8 from '../../../public/images/table-8.svg'
-import table9 from '../../../public/images/table-9.svg'
-import table10 from '../../../public/images/table-10.svg'
-import TableCard from "@/components/table-card";
+import table1 from '../../../../public/images/table-1.svg'
+import table2 from '../../../../public/images/table-2.svg'
+import table3 from '../../../../public/images/table-3.svg'
+import table4 from '../../../../public/images/table-4.svg'
+import table5 from '../../../../public/images/table-5.svg'
+import table6 from '../../../../public/images/table-6.svg'
+import table7 from '../../../../public/images/table-7.svg'
+import table8 from '../../../../public/images/table-8.svg'
+import table9 from '../../../../public/images/table-9.svg'
+import table10 from '../../../../public/images/table-10.svg'
+import TableCard from "./components/table-card";
 
 export default async function Table() {
   return (

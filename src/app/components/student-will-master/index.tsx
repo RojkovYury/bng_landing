@@ -50,7 +50,6 @@ export default async function StudentWillMaster() {
               fontWeight: 700,
               lineHeight: '40px',
               color: '#FFFFFF',
-              // mr: '20px',
               mr: { xs: '20px', sm: '20px', md: '0px', lg: '0px', xl: '0px' },
               ml: { xs: '16px', sm: '16px', md: '0px', lg: '0px', xl: '0px' },
             }}

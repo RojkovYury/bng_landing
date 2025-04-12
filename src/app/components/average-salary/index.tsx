@@ -5,6 +5,7 @@ import Image from 'next/image';
 import background from '../../../../public/images/average-salary-bg.svg'
 import AverageSalaryRow from "@/app/components/average-salary/components/average-salary-row";
 import AverageSalaryButton from "./components/average-salary-button";
+import AverageSalaryTitle from "./components/average-salary-title";
 
 export default async function AverageSalary() {
   return (
@@ -56,27 +57,7 @@ export default async function AverageSalary() {
             mt: { xs: '32px', sm: '32px', md: '40px', lg: '64px', xl: '64px' },
           }}
         >
-          <Box sx={{ mb: { xs: '24px', sm: '24px', md: '0px', lg: '0px', xl: '0px' } }}>
-            <Typography
-              sx={{
-                fontSize: { xs: '32px', sm: '32px', md: '32px', lg: '48px', xl: '48px' },
-                lineHeight: { xs: '40px', sm: '40px', md: '40px', lg: '56px', xl: '56px' },
-                fontWeight: 700,
-                color: '#FFA700',
-              }}
-            >
-              220 000 ₽
-            </Typography>
-            <Typography
-              sx={{
-                fontSize: { xs: '18px', sm: '18px', md: '18px', lg: '32px', xl: '32px' },
-                lineHeight: { xs: '22px', sm: '22px', md: '22px', lg: '40px', xl: '40px' },
-                fontWeight: 700,
-              }}
-            >
-              Средняя зарплата специалиста *
-            </Typography>
-          </Box>
+          <AverageSalaryTitle />
           <Box sx={{ display: 'flex', alignItems: 'end' }}>
             <AverageSalaryButton />
           </Box>

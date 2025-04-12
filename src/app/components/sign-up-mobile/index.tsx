@@ -7,6 +7,7 @@ import { useState } from "react";
 import SingUpMobileInputName from "./components/sign-up-mobile-input-name";
 import SingUpMobileInputPhone from "./components/sign-up-mobile-input-phone";
 import SingUpMobileCheckbox from "./components/sign-up-mobile-checkbox";
+import SingUpMobileTitle from "./components/sign-up-mobile-title";
 
 export default function SignUpMobile() {
   const [name, setName] = useState('');
@@ -42,23 +43,11 @@ export default function SignUpMobile() {
             zIndex: 2,
           }}
         >
-          <Typography sx={{ fontSize: '24px', fontWeight: 700, lineHeight: '32px', mb: '8px', color: '#FFFFFF' }}>
-            Записаться на курс
-          </Typography>
-          <Typography sx={{ fontSize: '16px', fontWeight: 600, lineHeight: '22px', mb: '40px', color: '#FFFFFF' }}>
-            или получить бесплатную консультацию
-          </Typography>
-
+          <SingUpMobileTitle />
           <SingUpMobileInputName value={name} setValue={setName} />
           <SingUpMobileInputPhone value={phone} setValue={setPhone} />
 
-
-          <Box
-            sx={{
-              display: 'flex',
-              mb: '12px',
-            }}
-          >
+          <Box sx={{ display: 'flex', mb: '12px' }}>
             <SingUpMobileCheckbox checked={check} setChecked={setCheck} sx={{ mr: '12px' }} />
             <Typography
               sx={{
@@ -83,9 +72,6 @@ export default function SignUpMobile() {
               &nbsp;и даю согласие на их обработку и хранение
             </Typography>
           </Box>
-
-
-
 
           <Button
             variant="contained"

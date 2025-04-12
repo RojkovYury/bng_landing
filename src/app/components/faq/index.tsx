@@ -1,6 +1,6 @@
 'use server'
 
-import FaqAccordion from "@/components/faq-accordion";
+import FaqAccordion from "@/app/components/faq/components/faq-accordion";
 import { Box } from "@mui/material";
 import CourseCostTitle from "./components/faq-title";
 

@@ -68,7 +68,7 @@ export default async function TrainingCenterProgram() {
             bgcolor: '#ECEFF4',
             py: { xs: '20px', sm: '20px', md: '24px', lg: '24px', xl: '24px' },
             px: { xs: '16px', sm: '16px', md: '40px', lg: '40px', xl: '40px' },
-        }}
+          }}
         >
           <Typography
             sx={{
