@@ -42,8 +42,9 @@ export default function HeaderMenuModal() {
       setShowButton(false);
     }
   };
+
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };

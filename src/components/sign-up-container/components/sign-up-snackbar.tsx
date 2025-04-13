@@ -22,6 +22,7 @@ export default function SingUpSnackbar({ open, setOpen, message }: SingUpSnackba
       autoHideDuration={2000}
       onClose={handleClose}
       anchorOrigin={{ vertical: 'top', horizontal: 'left' }}
+      sx={{ position: 'absolute' }}
     >
       <Alert
         onClose={handleClose}
@@ -30,7 +31,7 @@ export default function SingUpSnackbar({ open, setOpen, message }: SingUpSnackba
         sx={{
           width: '100%',
           maxWidth: '370px',
-          mt: { xs: '0px', sm: '0px', md: '20px', lg: '20px', xl: '20px' },
+          mt: { xs: '0px', sm: '-10px', md: '20px', lg: '20px', xl: '20px' },
           ml: { xs: '0px', sm: '-4px', md: '16px', lg: '16px', xl: '16px' },
           mr: { xs: '0px', sm: '20px', md: '40px', lg: '40px', xl: '40px' },
         }}
