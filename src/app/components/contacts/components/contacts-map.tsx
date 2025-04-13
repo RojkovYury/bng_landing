@@ -1,12 +1,33 @@
-'use server';
+'use client';
 
 import SignUpContainer from "@/components/sign-up-container";
 import { Box } from "@mui/material";
+import { useEffect, useState } from "react";
 
-export default async function ContactsMap() {
+export default function ContactsMap() {
+
+  const [loadMap, setLoadMap] = useState(false);
+
+  const handleScroll = () => {
+    const mapElement = document.getElementById('map');
+    if (mapElement) {
+      const rect = mapElement.getBoundingClientRect();
+      if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+        setLoadMap(true);
+        window.removeEventListener('scroll', handleScroll);
+      }
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <>
       <Box
+        id="map"
         sx={{
           display: 'flex',
           position: 'relative',
@@ -20,34 +41,41 @@ export default async function ContactsMap() {
           },
         }}
       >
-        <Box sx={{ width: '100%', height: '100%', display: { xs: 'none', sm: 'none', md: 'flex', lg: 'flex', xl: 'flex' } }}>
-          <iframe
-            src="https://yandex.ru/map-widget/v1/?ll=37.581067%2C54.192753&mode=search&whatshere%5Bpoint%5D=37.585811%2C54.192142&whatshere%5Bzoom%5D=17&z=16"
-            width="100%"
-            height="100%"
-            allowFullScreen={true}
-            style={{
-              position: 'relative',
-              border: 'none',
-              borderRadius: '8px',
-              overflow: 'hidden',
-            }}
-          />
-        </Box>
-        <Box sx={{ width: '100%', height: '100%', display: { xs: 'flex', sm: 'flex', md: 'none', lg: 'none', xl: 'none' } }}>
-          <iframe
-            src="https://yandex.ru/map-widget/v1/?ll=37.585667%2C54.192753&mode=search&whatshere%5Bpoint%5D=37.585811%2C54.192142&whatshere%5Bzoom%5D=17&z=16"
-            width="100%"
-            height="100%"
-            allowFullScreen={true}
-            style={{
-              position: 'relative',
-              border: 'none',
-              borderRadius: '8px',
-              overflow: 'hidden',
-            }}
-          />
-        </Box>
+        {loadMap && (
+          <Box sx={{ width: '100%', height: '100%', display: { xs: 'none', sm: 'none', md: 'flex', lg: 'flex', xl: 'flex' } }}>
+            <iframe
+              src="https://yandex.ru/map-widget/v1/?ll=37.581067%2C54.192753&mode=search&whatshere%5Bpoint%5D=37.585811%2C54.192142&whatshere%5Bzoom%5D=17&z=16"
+              width="100%"
+              height="100%"
+              allowFullScreen={true}
+              title="Yandex map"
+              style={{
+                position: 'relative',
+                border: 'none',
+                borderRadius: '8px',
+                overflow: 'hidden',
+              }}
+            />
+          </Box>
+        )}
+
+        {loadMap && (
+          <Box sx={{ width: '100%', height: '100%', display: { xs: 'flex', sm: 'flex', md: 'none', lg: 'none', xl: 'none' } }}>
+            <iframe
+              src="https://yandex.ru/map-widget/v1/?ll=37.585667%2C54.192753&mode=search&whatshere%5Bpoint%5D=37.585811%2C54.192142&whatshere%5Bzoom%5D=17&z=16"
+              width="100%"
+              height="100%"
+              allowFullScreen={true}
+              title="Yandex map"
+              style={{
+                position: 'relative',
+                border: 'none',
+                borderRadius: '8px',
+                overflow: 'hidden',
+              }}
+            />
+          </Box>
+        )}
 
         <Box
           sx={{
