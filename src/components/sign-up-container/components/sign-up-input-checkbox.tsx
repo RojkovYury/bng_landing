@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 import Image from 'next/image';
-import checkboxIcon from '../../public/icons/checkbox.svg'
+import checkboxIcon from '../../../../public/icons/checkbox.svg'
 
 interface SingUpInputCheckboxProps {
   checked: boolean;

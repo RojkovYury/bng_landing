@@ -1,12 +1,12 @@
 'use client';
 
-import { Box, IconButton, Link, Typography } from "@mui/material";
+import { Box, Link, Typography } from "@mui/material";
 import { useState } from "react";
-import SingUpInputPhone from "./sign-up-input-phone";
-import SingUpInputName from "./sign-up-input-name";
-import SingUpInputCheckbox from "./sign-up-input-checkbox";
-import CloseIcon from '@mui/icons-material/Close';
-import SingUpButton from "./sign-up-button";
+import SingUpInputPhone from "./components/sign-up-input-phone";
+import SingUpInputName from "./components/sign-up-input-name";
+import SingUpInputCheckbox from "./components/sign-up-input-checkbox";
+import SingUpButton from "./components/sign-up-button";
+import SingUpCloseButton from "./components/sign-up-close-button";
 
 interface SignUpContainerProps {
   text: string;
@@ -61,12 +61,7 @@ export default function SignUpContainer({ text, sx, onClose }: SignUpContainerPr
       <SingUpInputPhone value={phone} setValue={setPhone} />
       <SingUpButton onClick={handleMailer}/>
 
-      <Box
-        sx={{
-          display: 'flex',
-          mt: '20px',
-        }}
-      >
+      <Box sx={{ display: 'flex', mt: '20px' }}>
         <SingUpInputCheckbox checked={check} setChecked={setCheck} sx={{ mr: '12px' }}/>
         <Typography
           sx={{
@@ -87,20 +82,7 @@ export default function SignUpContainer({ text, sx, onClose }: SignUpContainerPr
         </Typography>
       </Box>
 
-      {onClose && (
-        <IconButton
-          onClick={onClose}
-          sx={{
-            position: 'absolute',
-            width: '40px',
-            height: '40px',
-            right: '12px',
-            top: '12px',
-          }}
-        >
-          <CloseIcon sx={{ width: '40px', height: '40px', color: 'rgba(121, 142, 188, 1)' }}/>
-        </IconButton>
-      )}
+      {onClose && (<SingUpCloseButton onClick={onClose} />)}
     </Box>
   )
 }
