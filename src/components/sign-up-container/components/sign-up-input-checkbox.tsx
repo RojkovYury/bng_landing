@@ -7,19 +7,31 @@ interface SingUpInputCheckboxProps {
   setChecked: (checked: boolean) => void;
   blue?: boolean;
   sx?: any;
+  errorInput: string;
+  setErrorInput: any;
 }
 
-export default function SingUpInputCheckbox({ checked, setChecked, blue, sx }: SingUpInputCheckboxProps) {
+export default function SingUpInputCheckbox({ checked, setChecked, blue, sx, errorInput, setErrorInput }: SingUpInputCheckboxProps) {
   const primaryColor = blue ? '#1144AA' : '#FFA700';
+  const error = errorInput === 'check';
   return (
     <Box
-      onClick={() => setChecked(!checked)}
+      onClick={() => {
+        setChecked(!checked);
+        setErrorInput('');
+      }}
       sx={{
         borderRadius: '4px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        border: checked ? `1px solid ${primaryColor}` : '1px solid #B3B9C3',
+        border: error
+        ? '1px solid #DE3745'
+        : checked
+          ? `1px solid ${primaryColor}`
+          : '1px solid #B3B9C3',
+
+
         width: { xs: '22px', sm: '22px', md: '28px', lg: '28px', xl: '28px' },
         height: { xs: '22px', sm: '22px', md: '28px', lg: '28px', xl: '28px' },
         minWidth: { xs: '22px', sm: '22px', md: '28px', lg: '28px', xl: '28px' },

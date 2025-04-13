@@ -7,6 +7,7 @@ import SingUpInputName from "./components/sign-up-input-name";
 import SingUpInputCheckbox from "./components/sign-up-input-checkbox";
 import SingUpButton from "./components/sign-up-button";
 import SingUpCloseButton from "./components/sign-up-close-button";
+import SingUpSnackbar from "./components/sign-up-snackbar";
 
 interface SignUpContainerProps {
   text: string;
@@ -18,20 +19,57 @@ export default function SignUpContainer({ text, sx, onClose }: SignUpContainerPr
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [check, setCheck] = useState(false);
+  const [openSnackbar, setOpenSnackbar] = useState(false);
   const [message, setMessage] = useState('');
+  const [errorInput, setErrorInput] = useState('');
 
   const handleMailer = async () => {
+    if (!name) {
+      setMessage('Имя не заполнено');
+      setOpenSnackbar(true);
+      setErrorInput('name');
+      return;
+    }
+
+    if (!phone) {
+      setMessage('Телефон не заполнен');
+      setOpenSnackbar(true);
+      setErrorInput('phone');
+      return;
+    }
+
+    if (phone.length < 18 || phone[4] !== '9') {
+      setMessage('Проверьте првильность введенного номера');
+      setOpenSnackbar(true);
+      setErrorInput('phone');
+      return;
+    }
+
+    if (!check) {
+      setMessage('Необходимо дать согласие на обработку и хранение персональных данных');
+      setOpenSnackbar(true);
+      setErrorInput('check');
+      return;
+    }
+
     const response = await fetch('/api/messenger', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, phone }),
     });
     const data = await response.json();
-    if (response.ok) { setMessage('Заявка успешно отправлена'); }
-    else { setMessage(`Error: ${data.message}`); }
+    if (response.ok) {
+      setMessage('Заявка успешно отправлена');
+      setOpenSnackbar(true);
+      onClose();
+    }
+    else {
+      setMessage(`Error: ${data.message}`);
+      setOpenSnackbar(true);
+    }
   };
 
-  return (   
+  return (
     <Box
       sx={{
         maxWidth: { xs: '304px', sm: '304px', md: '370px', lg: '370px', xl: '370px' },
@@ -57,12 +95,12 @@ export default function SignUpContainer({ text, sx, onClose }: SignUpContainerPr
         {text}
       </Typography>
 
-      <SingUpInputName value={name} setValue={setName} />
-      <SingUpInputPhone value={phone} setValue={setPhone} />
-      <SingUpButton onClick={handleMailer}/>
+      <SingUpInputName value={name} setValue={setName} errorInput={errorInput} setErrorInput={setErrorInput} />
+      <SingUpInputPhone value={phone} setValue={setPhone} errorInput={errorInput}  setErrorInput={setErrorInput}/>
+      <SingUpButton onClick={handleMailer} />
 
       <Box sx={{ display: 'flex', mt: '20px' }}>
-        <SingUpInputCheckbox checked={check} setChecked={setCheck} sx={{ mr: '12px' }}/>
+        <SingUpInputCheckbox checked={check} setChecked={setCheck} sx={{ mr: '12px' }} errorInput={errorInput}  setErrorInput={setErrorInput} />
         <Typography
           sx={{
             fontSize: { xs: '12px', sm: '12px', md: '13px', lg: '13px', xl: '13px' }, // 14 !
@@ -83,6 +121,8 @@ export default function SignUpContainer({ text, sx, onClose }: SignUpContainerPr
       </Box>
 
       {onClose && (<SingUpCloseButton onClick={onClose} />)}
+
+      <SingUpSnackbar message={message} open={openSnackbar} setOpen={setOpenSnackbar} />
     </Box>
   )
 }
