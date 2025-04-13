@@ -8,16 +8,31 @@ import SingUpMobileInputName from "./components/sign-up-mobile-input-name";
 import SingUpMobileInputPhone from "./components/sign-up-mobile-input-phone";
 import SingUpMobileCheckbox from "./components/sign-up-mobile-checkbox";
 import SingUpMobileTitle from "./components/sign-up-mobile-title";
+import handleMailer from "@/app/contracts";
+import SingUpSnackbar from "@/components/sign-up-container/components/sign-up-snackbar";
 
 export default function SignUpMobile() {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [check, setCheck] = useState(false);
-  /*
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [message, setMessage] = useState('');
   const [errorInput, setErrorInput] = useState('');
-  */
+
+  const handleSubmit = async () => {
+    await handleMailer({
+      name,
+      phone,
+      check,
+      setMessage,
+      setOpenSnackbar,
+      setErrorInput,
+    });
+    setName('');
+    setPhone('');
+    setCheck(false);
+  };
+
   return (
     <Box
       sx={{
@@ -49,11 +64,11 @@ export default function SignUpMobile() {
           }}
         >
           <SingUpMobileTitle />
-          <SingUpMobileInputName value={name} setValue={setName} />
-          <SingUpMobileInputPhone value={phone} setValue={setPhone} />
+          <SingUpMobileInputName value={name} setValue={setName} errorInput={errorInput} setErrorInput={setErrorInput} />
+          <SingUpMobileInputPhone value={phone} setValue={setPhone} errorInput={errorInput} setErrorInput={setErrorInput} />
 
           <Box sx={{ display: 'flex', mb: '12px' }}>
-            <SingUpMobileCheckbox checked={check} setChecked={setCheck} sx={{ mr: '12px' }} />
+            <SingUpMobileCheckbox checked={check} setChecked={setCheck} sx={{ mr: '12px' }} errorInput={errorInput} setErrorInput={setErrorInput} />
             <Typography
               sx={{
                 fontSize: '12px',
@@ -79,6 +94,7 @@ export default function SignUpMobile() {
           </Box>
 
           <Button
+            onClick={handleSubmit}
             variant="contained"
             sx={{
               borderRadius: '8px',
@@ -116,6 +132,7 @@ export default function SignUpMobile() {
           <Image src={bg} alt="" fill />
         </Box>
       </Box>
+      <SingUpSnackbar message={message} open={openSnackbar} setOpen={setOpenSnackbar} />
     </Box>
   )
 }

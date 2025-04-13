@@ -5,7 +5,7 @@ interface handleMailerProps {
   setMessage: any;
   setOpenSnackbar: any;
   setErrorInput: any;
-  onClose: any;
+  onClose?: any;
 }
 
 const handleMailer = async ({ name, phone, check, setMessage, setOpenSnackbar, setErrorInput, onClose }: handleMailerProps) => {

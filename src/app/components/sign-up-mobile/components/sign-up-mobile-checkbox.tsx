@@ -7,19 +7,30 @@ interface SingUpMobileCheckboxProps {
   setChecked: (checked: boolean) => void;
   blue?: boolean;
   sx?: any;
+  errorInput: string;
+  setErrorInput: any;
 }
 
-export default function SingUpMobileCheckbox({ checked, setChecked, blue, sx }: SingUpMobileCheckboxProps) {
+export default function SingUpMobileCheckbox({ checked, setChecked, blue, sx, errorInput, setErrorInput }: SingUpMobileCheckboxProps) {
   const primaryColor = blue ? '#1144AA' : '#FFA700';
+  const error = errorInput === 'check';
   return (
     <Box
-      onClick={() => setChecked(!checked)}
+      onClick={() => {
+        setChecked(!checked);
+        setErrorInput('');
+      }}
       sx={{
         borderRadius: '4px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        border: checked ? `1px solid ${primaryColor}` : '1px solid #B3B9C3',
+        border: error
+          ? '1px solid #DE3745'
+          : checked
+            ? `1px solid ${primaryColor}`
+            : '1px solid #B3B9C3',
+
         width: '22px',
         height: '22px',
         minWidth: '22px',
