@@ -53,6 +53,11 @@ export default function SingUpMobileInputPhone({ value, setValue, sx, errorInput
         disableUnderline
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
+        inputProps={{
+          inputMode: 'numeric',
+          pattern: '[0-9]*',
+          type: 'tel',
+        }}
         sx={{
           borderRadius: '8px',
           px: { xs: '16px', sm: '16px', md: '24px', lg: '24px', xl: '24px' },

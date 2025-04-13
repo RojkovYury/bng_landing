@@ -34,6 +34,8 @@ export default function SignUpContainer({ text, sx, onClose }: SignUpContainerPr
       setErrorInput,
       onClose,
     });
+    setName('');
+    setPhone('');
   };
 
   return (

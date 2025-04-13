@@ -44,7 +44,7 @@ export default function SingUpDrawer({ open, setOpen, rootSx }: SingUpDrawerProp
         sx={{ mx: 'auto' }}
         onClose={toggleDrawer(false)}
       />
-      <Box sx={{ width: '100%', height: '200px' }} />
+      <Box sx={{ width: '100%', height: '260px' }} />
     </SwipeableDrawer>
   )
 }
