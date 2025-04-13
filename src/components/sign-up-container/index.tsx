@@ -8,6 +8,7 @@ import SingUpInputCheckbox from "./components/sign-up-input-checkbox";
 import SingUpButton from "./components/sign-up-button";
 import SingUpCloseButton from "./components/sign-up-close-button";
 import SingUpSnackbar from "./components/sign-up-snackbar";
+import handleMailer from "@/app/contracts";
 
 interface SignUpContainerProps {
   text: string;
@@ -23,54 +24,16 @@ export default function SignUpContainer({ text, sx, onClose }: SignUpContainerPr
   const [message, setMessage] = useState('');
   const [errorInput, setErrorInput] = useState('');
 
-  const handleMailer = async () => {
-    if (!name) {
-      setMessage('Имя не заполнено');
-      setOpenSnackbar(true);
-      setErrorInput('name');
-      return;
-    }
-
-    if (!phone) {
-      setMessage('Телефон не заполнен');
-      setOpenSnackbar(true);
-      setErrorInput('phone');
-      return;
-    }
-
-    if (phone.length < 18 || phone[4] !== '9') {
-      setMessage('Проверьте првильность введенного номера');
-      setOpenSnackbar(true);
-      setErrorInput('phone');
-      return;
-    }
-
-    if (!check) {
-      setMessage('Необходимо дать согласие на обработку и хранение персональных данных');
-      setOpenSnackbar(true);
-      setErrorInput('check');
-      return;
-    }
-
-    const response = await fetch('/api/messenger', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, phone }),
+  const handleSubmit = async () => {
+    await handleMailer({
+      name,
+      phone,
+      check,
+      setMessage,
+      setOpenSnackbar,
+      setErrorInput,
+      onClose,
     });
-    const data = await response.json();
-    if (response.ok) {
-      setMessage('Заявка успешно отправлена');
-      // При изменении текста обязательно поменять на аналогичный в SingUpSnackbar у переменной currentSeverity
-      // Не стал делать "городушки", просто в зависимости от сообщения раскрашиваем Snackbar в зеленный
-      setOpenSnackbar(true);
-      setTimeout(() => {
-        onClose && onClose();
-      }, 1200);
-    }
-    else {
-      setMessage(`Error: ${data.message}`);
-      setOpenSnackbar(true);
-    }
   };
 
   return (
@@ -101,7 +64,7 @@ export default function SignUpContainer({ text, sx, onClose }: SignUpContainerPr
 
       <SingUpInputName value={name} setValue={setName} errorInput={errorInput} setErrorInput={setErrorInput} />
       <SingUpInputPhone value={phone} setValue={setPhone} errorInput={errorInput}  setErrorInput={setErrorInput}/>
-      <SingUpButton onClick={handleMailer} />
+      <SingUpButton onClick={handleSubmit} />
 
       <Box sx={{ display: 'flex', mt: '20px' }}>
         <SingUpInputCheckbox checked={check} setChecked={setCheck} sx={{ mr: '12px' }} errorInput={errorInput}  setErrorInput={setErrorInput} />

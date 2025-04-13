@@ -13,6 +13,11 @@ export default function SignUpMobile() {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [check, setCheck] = useState(false);
+  /*
+  const [openSnackbar, setOpenSnackbar] = useState(false);
+  const [message, setMessage] = useState('');
+  const [errorInput, setErrorInput] = useState('');
+  */
   return (
     <Box
       sx={{
