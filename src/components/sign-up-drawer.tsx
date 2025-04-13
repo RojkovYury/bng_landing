@@ -42,6 +42,7 @@ export default function SingUpDrawer({ open, setOpen, rootSx }: SingUpDrawerProp
       <SignUpContainer
         text="Заказать звонок"
         sx={{ mx: 'auto' }}
+        onClose={toggleDrawer(false)}
       />
       <Box sx={{ width: '100%', height: '200px' }} />
     </SwipeableDrawer>

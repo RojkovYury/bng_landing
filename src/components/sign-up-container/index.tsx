@@ -60,8 +60,12 @@ export default function SignUpContainer({ text, sx, onClose }: SignUpContainerPr
     const data = await response.json();
     if (response.ok) {
       setMessage('Заявка успешно отправлена');
+      // При изменении текста обязательно поменять на аналогичный в SingUpSnackbar у переменной currentSeverity
+      // Не стал делать "городушки", просто в зависимости от сообщения раскрашиваем Snackbar в зеленный
       setOpenSnackbar(true);
-      onClose();
+      setTimeout(() => {
+        onClose && onClose();
+      }, 1200);
     }
     else {
       setMessage(`Error: ${data.message}`);
