@@ -20,34 +20,29 @@ export default async function Header() {
         maxWidth: '1440px',
       }}
     >
-      <HeaderLogo />
-      
-      <Box
-        sx={{
-          display: { xs: 'none', sm: 'none', md: 'none', lg: 'none', xl: 'flex' },
-          width: '100%',
-        }}
-      >
-        <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '64px', mr: '48px' }}>
-          <Box sx={{ display: 'flex', mt: '4px', justifyContent: 'end', alignItems: 'center' }}>
-            <Typography sx={{ fontSize: '16px', fontWeight: 400, lineHeight: '16px', mr: '40px' }}>
-              г. Тула, ул. Революции, дом 55, офис 202
-            </Typography>
-            <Typography sx={{ fontSize: '16px', fontWeight: 400, lineHeight: '20px' }}>
-              info@bng-it.ru
-            </Typography>
+      <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+        <HeaderLogo />
+        <Box sx={{ display: { xs: 'none', sm: 'none', md: 'none', lg: 'none', xl: 'flex' } }}>
+          <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '64px', mr: '48px' }}>
+            <Box sx={{ display: 'flex', mt: '4px', justifyContent: 'end', alignItems: 'center' }}>
+              <Typography sx={{ fontSize: '16px', fontWeight: 400, lineHeight: '16px', mr: '40px' }}>
+                г. Тула, ул. Революции, дом 55, офис 202
+              </Typography>
+              <Typography sx={{ fontSize: '16px', fontWeight: 400, lineHeight: '20px' }}>
+                info@bng-it.ru
+              </Typography>
+            </Box>
+            <HeaderScrollTo />
           </Box>
 
-          <HeaderScrollTo />
-        </Box>
-
-        <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '64px' }}>
-          <Typography sx={{ textWrap: 'nowrap', fontSize: '18px', fontWeight: 700, lineHeight: '24px', color: '#fff', bgcolor: '#FFA700', borderRadius: '8px', px: '20px', py: '8px' }}>
-            <a href="tel:+79330283525" style={{ textDecoration: 'none', color: 'inherit' }}>  
-              +7 (933) 028 35 25
-            </a>
-          </Typography>
-          <HeaderOpenModal />
+          <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '64px' }}>
+            <Typography sx={{ textWrap: 'nowrap', fontSize: '18px', fontWeight: 700, lineHeight: '24px', color: '#fff', bgcolor: '#FFA700', borderRadius: '8px', px: '20px', py: '8px' }}>
+              <a href="tel:+79330283525" style={{ textDecoration: 'none', color: 'inherit' }}>  
+                +7 (933) 028 35 25
+              </a>
+            </Typography>
+            <HeaderOpenModal />
+          </Box>
         </Box>
       </Box>
 

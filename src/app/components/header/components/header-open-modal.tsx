@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from "react";
-import { Box, Modal } from "@mui/material";
+import { Box, Modal, Typography } from "@mui/material";
 import SignUpContainer from "@/components/sign-up-container";
 
 export default function HeaderOpenModal() {
@@ -9,6 +9,20 @@ export default function HeaderOpenModal() {
   const handleClose = () => setOpen(false);
   return (
     <Box sx={{ display: 'flex' }}>
+      <Typography
+        onClick={() => setOpen(true)}
+        sx={{
+          fontSize: '14px',
+          fontWeight: 400,
+          lineHeight: '100%',
+          color: '#1144AA',
+          cursor: 'pointer',
+          borderBottom: '1px dashed #1144AA',
+        }}
+      >
+        Заказать звонок
+      </Typography>
+
       <Modal
         open={open}
         onClose={handleClose}

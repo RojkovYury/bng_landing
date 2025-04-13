@@ -9,7 +9,7 @@ export default function ContactsMap() {
   const [loadMap, setLoadMap] = useState(false);
 
   const handleScroll = () => {
-    const mapElement = document.getElementById('map');
+    const mapElement = document.getElementById('faq');
     if (mapElement) {
       const rect = mapElement.getBoundingClientRect();
       if (rect.top <= window.innerHeight && rect.bottom >= 0) {
