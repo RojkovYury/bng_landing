@@ -41,7 +41,7 @@ export default async function Main() {
       <Faq />
       <Contacts />
       <Footer />
-      <ScreeWidth display="flex" /> {/* Для тестов */}
+      <ScreeWidth display="none" /> {/* Для тестов */}
     </Box>
   )
 }

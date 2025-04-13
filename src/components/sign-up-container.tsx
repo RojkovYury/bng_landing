@@ -1,11 +1,12 @@
 'use client';
 
-import { Box, Button, IconButton, Link, Typography } from "@mui/material";
+import { Box, IconButton, Link, Typography } from "@mui/material";
 import { useState } from "react";
 import SingUpInputPhone from "./sign-up-input-phone";
 import SingUpInputName from "./sign-up-input-name";
 import SingUpInputCheckbox from "./sign-up-input-checkbox";
 import CloseIcon from '@mui/icons-material/Close';
+import SingUpButton from "./sign-up-button";
 
 interface SignUpContainerProps {
   text: string;
@@ -17,10 +18,22 @@ export default function SignUpContainer({ text, sx, onClose }: SignUpContainerPr
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [check, setCheck] = useState(false);
+  const [message, setMessage] = useState('');
+
+  const handleMailer = async () => {
+    const response = await fetch('/api/messenger', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, phone }),
+    });
+    const data = await response.json();
+    if (response.ok) { setMessage('Заявка успешно отправлена'); }
+    else { setMessage(`Error: ${data.message}`); }
+  };
+
   return (   
     <Box
       sx={{
-        // width: { xs: '100%', sm: '100%', md: '370px', lg: '370px', xl: '370px' },
         maxWidth: { xs: '304px', sm: '304px', md: '370px', lg: '370px', xl: '370px' },
         height: { xs: 'inherit', sm: 'inherit', md: '356px', lg: '356px', xl: '356px' },
         position: 'relative',
@@ -46,29 +59,7 @@ export default function SignUpContainer({ text, sx, onClose }: SignUpContainerPr
 
       <SingUpInputName value={name} setValue={setName} />
       <SingUpInputPhone value={phone} setValue={setPhone} />
-
-      <Button
-        variant="contained"
-        sx={{
-          borderRadius: '8px',
-          width: '100%',
-          height: { xs: '44px', sm: '44px', md: '52px', lg: '52px', xl: '52px' },
-          minHeight: { xs: '44px', sm: '44px', md: '52px', lg: '52px', xl: '52px' },
-          bgcolor: '#FFA700',
-          boxShadow: 'none',
-
-          textTransform: 'none',
-          fontSize: { xs: '16px', sm: '16px', md: '18px', lg: '18px', xl: '18px' },
-          lineHeight: '20px',
-
-          '&:hover': {
-            bgcolor: '#FF7B00',
-            boxShadow: 'none',
-          },
-        }}
-      >
-        Отправить
-      </Button>
+      <SingUpButton onClick={handleMailer}/>
 
       <Box
         sx={{
