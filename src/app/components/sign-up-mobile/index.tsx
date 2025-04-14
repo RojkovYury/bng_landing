@@ -1,6 +1,6 @@
 'use client';
 
-import { Box, Button, Link, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import Image from 'next/image';
 import bg from '../../../../public/images/sign-up-mobile-bg.png'
 import { useState } from "react";
@@ -10,12 +10,14 @@ import SingUpMobileCheckbox from "./components/sign-up-mobile-checkbox";
 import SingUpMobileTitle from "./components/sign-up-mobile-title";
 import handleMailer from "@/app/contracts";
 import SingUpSnackbar from "@/components/sign-up-container/components/sign-up-snackbar";
+import PolicyModal from "@/components/policy-modal";
 
 export default function SignUpMobile() {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [check, setCheck] = useState(false);
   const [openSnackbar, setOpenSnackbar] = useState(false);
+  const [openPolicy, setOpenPolicy] = useState(false);
   const [message, setMessage] = useState('');
   const [errorInput, setErrorInput] = useState('');
 
@@ -78,17 +80,21 @@ export default function SignUpMobile() {
               }}
             >
               Нажимая кнопку “Отправить”, я соглашаюсь с&nbsp;
-              <Link
-                href="/"
-                underline="hover"
+              <Typography
+                component="span"
+                onClick={() => setOpenPolicy(true)}
                 sx={{
-                  color: '#FFFFFF',
-                  textDecoration: 'underline',
+                  fontSize: '12px',
+                  lineHeight: '16px',
                   fontWeight: 500,
+                  mb: { xs: '12px', sm: '12px', md: '0px', lg: '0px', xl: '0px' },
+                  cursor: 'pointer',
+                  color: '#F2F5F9',
+                  textDecoration: 'underline',
                 }}
               >
                 положением о персональных данных
-              </Link>
+              </Typography>
               &nbsp;и даю согласие на их обработку и хранение
             </Typography>
           </Box>
@@ -133,6 +139,7 @@ export default function SignUpMobile() {
         </Box>
       </Box>
       <SingUpSnackbar message={message} open={openSnackbar} setOpen={setOpenSnackbar} />
+      <PolicyModal open={openPolicy} setOpen={setOpenPolicy} />
     </Box>
   )
 }
