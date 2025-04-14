@@ -1,6 +1,7 @@
 'use server';
 
 import { Box, Typography } from "@mui/material";
+import FooterPolicyOpen from "./components/footer-policy-open";
 
 const TypographyStyle = {
   fontSize: { xs: '12px', sm: '16px', md: '16px', lg: '16px', xl: '16px' },
@@ -31,9 +32,7 @@ export default async function FooterInfo () {
         </Typography>
       </Box>
 
-      <Typography sx={{ ...TypographyStyle, mb: { xs: '12px', sm: '12px', md: '0px', lg: '0px', xl: '0px' }, }}>
-        Положение о персональных данных
-      </Typography>
+      <FooterPolicyOpen />
     </Box>
   )
 }
