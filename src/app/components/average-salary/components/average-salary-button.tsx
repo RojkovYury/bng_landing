@@ -30,7 +30,7 @@ export default function AverageSalaryButton() {
           },
         }}
       >
-        Начать учиться
+        Хочу к вам
       </Button>
 
       <SingUpModal open={open} setOpen={setOpen} rootSx={{ display: { xs: 'none', sm: 'flex', md: 'flex', lg: 'flex', xl: 'flex' } }} />

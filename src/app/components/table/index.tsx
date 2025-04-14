@@ -48,9 +48,9 @@ export default async function Table() {
               ml: { xs: '16px', sm: '16px', md: '0px', lg: '0px', xl: '0px' },
             }}
           >
-            <TableCard src={table1} text="Настоящее очное обучение с преподавателем"/>
+            <TableCard src={table1} text="Настоящее очное взаимодействие с преподавателем"/>
             <TableCard src={table2} text="Работа не на поток, а в малых группах – внимания хватит всем"/>
-            <TableCard src={table3} text="Преподаватели – ведущие разработчики в действующей IT-компании"/>
+            <TableCard src={table3} text="Наставники – ведущие разработчики в действующей IT-компании"/>
             <TableCard src={table4} text="Сопровождение ментора онлайн между занятиями"/>
             <TableCard src={table5} text="Изучение с нуля до создания проекта веб-приложения/бота" sx={{ mr: '0px' }}/>
           </Box>

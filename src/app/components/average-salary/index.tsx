@@ -68,8 +68,8 @@ export default async function AverageSalary() {
             bgColor='#C9D3E8'
             textPrice='100 000 ₽'
             textCompetence='JUNIOR'
-            textExp='После курса'
-            rowWidth={{ xs: '65%', sm: '50%', md: '35%', lg: '50%', xl: '45%' }}
+            textExp='Опыт до 1 года'
+            rowWidth={{ xs: '70%', sm: '50%', md: '35%', lg: '52%', xl: '45%' }}
           />
           <AverageSalaryRow
             bgColor='#798EBC'

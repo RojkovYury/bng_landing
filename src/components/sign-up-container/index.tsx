@@ -15,9 +15,10 @@ interface SignUpContainerProps {
   text: string;
   sx?: any;
   onClose?: any;
+  drawer: boolean;
 }
 
-export default function SignUpContainer({ text, sx, onClose }: SignUpContainerProps) {
+export default function SignUpContainer({ text, sx, onClose, drawer }: SignUpContainerProps) {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [check, setCheck] = useState(false);
@@ -62,6 +63,9 @@ export default function SignUpContainer({ text, sx, onClose }: SignUpContainerPr
           lineHeight: { xs: '20px', sm: '20px', md: '32px', lg: '32px', xl: '32px' },
           fontWeight: 700,
           mb: { xs: '32px', sm: '32px', md: '40px', lg: '40px', xl: '40px' },
+          width: drawer ? '100%' : 'unset',
+          display: drawer ? 'flex' : 'unset',
+          justifyContent: drawer ? 'center' : 'unset',
         }}
       >
         {text}
@@ -103,7 +107,7 @@ export default function SignUpContainer({ text, sx, onClose }: SignUpContainerPr
         </Typography>
       </Box>
 
-      {onClose && (<SingUpCloseButton onClick={onClose} />)}
+      {onClose && !drawer && (<SingUpCloseButton onClick={onClose} />)}
 
       <SingUpSnackbar message={message} open={openSnackbar} setOpen={setOpenSnackbar} />
       <PolicyModal open={openPolicy} setOpen={setOpenPolicy} />

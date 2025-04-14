@@ -30,6 +30,7 @@ export default function ContactsMap() {
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -52,7 +53,7 @@ export default function ContactsMap() {
         {loadMap && (
           <Box sx={{ width: '100%', height: '100%', display: { xs: 'none', sm: 'none', md: 'flex', lg: 'flex', xl: 'flex' } }}>
             <iframe
-              src="https://yandex.ru/map-widget/v1/?ll=37.581067%2C54.192753&mode=search&whatshere%5Bpoint%5D=37.585811%2C54.192142&whatshere%5Bzoom%5D=17&z=16"
+              src="https://yandex.ru/map-widget/v1/?ll=37.581067%2C54.192753&mode=search&whatshere%5Bpoint%5D=37.584664%2C54.192188&whatshere%5Bzoom%5D=17&z=16"
               width="100%"
               height="100%"
               allowFullScreen={true}
@@ -70,7 +71,7 @@ export default function ContactsMap() {
         {loadMap && (
           <Box sx={{ width: '100%', height: '100%', display: { xs: 'flex', sm: 'flex', md: 'none', lg: 'none', xl: 'none' } }}>
             <iframe
-              src="https://yandex.ru/map-widget/v1/?ll=37.585667%2C54.192753&mode=search&whatshere%5Bpoint%5D=37.585811%2C54.192142&whatshere%5Bzoom%5D=17&z=16"
+              src="https://yandex.ru/map-widget/v1/?ll=37.584667%2C54.192753&mode=search&whatshere%5Bpoint%5D=37.584664%2C54.192188&whatshere%5Bzoom%5D=17&z=16"
               width="100%"
               height="100%"
               allowFullScreen={true}

@@ -32,7 +32,7 @@ export default async function FooterLogo() {
           maxWidth: { xs: '126px', sm: '198px', md: '198px', lg: '198px', xl: '198px' },
         }}
       >
-        Очный класс программирования в Туле
+        Очный мастер-класс по программированию в Туле
       </Typography>
     </Box>
   )

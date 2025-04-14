@@ -58,7 +58,7 @@ export default function WhoIsItForMobileCards() {
         <Box ref={cardRef2} sx={{ display: 'flex' }}>
           <WhoIsItForMobileCard
             title='Студентам'
-            text='Освойте престижную профессию еще в процессе обучения. Начните строить карьеру раньше своих сверстников'
+            text='Освойте престижную профессию еще в процессе обучения в ВУЗЕ. Начните строить карьеру раньше своих сверстников'
             src={student}
             mr="16px"
             ml="16px"

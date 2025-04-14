@@ -38,7 +38,7 @@ export default function TrainingCenterProgramHeader() {
     >
       <Box sx={{ mb: { xs: '0px', sm: '0px', md: '0px', lg: '0px', xl: '0px' }, mr: '20px' }}>
         <Typography sx={{ ...titleText, color: '#FFA700' }}>Программа</Typography>
-        <Typography sx={{ ...titleText }}>нашего учебного центра</Typography>
+        <Typography sx={{ ...titleText }}>мастер-класса</Typography>
       </Box>
       
       <Box
