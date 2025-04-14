@@ -11,12 +11,14 @@ import SingUpMobileTitle from "./components/sign-up-mobile-title";
 import handleMailer from "@/app/contracts";
 import SingUpSnackbar from "@/components/sign-up-container/components/sign-up-snackbar";
 import PolicyModal from "@/components/policy-modal";
+import SingUpSuccessSnackbar from "@/components/sign-up-container/components/sign-up-success-snackbar";
 
 export default function SignUpMobile() {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [check, setCheck] = useState(false);
   const [openSnackbar, setOpenSnackbar] = useState(false);
+  const [openSuccessSnackbar, setOpenSuccessSnackbar] = useState(false);
   const [openPolicy, setOpenPolicy] = useState(false);
   const [message, setMessage] = useState('');
   const [errorInput, setErrorInput] = useState('');
@@ -32,6 +34,7 @@ export default function SignUpMobile() {
       setMessage,
       setOpenSnackbar,
       setErrorInput,
+      setOpenSuccessSnackbar,
     });
   };
 
@@ -139,6 +142,7 @@ export default function SignUpMobile() {
         </Box>
       </Box>
       <SingUpSnackbar message={message} open={openSnackbar} setOpen={setOpenSnackbar} />
+      <SingUpSuccessSnackbar open={openSuccessSnackbar} setOpen={setOpenSuccessSnackbar}/>
       <PolicyModal open={openPolicy} setOpen={setOpenPolicy} />
     </Box>
   )

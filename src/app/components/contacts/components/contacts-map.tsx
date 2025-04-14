@@ -1,12 +1,13 @@
 'use client';
 
 import SignUpContainer from "@/components/sign-up-container";
+import SingUpSuccessSnackbar from "@/components/sign-up-container/components/sign-up-success-snackbar";
 import { Box } from "@mui/material";
 import { useEffect, useState } from "react";
 
 export default function ContactsMap() {
-
   const [loadMap, setLoadMap] = useState(false);
+  const [openSuccessSnackbar, setOpenSuccessSnackbar] = useState(false);
 
   const handleScroll = () => {
     const faqElement = document.getElementById('faq');
@@ -34,7 +35,7 @@ export default function ContactsMap() {
   }, []);
 
   return (
-    <>
+    <Box sx={{ position: 'relative' }}>
       <Box
         id="map"
         sx={{
@@ -94,7 +95,10 @@ export default function ContactsMap() {
             top: '40px',
           }}
         >
-          <SignUpContainer text="Обратный звонок"/>
+          <SignUpContainer
+            text="Обратный звонок"
+            setOpenSuccessSnackbar={setOpenSuccessSnackbar}
+          />
         </Box>
       </Box>
 
@@ -103,10 +107,16 @@ export default function ContactsMap() {
         sx={{
           display: { xs: 'flex', sm: 'flex', md: 'none', lg: 'none', xl: 'none' },
           mx: 'auto',
+          justifyContent: 'center',
         }}
       >
-        <SignUpContainer text="Обратный звонок" sx={{ boxShadow: '0px 12px 20px 0px #13264D1F' }} />
+        <SignUpContainer
+          text="Обратный звонок"
+          setOpenSuccessSnackbar={setOpenSuccessSnackbar}
+          sx={{ boxShadow: '0px 12px 20px 0px #13264D1F' }}
+        />
       </Box>
-    </>
+      <SingUpSuccessSnackbar open={openSuccessSnackbar} setOpen={setOpenSuccessSnackbar}/>
+    </Box>
   )
 }

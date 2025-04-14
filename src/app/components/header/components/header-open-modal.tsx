@@ -3,9 +3,11 @@
 import { useState } from "react";
 import { Box, Modal, Typography } from "@mui/material";
 import SignUpContainer from "@/components/sign-up-container";
+import SingUpSuccessSnackbar from "@/components/sign-up-container/components/sign-up-success-snackbar";
 
 export default function HeaderOpenModal() {
   const [open, setOpen] = useState(false);
+  const [openSuccessSnackbar, setOpenSuccessSnackbar] = useState(false);
   const handleClose = () => setOpen(false);
   return (
     <Box sx={{ display: 'flex' }}>
@@ -41,9 +43,14 @@ export default function HeaderOpenModal() {
             outline: 'none',
           }}
         >
-          <SignUpContainer text="Заказать звонок" onClose={handleClose}/>
+          <SignUpContainer
+            text="Заказать звонок"
+            setOpenSuccessSnackbar={setOpenSuccessSnackbar}
+            onClose={handleClose}
+          />
         </Box>
       </Modal>
+      <SingUpSuccessSnackbar open={openSuccessSnackbar} setOpen={setOpenSuccessSnackbar}/>
     </Box>
   )
 }

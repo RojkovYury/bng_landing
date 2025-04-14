@@ -9,9 +9,10 @@ interface handleMailerProps {
   setName: any;
   setPhone: any;
   setCheck: any;
+  setOpenSuccessSnackbar: any;
 }
 
-const handleMailer = async ({ name, phone, check, setMessage, setOpenSnackbar, setErrorInput, onClose, setName, setPhone, setCheck }: handleMailerProps) => {
+const handleMailer = async ({ name, phone, check, setMessage, setOpenSnackbar, setErrorInput, onClose, setName, setPhone, setCheck, setOpenSuccessSnackbar }: handleMailerProps) => {
   if (!name) {
     setMessage('Имя не заполнено');
     setOpenSnackbar(true);
@@ -50,14 +51,10 @@ const handleMailer = async ({ name, phone, check, setMessage, setOpenSnackbar, s
     body: JSON.stringify({ name, phone }),
   });
   const data = await response.json();
+
   if (response.ok) {
-    setMessage('Заявка успешно отправлена');
-    // При изменении текста обязательно поменять на аналогичный в SingUpSnackbar у переменной currentSeverity
-    // Не стал делать "городушки", просто в зависимости от сообщения раскрашиваем Snackbar в зеленный
-    setOpenSnackbar(true);
-    setTimeout(() => {
-      onClose && onClose();
-    }, 1200);
+    setOpenSuccessSnackbar(true);
+    onClose && onClose();
   }
   else {
     setMessage(`Error: ${data.message}`);

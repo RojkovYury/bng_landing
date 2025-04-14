@@ -69,6 +69,7 @@ export default function HeaderMenuModal() {
       <Drawer
         open={openMenu}
         onClose={toggleMenu(false)}
+        keepMounted
         sx={{
           '& .MuiDrawer-paper ': { width: { xs: '100%', sm: 'inherit', md: 'inherit', lg: 'inherit', xl: 'inherit' } },
         }}

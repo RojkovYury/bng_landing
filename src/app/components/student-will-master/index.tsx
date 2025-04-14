@@ -4,6 +4,7 @@ import SignUpContainer from "@/components/sign-up-container";
 import { Box, Typography } from "@mui/material";
 import StudentWillMasterTag from "./components/student-will-master-tag";
 import StudentWillMasterBg from "./components/student-will-master-bg";
+import StudentWillMasterSignUpBox from "./components/student-will-master-sign-up-box";
 
 const tagText1 = [
   'Язык C#',
@@ -102,12 +103,7 @@ export default async function StudentWillMaster() {
           </Box>
         </Box>
 
-        <Box sx={{ display: 'flex', mx: { xs: 'auto', sm: 'auto', md: '20px', lg: '20px', xl: '0px' } }}>
-          <SignUpContainer
-            text="Записаться на курс"
-            sx={{  width: { xs: '100%', sm: '100%', md: '370px', lg: '370px', xl: '370px' } }}
-          />
-        </Box>
+        <StudentWillMasterSignUpBox />
       </Box>
       
       <StudentWillMasterBg />

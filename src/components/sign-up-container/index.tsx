@@ -16,9 +16,10 @@ interface SignUpContainerProps {
   sx?: any;
   onClose?: any;
   drawer?: boolean;
+  setOpenSuccessSnackbar: any;
 }
 
-export default function SignUpContainer({ text, sx, onClose, drawer }: SignUpContainerProps) {
+export default function SignUpContainer({ text, sx, onClose, drawer, setOpenSuccessSnackbar }: SignUpContainerProps) {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [check, setCheck] = useState(false);
@@ -39,6 +40,7 @@ export default function SignUpContainer({ text, sx, onClose, drawer }: SignUpCon
       setOpenSnackbar,
       setErrorInput,
       onClose,
+      setOpenSuccessSnackbar,
     });
   };
 

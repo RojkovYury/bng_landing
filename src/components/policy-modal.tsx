@@ -4,13 +4,13 @@ import { Box, Modal } from "@mui/material";
 import Policy from "../../public/documents/policy";
 import SingUpCloseButton from "./sign-up-container/components/sign-up-close-button";
 
-interface SingUpModalProps {
+interface PolicyModalProps {
   open: boolean;
   setOpen: any;
   rootSx?: any;
 }
 
-export default function PolicyModal({ open, setOpen, rootSx }: SingUpModalProps) {
+export default function PolicyModal({ open, setOpen, rootSx }: PolicyModalProps) {
   const handleClose = () => setOpen(false);
   return (
     <Modal
