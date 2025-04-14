@@ -13,7 +13,7 @@ const Policy = `
 <div
   style="
     overflow-y: auto;
-    max-height: 400px;
+    max-height: 70vh;
   "
 >
 
