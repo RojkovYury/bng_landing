@@ -27,8 +27,9 @@ export default function HeaderMenuModal() {
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
+    const indentation = 0; 
     if (element) {
-        const offsetTop = element.getBoundingClientRect().top + window.pageYOffset;
+        const offsetTop = element.getBoundingClientRect().top + window.pageYOffset - indentation;
         // scrollIntoView не применять, сломает скролл на мобиле из-за глобального overflow: 'hidden'
         window.scrollTo({ top: offsetTop, behavior: 'smooth' });
     }
