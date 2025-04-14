@@ -75,9 +75,8 @@ export default function SignUpContainer({ text, sx, onClose, drawer, setOpenSucc
 
       <SingUpInputName value={name} setValue={setName} errorInput={errorInput} setErrorInput={setErrorInput} />
       <SingUpInputPhone value={phone} setValue={setPhone} errorInput={errorInput}  setErrorInput={setErrorInput}/>
-      <SingUpButton onClick={handleSubmit} />
-
-      <Box sx={{ display: 'flex', mt: '20px' }}>
+      
+      <Box sx={{ display: 'flex', mb: { xs: '12px', sm: '12px', md: '20px', lg: '20px', xl: '20px' } }}>
         <SingUpInputCheckbox checked={check} setChecked={setCheck} sx={{ mr: '12px' }} errorInput={errorInput}  setErrorInput={setErrorInput} />
         <Typography
           sx={{
@@ -108,6 +107,8 @@ export default function SignUpContainer({ text, sx, onClose, drawer, setOpenSucc
           &nbsp;и даю согласие на их обработку и хранение
         </Typography>
       </Box>
+
+      <SingUpButton onClick={handleSubmit} />
 
       {onClose && !drawer && (<SingUpCloseButton onClick={onClose} />)}
 
