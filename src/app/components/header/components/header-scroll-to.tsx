@@ -14,12 +14,14 @@ const typographyStyle = {
 export default function HeaderScrollTo() {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
+    const indentation = (id == 'program') || (id == 'faq') ? -120 : 50; 
     if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-    }
+      const offsetTop = element.getBoundingClientRect().top + window.pageYOffset - indentation;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+    });
+  }
   };
   return (
     <Box sx={{ display: 'flex' }}>
