@@ -32,9 +32,10 @@ interface SingUpMobileInputPhoneProps {
   sx?: any;
   errorInput: string;
   setErrorInput: any;
+  disabled: boolean;
 }
 
-export default function SingUpMobileInputPhone({ value, setValue, sx, errorInput, setErrorInput }: SingUpMobileInputPhoneProps) {
+export default function SingUpMobileInputPhone({ value, setValue, sx, errorInput, setErrorInput, disabled }: SingUpMobileInputPhoneProps) {
   const [isFocused, setIsFocused] = useState(false);
   const error = errorInput === 'phone';
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -63,7 +64,7 @@ export default function SingUpMobileInputPhone({ value, setValue, sx, errorInput
           px: { xs: '16px', sm: '16px', md: '24px', lg: '24px', xl: '24px' },
           pt: { xs: '6px', sm: '6px', md: '10px', lg: '10px', xl: '10px' }, // -6
           pb: { xs: '6px', sm: '6px', md: '9px', lg: '9px', xl: '9px' }, // -7
-          bgcolor: '#F2F5F9',
+          bgcolor: !disabled ? '#F2F5F9' : '#C9D3E8',
           border: error
             ? '1px solid #DE3745'
             : isFocused || value

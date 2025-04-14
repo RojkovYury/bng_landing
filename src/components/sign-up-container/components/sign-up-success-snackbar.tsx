@@ -17,9 +17,9 @@ export default function SingUpSuccessSnackbar({ open, setOpen }: SingUpSnackbarP
   return (
     <Snackbar
       open={open}
-      autoHideDuration={2000}
+      autoHideDuration={1600}
       onClose={handleClose}
-      anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+      anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
       sx={{
         position: 'fixed',
         bottom: 20,

@@ -9,9 +9,10 @@ interface SingUpInputCheckboxProps {
   sx?: any;
   errorInput: string;
   setErrorInput: any;
+  disabled: boolean;
 }
 
-export default function SingUpInputCheckbox({ checked, setChecked, blue, sx, errorInput, setErrorInput }: SingUpInputCheckboxProps) {
+export default function SingUpInputCheckbox({ checked, setChecked, blue, sx, errorInput, setErrorInput, disabled }: SingUpInputCheckboxProps) {
   const primaryColor = blue ? '#1144AA' : '#FFA700';
   const error = errorInput === 'check';
   return (
@@ -25,18 +26,23 @@ export default function SingUpInputCheckbox({ checked, setChecked, blue, sx, err
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        border: error
-        ? '1px solid #DE3745'
-        : checked
-          ? `1px solid ${primaryColor}`
-          : '1px solid #B3B9C3',
-
+        border: disabled
+          ? '1px solid #C9D3E8'
+          : error
+            ? '1px solid #DE3745'
+            : checked
+              ? `1px solid ${primaryColor}`
+              : '1px solid #B3B9C3',
 
         width: { xs: '22px', sm: '22px', md: '28px', lg: '28px', xl: '28px' },
         height: { xs: '22px', sm: '22px', md: '28px', lg: '28px', xl: '28px' },
         minWidth: { xs: '22px', sm: '22px', md: '28px', lg: '28px', xl: '28px' },
         minHeight: { xs: '22px', sm: '22px', md: '28px', lg: '28px', xl: '28px' },
-        backgroundColor: checked ? `${primaryColor}` : '#fff',
+        backgroundColor: disabled
+          ? '#C9D3E8'
+          : checked
+            ? `${primaryColor}`
+            : '#fff',
         cursor: 'pointer',
         transition: 'background-color 0.3s ease, border 0.3s ease',
         ...sx,

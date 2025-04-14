@@ -9,9 +9,10 @@ interface SingUpMobileCheckboxProps {
   sx?: any;
   errorInput: string;
   setErrorInput: any;
+  disabled: boolean;
 }
 
-export default function SingUpMobileCheckbox({ checked, setChecked, blue, sx, errorInput, setErrorInput }: SingUpMobileCheckboxProps) {
+export default function SingUpMobileCheckbox({ checked, setChecked, blue, sx, errorInput, setErrorInput, disabled }: SingUpMobileCheckboxProps) {
   const primaryColor = blue ? '#1144AA' : '#FFA700';
   const error = errorInput === 'check';
   return (
@@ -25,17 +26,23 @@ export default function SingUpMobileCheckbox({ checked, setChecked, blue, sx, er
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        border: error
-          ? '1px solid #DE3745'
-          : checked
-            ? `1px solid ${primaryColor}`
-            : '1px solid #B3B9C3',
+        border: disabled
+          ? '1px solid #C9D3E8'
+          : error
+            ? '1px solid #DE3745'
+            : checked
+              ? `1px solid ${primaryColor}`
+              : '1px solid #B3B9C3',
 
         width: '22px',
         height: '22px',
         minWidth: '22px',
         minHeight: '22px',
-        backgroundColor: checked ? `${primaryColor}` : 'rgba(255, 255, 255, 0.3)',
+        backgroundColor: disabled
+          ? '#C9D3E8'
+          : checked
+            ? `${primaryColor}`
+            : 'rgba(255, 255, 255, 0.3)',
         cursor: 'pointer',
         transition: 'background-color 0.3s ease, border 0.3s ease',
         ...sx,

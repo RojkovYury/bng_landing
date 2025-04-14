@@ -12,6 +12,7 @@ import handleMailer from "@/app/contracts";
 import SingUpSnackbar from "@/components/sign-up-container/components/sign-up-snackbar";
 import PolicyModal from "@/components/policy-modal";
 import SingUpSuccessSnackbar from "@/components/sign-up-container/components/sign-up-success-snackbar";
+import SingUpProgress from "@/components/sign-up-container/components/sign-up-progress";
 
 export default function SignUpMobile() {
   const [name, setName] = useState('');
@@ -22,6 +23,7 @@ export default function SignUpMobile() {
   const [openPolicy, setOpenPolicy] = useState(false);
   const [message, setMessage] = useState('');
   const [errorInput, setErrorInput] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async () => {
     await handleMailer({
@@ -35,6 +37,7 @@ export default function SignUpMobile() {
       setOpenSnackbar,
       setErrorInput,
       setOpenSuccessSnackbar,
+      setIsLoading,
     });
   };
 
@@ -48,6 +51,8 @@ export default function SignUpMobile() {
         zIndex: 2,
       }}
     >
+      {isLoading && (<SingUpProgress />)}
+
       <Box
         sx={{
           position: 'relative',
@@ -69,11 +74,11 @@ export default function SignUpMobile() {
           }}
         >
           <SingUpMobileTitle />
-          <SingUpMobileInputName value={name} setValue={setName} errorInput={errorInput} setErrorInput={setErrorInput} />
-          <SingUpMobileInputPhone value={phone} setValue={setPhone} errorInput={errorInput} setErrorInput={setErrorInput} />
+          <SingUpMobileInputName value={name} setValue={setName} errorInput={errorInput} setErrorInput={setErrorInput} disabled={isLoading} />
+          <SingUpMobileInputPhone value={phone} setValue={setPhone} errorInput={errorInput} setErrorInput={setErrorInput} disabled={isLoading} />
 
           <Box sx={{ display: 'flex', mb: '12px' }}>
-            <SingUpMobileCheckbox checked={check} setChecked={setCheck} sx={{ mr: '12px' }} errorInput={errorInput} setErrorInput={setErrorInput} />
+            <SingUpMobileCheckbox checked={check} setChecked={setCheck} sx={{ mr: '12px' }} errorInput={errorInput} setErrorInput={setErrorInput} disabled={isLoading} />
             <Typography
               sx={{
                 fontSize: '12px',
@@ -109,7 +114,7 @@ export default function SignUpMobile() {
               borderRadius: '8px',
               width: '100%',
               height: '44px',
-              bgcolor: '#FFA700',
+              bgcolor: isLoading ? '#C9D3E8' : '#FFA700',
               boxShadow: 'none',
 
               textTransform: 'none',
@@ -118,7 +123,7 @@ export default function SignUpMobile() {
               lineHeight: '20px',
 
               '&:hover': {
-                bgcolor: '#FF7B00',
+                bgcolor: isLoading ? '#C9D3E8' : '#FF7B00',
                 boxShadow: 'none',
               },
             }}

@@ -10,6 +10,7 @@ import SingUpCloseButton from "./components/sign-up-close-button";
 import SingUpSnackbar from "./components/sign-up-snackbar";
 import handleMailer from "@/app/contracts";
 import PolicyModal from "../policy-modal";
+import SingUpProgress from "./components/sign-up-progress";
 
 interface SignUpContainerProps {
   text: string;
@@ -27,6 +28,7 @@ export default function SignUpContainer({ text, sx, onClose, drawer, setOpenSucc
   const [openPolicy, setOpenPolicy] = useState(false);
   const [message, setMessage] = useState('');
   const [errorInput, setErrorInput] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async () => {
     await handleMailer({
@@ -41,6 +43,7 @@ export default function SignUpContainer({ text, sx, onClose, drawer, setOpenSucc
       setErrorInput,
       onClose,
       setOpenSuccessSnackbar,
+      setIsLoading,
     });
   };
 
@@ -56,9 +59,12 @@ export default function SignUpContainer({ text, sx, onClose, drawer, setOpenSucc
         borderRadius: '20px',
         px: { xs: '20px', sm: '20px', md: '40px', lg: '40px', xl: '40px' },
         py: { xs: '20px', sm: '20px', md: '40px', lg: '40px', xl: '40px' },
+        zIndex: 3,
         ...sx,
       }}
     >
+      {isLoading && (<SingUpProgress />)}
+
       <Typography
         sx={{
           fontSize: { xs: '16px', sm: '16px', md: '24px', lg: '24px', xl: '24px' },
@@ -73,11 +79,11 @@ export default function SignUpContainer({ text, sx, onClose, drawer, setOpenSucc
         {text}
       </Typography>
 
-      <SingUpInputName value={name} setValue={setName} errorInput={errorInput} setErrorInput={setErrorInput} />
-      <SingUpInputPhone value={phone} setValue={setPhone} errorInput={errorInput}  setErrorInput={setErrorInput}/>
+      <SingUpInputName value={name} setValue={setName} errorInput={errorInput} setErrorInput={setErrorInput} disabled={isLoading} />
+      <SingUpInputPhone value={phone} setValue={setPhone} errorInput={errorInput}  setErrorInput={setErrorInput} disabled={isLoading} />
       
       <Box sx={{ display: 'flex', mb: { xs: '12px', sm: '12px', md: '20px', lg: '20px', xl: '20px' } }}>
-        <SingUpInputCheckbox checked={check} setChecked={setCheck} sx={{ mr: '12px' }} errorInput={errorInput}  setErrorInput={setErrorInput} />
+        <SingUpInputCheckbox checked={check} setChecked={setCheck} sx={{ mr: '12px' }} errorInput={errorInput}  setErrorInput={setErrorInput} disabled={isLoading} />
         <Typography
           sx={{
             fontSize: { xs: '12px', sm: '12px', md: '13px', lg: '13px', xl: '13px' }, // 14 !
@@ -108,7 +114,7 @@ export default function SignUpContainer({ text, sx, onClose, drawer, setOpenSucc
         </Typography>
       </Box>
 
-      <SingUpButton onClick={handleSubmit} />
+      <SingUpButton onClick={handleSubmit} disabled={isLoading} />
 
       {onClose && !drawer && (<SingUpCloseButton onClick={onClose} />)}
 
