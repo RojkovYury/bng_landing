@@ -6,9 +6,12 @@ interface handleMailerProps {
   setOpenSnackbar: any;
   setErrorInput: any;
   onClose?: any;
+  setName: any;
+  setPhone: any;
+  setCheck: any;
 }
 
-const handleMailer = async ({ name, phone, check, setMessage, setOpenSnackbar, setErrorInput, onClose }: handleMailerProps) => {
+const handleMailer = async ({ name, phone, check, setMessage, setOpenSnackbar, setErrorInput, onClose, setName, setPhone, setCheck }: handleMailerProps) => {
   if (!name) {
     setMessage('Имя не заполнено');
     setOpenSnackbar(true);
@@ -36,6 +39,10 @@ const handleMailer = async ({ name, phone, check, setMessage, setOpenSnackbar, s
     setErrorInput('check');
     return;
   }
+
+  setName('');
+  setPhone('');
+  setCheck(false);
 
   const response = await fetch('/api/messenger', {
     method: 'POST',

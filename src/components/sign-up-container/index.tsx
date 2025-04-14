@@ -29,15 +29,16 @@ export default function SignUpContainer({ text, sx, onClose }: SignUpContainerPr
   const handleSubmit = async () => {
     await handleMailer({
       name,
+      setName,
       phone,
+      setPhone,
       check,
+      setCheck,
       setMessage,
       setOpenSnackbar,
       setErrorInput,
       onClose,
     });
-    setName('');
-    setPhone('');
   };
 
   return (

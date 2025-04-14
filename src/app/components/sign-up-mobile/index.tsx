@@ -24,15 +24,15 @@ export default function SignUpMobile() {
   const handleSubmit = async () => {
     await handleMailer({
       name,
+      setName,
       phone,
+      setPhone,
       check,
+      setCheck,
       setMessage,
       setOpenSnackbar,
       setErrorInput,
     });
-    setName('');
-    setPhone('');
-    setCheck(false);
   };
 
   return (
