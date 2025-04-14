@@ -27,7 +27,7 @@ const handleMailer = async ({ name, phone, check, setMessage, setOpenSnackbar, s
   }
 
   if (phone.length < 18 || phone[4] !== '9') {
-    setMessage('Проверьте првильность введенного номера');
+    setMessage('Проверьте правильность введенного номера');
     setOpenSnackbar(true);
     setErrorInput('phone');
     return;

@@ -15,7 +15,7 @@ interface SignUpContainerProps {
   text: string;
   sx?: any;
   onClose?: any;
-  drawer: boolean;
+  drawer?: boolean;
 }
 
 export default function SignUpContainer({ text, sx, onClose, drawer }: SignUpContainerProps) {

@@ -7,7 +7,6 @@ interface SingUpDrawerProps {
   open: boolean;
   setOpen: any;
   rootSx: any;
-  // text?: string;
 }
 
 export default function SingUpDrawer({ open, setOpen, rootSx }: SingUpDrawerProps) {
