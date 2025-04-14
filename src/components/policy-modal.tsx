@@ -41,9 +41,9 @@ export default function PolicyModal({ open, setOpen, rootSx }: SingUpModalProps)
         <div
           dangerouslySetInnerHTML={{ __html: Policy }}
           style={{
-            overflowY: 'auto', // Вертикальная прокрутка внутри элемента
-            maxHeight: '100%', // Запретить превышение максимальной высоты
-            overflowWrap: 'break-word', // Перенос длинных слов
+            overflowY: 'auto',
+            maxHeight: '100%',
+            overflowWrap: 'break-word',
           }} 
         />
         <SingUpCloseButton onClick={handleClose} />
