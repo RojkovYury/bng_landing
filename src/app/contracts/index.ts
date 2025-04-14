@@ -44,6 +44,7 @@ const handleMailer = async ({ name, phone, check, setMessage, setOpenSnackbar, s
   setName('');
   setPhone('');
   setCheck(false);
+  onClose && onClose();
 
   const response = await fetch('/api/messenger', {
     method: 'POST',
@@ -54,7 +55,6 @@ const handleMailer = async ({ name, phone, check, setMessage, setOpenSnackbar, s
 
   if (response.ok) {
     setOpenSuccessSnackbar(true);
-    onClose && onClose();
   }
   else {
     setMessage(`Error: ${data.message}`);
