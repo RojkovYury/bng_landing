@@ -16,10 +16,10 @@ const sendMail = async (props: { name: string; phone: string; }): Promise<any> =
   });
 
   const mailOptions = {
-    from: 'rojkov.yury.vl@yandex.ru',
-    to: 'rojkov.yury@gmail.com',
-    subject: 'Заявка с сайта bng.ru',
-    text: `Заявка с сайта bng.ru
+    from: 'https://bng-school.netlify.app',
+    to: 'academy@bng-it.ru',
+    subject: 'Заявка с сайта bng-school.netlify.app',
+    text: `Заявка с сайта bng-school.netlify.app
       Имя: ${name};
       Телефон: ${phone};
       Время: ${date};
