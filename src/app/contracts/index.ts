@@ -62,6 +62,7 @@ const handleMailer = async ({ name, phone, check, setMessage, setOpenSnackbar, s
   else {
     setMessage(`Error: ${data.message}`);
     setOpenSnackbar(true);
+    setIsLoading(false);
   }
 };
 

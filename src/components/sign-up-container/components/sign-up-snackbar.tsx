@@ -7,7 +7,6 @@ interface SingUpSnackbarProps {
 }
 
 export default function SingUpSnackbar({ open, setOpen, message }: SingUpSnackbarProps) {
-  const currentSeverity = (message == 'Заявка успешно отправлена') ? 'success' : 'error';
   const handleClose = (
     event?: React.SyntheticEvent | Event,
     reason?: SnackbarCloseReason,
@@ -26,7 +25,7 @@ export default function SingUpSnackbar({ open, setOpen, message }: SingUpSnackba
     >
       <Alert
         onClose={handleClose}
-        severity={currentSeverity}
+        severity="error"
         variant="filled"
         sx={{
           width: '100%',
