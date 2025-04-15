@@ -10,13 +10,13 @@ const sendMail = async (props: { name: string; phone: string; }): Promise<any> =
     port: 465,
     secure: true, // true for 465, false for other ports
     auth: {
-      user: 'rojkov.yury.vl@yandex.ru',
+      user: 'rojkov.yury.vl@yandex.ru', // должно дублироваться в mailOptions в from
       pass: 'ubuwcqxsubsbvofb'
     }
   });
 
   const mailOptions = {
-    from: 'https://bng-school.netlify.app',
+    from: 'rojkov.yury.vl@yandex.ru',
     to: 'academy@bng-it.ru',
     subject: 'Заявка с сайта bng-school.netlify.app',
     text: `Заявка с сайта bng-school.netlify.app
