@@ -49,7 +49,6 @@ export default async function TrainingCenterProgram() {
           text="C использованием фреймворка Asp.NET Core, а также языка динамической разметки страниц Razor. Также рассматривается введение в работу с базами данных на примере SQLite."
           sx={{ mt: { xs: '20px', sm: '20px', md: '40px', lg: '40px', xl: '40px' }, mb: '40px' }}
         />
-
         <TrainingCenterProgramBg />
       </Box>
 

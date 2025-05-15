@@ -1,10 +1,10 @@
-'use client';
+'use server';
 
 import { Box } from "@mui/material";
 import Image from 'next/image';
 import bg from '../../../../../public/images/training-center-program-bg.png';
 
-export default function TrainingCenterProgramBg() {
+export default async function TrainingCenterProgramBg() {
   return (
     <Box
       sx={{

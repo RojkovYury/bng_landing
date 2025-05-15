@@ -3,6 +3,7 @@
 import FaqAccordion from "@/app/components/faq/components/faq-accordion";
 import { Box } from "@mui/material";
 import CourseCostTitle from "./components/faq-title";
+import TrainingCenterProgramBg from "./components/faq-bg";
 
 export default async function Faq() {
   return (
@@ -20,6 +21,8 @@ export default async function Faq() {
       <Box
         sx={{
           display: 'flex',
+          position: 'relative',
+          overflow: 'hidden',
           flexDirection: { xs: 'column', sm: 'column', md: 'row', lg: 'row', xl: 'row' },
           mb: { xs: '80px', sm: '80px', md: '180px', lg: '180px', xl: '180px' },
           width: { xs: 'calc(100% - 32px)', sm: 'calc(100% - 32px)', md: 'calc(100% - 40px)', lg: 'calc(100% - 40px)', xl: 'calc(100% - 40px)' },
@@ -29,7 +32,7 @@ export default async function Faq() {
           py: { xs: '16px', sm: '16px', md: '40px', lg: '40px', xl: '40px' },
         }}
       >
-        <Box sx={{ width: { xs: '100%', sm: '100%', md: '50%', lg: '50%', xl: '50%' } }}>
+        <Box sx={{ width: { xs: '100%', sm: '100%', md: '50%', lg: '50%', xl: '50%' }, zIndex: 3 }}>
           <FaqAccordion
             dafaultExpanded
             title="Что такое C# и почему стоит его изучать?"
@@ -60,7 +63,7 @@ export default async function Faq() {
           />
         </Box>
 
-        <Box sx={{ width: { xs: '100%', sm: '100%', md: '50%', lg: '50%', xl: '50%' } }}>
+        <Box sx={{ width: { xs: '100%', sm: '100%', md: '50%', lg: '50%', xl: '50%' }, zIndex: 3 }}>
           <FaqAccordion
             title="Кто может пройти мастер-класс на C#-разработчика?"
             text="Любой школьник, студент или взрослый. Главное - старше 16 лет и желание научиться новому."
@@ -89,6 +92,7 @@ export default async function Faq() {
             }}
           />
         </Box>
+        <TrainingCenterProgramBg />
       </Box>
     </Box>
   )
