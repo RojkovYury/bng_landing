@@ -10,7 +10,7 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 export default function OurMentorMobileCards() {
-  const [currentCardSelected, setIsLastOneSelected] = useState(0); // 1 не вписывать, иначе на мобиле при открытии useEffect автоматом проскроллит к блоку
+  const [currentCardSelected, setCurrentCardSelected] = useState(0); // 1 не вписывать, иначе на мобиле при открытии useEffect автоматом проскроллит к блоку
   const cardRefMentor1 = useRef(null);
   const cardRefMentor2 = useRef(null);
   const cardRefMentor3 = useRef(null);
@@ -80,7 +80,7 @@ export default function OurMentorMobileCards() {
 
       <Box sx={{ display: 'flex', mb: '60px', justifyContent: 'center' }}>
         <Box
-          onClick={() => setIsLastOneSelected(1)}
+          onClick={() => setCurrentCardSelected(1)}
           sx={{
             width: (currentCardSelected == 1 || !currentCardSelected) ? '75%' : '25%',
             transformOrigin: 'left',
@@ -97,7 +97,7 @@ export default function OurMentorMobileCards() {
         </Box>
 
         <Box
-          onClick={() => setIsLastOneSelected(2)}
+          onClick={() => setCurrentCardSelected(2)}
           sx={{
             width: currentCardSelected == 2 ? '75%' : '25%',
             display: 'flex',
@@ -112,7 +112,7 @@ export default function OurMentorMobileCards() {
         </Box>
 
         <Box
-          onClick={() => setIsLastOneSelected(3)}
+          onClick={() => setCurrentCardSelected(3)}
           sx={{
             width: currentCardSelected == 3 ? '75%' : '25%',
             transformOrigin: 'right',
@@ -131,8 +131,8 @@ export default function OurMentorMobileCards() {
 
       <IconButton
         onClick={() => {
-          if (currentCardSelected == 2) { setIsLastOneSelected(1) }
-          if (currentCardSelected == 3) { setIsLastOneSelected(2) }
+          if (currentCardSelected == 2) { setCurrentCardSelected(1) }
+          if (currentCardSelected == 3) { setCurrentCardSelected(2) }
         }}
         sx={{
           position: 'absolute',
@@ -154,8 +154,8 @@ export default function OurMentorMobileCards() {
       </IconButton>
       <IconButton
         onClick={() => {
-          if (currentCardSelected == 1 || !currentCardSelected) { setIsLastOneSelected(2) }
-          if (currentCardSelected == 2) { setIsLastOneSelected(3) }
+          if (currentCardSelected == 1 || !currentCardSelected) { setCurrentCardSelected(2) }
+          if (currentCardSelected == 2) { setCurrentCardSelected(3) }
         }}
         sx={{
           position: 'absolute',
