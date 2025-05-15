@@ -6,6 +6,7 @@ import HeaderMenuModal from "./components/header-menu-modal";
 import HeaderScrollTo from "./components/header-scroll-to";
 import HeaderLogo from "./components/header-logo";
 import HeaderFabUp from "./components/header-fab-up";
+import SocialNetworkIcons from "@/components/social-network-icons";
 
 export default async function Header() {
   return (
@@ -28,9 +29,10 @@ export default async function Header() {
               <Typography sx={{ fontSize: '16px', fontWeight: 400, lineHeight: '16px', mr: '40px' }}>
                 г. Тула, ул. Революции, дом 55, офис 202
               </Typography>
-              <Typography sx={{ fontSize: '16px', fontWeight: 400, lineHeight: '20px' }}>
+              <Typography sx={{ fontSize: '16px', fontWeight: 400, lineHeight: '20px', mr: '40px' }}>
                 info@bng-it.ru
               </Typography>
+              <SocialNetworkIcons />
             </Box>
             <HeaderScrollTo />
           </Box>

@@ -8,6 +8,7 @@ import menuWhite from '../../../../../public/icons/menu-white.svg'
 import close from '../../../../../public/icons/close.svg'
 import SingUpModal from "@/components/sign-up-modal";
 import SingUpDrawer from "@/components/sign-up-drawer";
+import SocialNetworkIcons from "@/components/social-network-icons";
 
 const typographyStyle = {
   fontSize: '14px',
@@ -131,9 +132,12 @@ export default function HeaderMenuModal() {
             <Typography sx={{ fontSize: '14px', fontWeight: 400, lineHeight: '20px', mb: '16px' }}>
               г. Тула, ул. Революции, дом 55, офис 202
             </Typography>
-            <Typography sx={{ fontSize: '14px', fontWeight: 400, lineHeight: '20px', mb: '28px' }}>
-              info@bng-it.ru
-            </Typography>
+            <Box sx={{ display: 'flex' }}>
+              <Typography sx={{ fontSize: '14px', fontWeight: 400, lineHeight: '20px', mb: '28px', mr: '16px' }}>
+                info@bng-it.ru
+              </Typography>
+              <SocialNetworkIcons />
+            </Box>
 
             <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '64px' }}>
               <Typography sx={{ maxWidth: '208px', textWrap: 'nowrap', fontSize: '18px', fontWeight: 700, lineHeight: '24px', color: '#fff', bgcolor: '#FFA700', borderRadius: '8px', px: '20px', py: '8px' }}>

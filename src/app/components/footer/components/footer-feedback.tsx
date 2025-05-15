@@ -2,6 +2,7 @@
 
 import { Box, Typography } from "@mui/material";
 import FooterButtonModalOpen from "./footer-button-modal-open";
+import SocialNetworkIcons from "@/components/social-network-icons";
 
 const TypographyStyle = {
   fontSize: { xs: '16px', sm: '16px', md: '20px', lg: '20px', xl: '20px' },
@@ -35,15 +36,27 @@ export default async function FooterFeedback () {
           info@bng-it.ru
         </Typography>
 
-        <Typography
+        <Box
           sx={{
-            ...TypographyStyle,
-            fontWeight: 700,
-            mr: '20px',
+            display: 'flex',
+            alignItems: { xs: 'unset', sm: 'center', md: 'center', lg: 'center', xl: 'center' },
+            flexDirection: { xs: 'column', sm: 'row', md: 'row', lg: 'row', xl: 'row' },
           }}
         >
-          +7 (933) 028 35 25
-        </Typography>
+          <Typography
+            sx={{
+              ...TypographyStyle,
+              fontWeight: 700,
+              mr: '20px',
+              mb: { xs: '12px', sm: '0px', md: '0px', lg: '0px', xl: '0px' },
+            }}
+          >
+            +7 (933) 028 35 25
+          </Typography>
+          <Box sx={{ mr: { xs: '0px', sm: '0px', md: '0px', lg: '20px', xl: '20px' } }}>
+            <SocialNetworkIcons />
+          </Box>
+        </Box>
       </Box>
 
       <FooterButtonModalOpen />
