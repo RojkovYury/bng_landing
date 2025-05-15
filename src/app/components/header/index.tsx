@@ -29,9 +29,13 @@ export default async function Header() {
               <Typography sx={{ fontSize: '16px', fontWeight: 400, lineHeight: '16px', mr: '40px' }}>
                 г. Тула, ул. Революции, дом 55, офис 202
               </Typography>
+              
               <Typography sx={{ fontSize: '16px', fontWeight: 400, lineHeight: '20px', mr: '40px' }}>
-                info@bng-it.ru
+                <a href="mailto:info@bng-it.ru" style={{ textDecoration: 'none', color: 'inherit' }}>
+                  info@bng-it.ru
+                </a>
               </Typography>
+
               <SocialNetworkIcons />
             </Box>
             <HeaderScrollTo />

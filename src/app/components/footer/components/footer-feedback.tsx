@@ -33,7 +33,9 @@ export default async function FooterFeedback () {
             mb: { xs: '12px', sm: '0px', md: '0px', lg: '0px', xl: '0px' },
           }}
         >
-          info@bng-it.ru
+          <a href="mailto:info@bng-it.ru" style={{ textDecoration: 'none', color: 'inherit' }}>
+            info@bng-it.ru
+          </a>
         </Typography>
 
         <Box
