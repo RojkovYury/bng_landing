@@ -26,7 +26,7 @@ export default function SocialNetworkIcons() {
       </IconButton>
 
       <IconButton
-       href='https://wa.me/academybng'// !
+       href='https://wa.me/+79330283525'
         target='_blank'
         sx={{ ...iconButtonStyle }}
       >
