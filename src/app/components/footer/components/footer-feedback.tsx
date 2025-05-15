@@ -53,7 +53,9 @@ export default async function FooterFeedback () {
               mb: { xs: '12px', sm: '0px', md: '0px', lg: '0px', xl: '0px' },
             }}
           >
-            +7 (933) 028 35 25
+            <a href="tel:+79330283525" style={{ textDecoration: 'none', color: 'inherit' }}>  
+              +7 (933) 028 35 25
+            </a>
           </Typography>
           <Box sx={{ mr: { xs: '0px', sm: '0px', md: '0px', lg: '20px', xl: '20px' } }}>
             <SocialNetworkIcons />
