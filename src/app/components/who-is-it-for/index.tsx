@@ -1,18 +1,10 @@
-// TODO если нет разницы между обычным и 2x - вернуть обычные
-
 'use server'
 
 import WhoIsItForCard from "@/app/components/who-is-it-for/components/who-is-it-for-card";
 import { Box } from "@mui/material";
-/*
-import outIt from '../../../../public/images/who-is-it-for-out.png';
-import student from '../../../../public/images/who-is-it-for-stud.png';
-import inIt from '../../../../public/images/who-is-it-for-in.png';
-*/
 import outIt from '../../../../public/images/who-is-it-for-out-2x.png';
 import student from '../../../../public/images/who-is-it-for-stud-2x.png';
-import inIt from '../../../../public/images/who-is-it-for-in.png';
-
+import inIt from '../../../../public/images/who-is-it-for-in-2x.png';
 import WhoIsItForTitle from "./components/who-is-it-for-title";
 import WhoIsItForMobileCards from "./components/who-is-it-for-mobile-cards";
 import WhoIsItForBg from "./components/who-is-it-for-bg";
