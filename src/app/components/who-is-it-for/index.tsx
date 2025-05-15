@@ -1,10 +1,18 @@
+// TODO если нет разницы между обычным и 2x - вернуть обычные
+
 'use server'
 
 import WhoIsItForCard from "@/app/components/who-is-it-for/components/who-is-it-for-card";
 import { Box } from "@mui/material";
+/*
 import outIt from '../../../../public/images/who-is-it-for-out.png';
 import student from '../../../../public/images/who-is-it-for-stud.png';
 import inIt from '../../../../public/images/who-is-it-for-in.png';
+*/
+import outIt from '../../../../public/images/who-is-it-for-out-2x.png';
+import student from '../../../../public/images/who-is-it-for-stud-2x.png';
+import inIt from '../../../../public/images/who-is-it-for-in.png';
+
 import WhoIsItForTitle from "./components/who-is-it-for-title";
 import WhoIsItForMobileCards from "./components/who-is-it-for-mobile-cards";
 import WhoIsItForBg from "./components/who-is-it-for-bg";
@@ -31,19 +39,19 @@ export default async function WhoIsItFor() {
         <Box sx={{ display: { xs: 'none', sm: 'none', md: 'flex', lg: 'flex', xl: 'flex' }, zIndex: 2, mb: '80px' }}>
           <WhoIsItForCard
             title='Специалистам вне IT'
-            text='Недовольны своим нынешним доходом? Программирование — это удобный путь в прибыльную и быстро развивающуюся IT-индустрию'
+            text='Недовольны своим нынешним доходом? Программирование — это удобный путь в прибыльную и быстро развивающуюся IT-индустрию.'
             src={outIt}
             mr
           />
           <WhoIsItForCard
             title='Студентам'
-            text='Освойте престижную профессию еще в процессе обучения в ВУЗЕ. Начните строить карьеру раньше своих сверстников'
+            text='Освойте престижную профессию еще в процессе обучения в ВУЗЕ. Начните строить карьеру раньше своих сверстников.'
             src={student}
             mr
           />
           <WhoIsItForCard
             title='IT специалистам'
-            text='Уже работаете программистом? Повысьте свои навыки, изучите востребованный язык С#, чтобы претендовать на более высокую зарплату'
+            text='Уже работаете программистом? Повысьте свои навыки, изучите востребованный язык С#, чтобы претендовать на более высокую зарплату.'
             src={inIt}
           />
         </Box>

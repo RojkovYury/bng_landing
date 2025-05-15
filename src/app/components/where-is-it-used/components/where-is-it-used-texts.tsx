@@ -21,7 +21,7 @@ export default async function WhereIsItUsedTexts() {
         </Typography>
 
         <Typography sx={{ ...textTypography }}>
-          мобильные и настольные приложения, а также игры
+          мобильные и настольные приложения, а также игры.
         </Typography>
       </Box>
 
@@ -32,7 +32,7 @@ export default async function WhereIsItUsedTexts() {
         }}
         >
         <Typography sx={{ ...textTypography, fontWeight: 500 }}>
-          Освоив этот язык, вы сможете создавать все это и претендовать на высокооплачиваемую работу
+          Освоив этот язык, вы сможете создавать все это и претендовать на высокооплачиваемую работу.
         </Typography>
       </Box>
     </>
