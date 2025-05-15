@@ -9,7 +9,13 @@ const typographyStyle = {
   lineHeight: '20px',
   textWrap: 'nowrap',
   cursor: 'pointer',
-}
+  borderBottom: '2px solid transparent',
+  transition: 'border-bottom 0.3s ease',
+  textDecoration: 'none',
+  '&:hover': {
+    borderBottom: '2px solid #FFA700',
+  },
+};
 
 export default function HeaderScrollTo() {
   const scrollToSection = (id: string) => {
