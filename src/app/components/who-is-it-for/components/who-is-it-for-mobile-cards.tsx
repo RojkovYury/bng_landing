@@ -11,6 +11,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 export default function WhoIsItForMobileCards() {
   const [currentCardSelected, setIsLastOneSelected] = useState(0); // 1 не вписывать, иначе на мобиле при открытии useEffect автоматом проскроллит к блоку
+  const [isManual, setIsManual] = useState(false);
   const cardRef1 = useRef(null);
   const cardRef2 = useRef(null);
   const cardRef3 = useRef(null);
@@ -19,7 +20,6 @@ export default function WhoIsItForMobileCards() {
     if (ref.current) {
       ref.current.scrollIntoView({
         behavior: 'smooth',
-        // block: 'center',
         block: 'nearest',
         inline: currentCardSelected === 1
           ? 'start'
@@ -31,21 +31,71 @@ export default function WhoIsItForMobileCards() {
   };
 
   useEffect(() => {
-    if (currentCardSelected === 1) {
+    if (currentCardSelected === 1 && isManual) {
       scrollToCard(cardRef1);
+      setIsManual(false);
     }
-    if (currentCardSelected === 2) {
+    if (currentCardSelected === 2 && isManual) {
       scrollToCard(cardRef2);
+      setIsManual(false);
     }
-    if (currentCardSelected === 3) {
+    if (currentCardSelected === 3 && isManual) {
       scrollToCard(cardRef3);
+      setIsManual(false);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentCardSelected]);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const cardsRefs = [cardRef1, cardRef2, cardRef3];
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 1,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const index = cardsRefs.findIndex((ref) => ref.current === entry.target);
+        
+        if (index === 0 && (entry.isIntersecting && entry.intersectionRatio === 1.0)) {
+          setIsLastOneSelected(index + 1);
+        }
+
+        if (index === 1 && (entry.isIntersecting && entry.intersectionRatio >= 0.5)) {
+          setIsLastOneSelected(index + 1);
+        }
+
+        if (index === 2 && (entry.isIntersecting && entry.intersectionRatio >= 1.0)) {
+          setIsLastOneSelected(index + 1);
+        }
+      });
+    }, observerOptions);
+
+
+    cardsRefs.forEach(ref => {
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+    });
+
+    return () => { observer.disconnect(); };
+  }, [cardsRefs]);
+
+
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', position: 'relative', zIndex: 3 }}>
-      <Box sx={{ display: 'flex', overflow: 'hidden', zIndex: 2 }}>
+      <Box
+        sx={{
+          display: 'flex',
+          zIndex: 2,
+          overflow: { xs: 'auto', sm: 'auto' },
+          scrollbarColor: { xs: '#1144AA #1144AA', sm: '#FFA700 #1144AA' },
+          pb: { xs: '4px', sm: '26px' },
+          mb: { xs: '0px', sm: '28px' },
+        }}
+      >
         <Box ref={cardRef1} sx={{ display: 'flex' }}>
           <WhoIsItForMobileCard
             title='Специалистам вне IT'
@@ -75,9 +125,10 @@ export default function WhoIsItForMobileCards() {
         </Box>
       </Box>
 
-      <Box sx={{ display: 'flex', mb: '20px' }}>
-      <Box
-          onClick={() => setIsLastOneSelected(1)}
+      {/* Нижние полосочки */}
+      <Box sx={{ display: { xs: 'flex', sm: 'none' }, mb: '20px' }}>
+        <Box
+          onClick={() => { setIsManual(true); setIsLastOneSelected(1); }}
           sx={{
             width: (currentCardSelected == 1 || !currentCardSelected) ? '75%' : '25%',
             transformOrigin: 'left',
@@ -94,7 +145,7 @@ export default function WhoIsItForMobileCards() {
         </Box>
 
         <Box
-          onClick={() => setIsLastOneSelected(2)}
+          onClick={() => { setIsManual(true); setIsLastOneSelected(2); }}
           sx={{
             width: currentCardSelected == 2 ? '75%' : '25%',
             display: 'flex',
@@ -109,7 +160,7 @@ export default function WhoIsItForMobileCards() {
         </Box>
 
         <Box
-          onClick={() => setIsLastOneSelected(3)}
+          onClick={() => { setIsManual(true); setIsLastOneSelected(3); }}
           sx={{
             width: currentCardSelected == 3 ? '75%' : '25%',
             transformOrigin: 'right',
@@ -126,12 +177,14 @@ export default function WhoIsItForMobileCards() {
         </Box>
       </Box>
 
+      {/* Стрелки */}
       <IconButton
         onClick={() => {
-          if (currentCardSelected == 2) { setIsLastOneSelected(1) }
-          if (currentCardSelected == 3) { setIsLastOneSelected(2) }
+          if (currentCardSelected == 2) { setIsManual(true); setIsLastOneSelected(1); }
+          if (currentCardSelected == 3) { setIsManual(true); setIsLastOneSelected(2); }
         }}
         sx={{
+          display: { xs: 'flex', sm: 'none' },
           position: 'absolute',
           zIndex: 3,
           width: '46px',
@@ -151,10 +204,11 @@ export default function WhoIsItForMobileCards() {
       </IconButton>
       <IconButton
         onClick={() => {
-          if (currentCardSelected == 1 || !currentCardSelected) { setIsLastOneSelected(2) }
-          if (currentCardSelected == 2) { setIsLastOneSelected(3) }
+          if (currentCardSelected == 1 || !currentCardSelected) { setIsManual(true); setIsLastOneSelected(2); }
+          if (currentCardSelected == 2) { setIsManual(true); setIsLastOneSelected(3); }
         }}
         sx={{
+          display: { xs: 'flex', sm: 'none' },
           position: 'absolute',
           zIndex: 3,
           width: '46px',
