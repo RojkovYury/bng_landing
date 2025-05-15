@@ -1,5 +1,6 @@
 'use server';
 
+import SocialNetworkIcons from "@/components/social-network-icons";
 import { Box, Typography } from "@mui/material";
 import Image from 'next/image';
 
@@ -8,16 +9,19 @@ interface ContactsGreyBoxProps {
   text: string;
   sx?: any;
   textSx?: any;
+  link?: string;
+  email?: boolean;
+  tel?: boolean;
 }
 
-export default async function ContactsGreyBox({ src, text, sx, textSx }: ContactsGreyBoxProps) {
+export default async function ContactsGreyBox({ src, text, sx, textSx, email, tel, link }: ContactsGreyBoxProps) {
   return ( 
     <Box
       sx={{
         display: 'flex',
         alignItems: 'center',
-        pr: { xs: '16px', sm: '16px', md: '0px', lg: '30px', xl: '40px' },
-        pl: { xs: '12px', sm: '12px', md: '20px', lg: '20px', xl: '40px' },
+        pr: { xs: '16px', sm: '16px', md: '0px', lg: '15px', xl: '30px' },
+        pl: { xs: '12px', sm: '12px', md: '20px', lg: '15px', xl: '30px' },
         py: { xs: '16px', sm: '16px', md: '16px', lg: '16px', xl: '20px' },
         bgcolor: '#F2F5F9',
         borderRadius: '8px',
@@ -41,15 +45,24 @@ export default async function ContactsGreyBox({ src, text, sx, textSx }: Contact
         <Image src={src} alt="" fill />
       </Box>
       <Typography
+        component={(email || tel) ? "a" : "div"}
+        href={link}
         sx={{
           fontSize: { xs: '14px', sm: '14px', md: '18px', lg: '16px', xl: '18px' },
           lineHeight: { xs: '20px', sm: '20px', md: '24px', lg: '22px', xl: '24px' },
           fontWeight: 500,
+          textDecoration: 'none',
+          color: 'inherit',
           ...textSx,
         }}
       >
         {text}
       </Typography>
+      {(tel) && (
+        <Box sx={{ ml: '12px' }}>
+          <SocialNetworkIcons />
+        </Box>
+      )}
     </Box>
   )
 }
