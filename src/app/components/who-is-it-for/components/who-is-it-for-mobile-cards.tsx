@@ -90,7 +90,7 @@ export default function WhoIsItForMobileCards() {
         sx={{
           display: 'flex',
           zIndex: 2,
-          overflow: { xs: 'auto', sm: 'auto' },
+          overflow: 'auto',
           scrollbarColor: { xs: '#1144AA #1144AA', sm: '#FFA700 #1144AA' },
           pb: { xs: '4px', sm: '26px' },
           mb: { xs: '0px', sm: '28px' },

@@ -11,15 +11,15 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 export default function OurMentorMobileCards() {
   const [currentCardSelected, setCurrentCardSelected] = useState(0); // 1 не вписывать, иначе на мобиле при открытии useEffect автоматом проскроллит к блоку
-  const cardRefMentor1 = useRef(null);
-  const cardRefMentor2 = useRef(null);
-  const cardRefMentor3 = useRef(null);
+  const [isManual, setIsManual] = useState(false);
+  const cardRef1 = useRef(null);
+  const cardRef2 = useRef(null);
+  const cardRef3 = useRef(null);
 
   const scrollToCard = (ref: any) => {
     if (ref.current) {
       ref.current.scrollIntoView({
         behavior: 'smooth',
-        // block: 'center',
         block: 'nearest',
         inline: currentCardSelected == 1
           ? 'start'
@@ -31,22 +31,70 @@ export default function OurMentorMobileCards() {
   };
 
   useEffect(() => {
-    if (currentCardSelected == 1) {
-      scrollToCard(cardRefMentor1);
+    if (currentCardSelected === 1 && isManual) {
+      scrollToCard(cardRef1);
+      setIsManual(false);
     }
-    if (currentCardSelected == 2) {
-      scrollToCard(cardRefMentor2);
+    if (currentCardSelected === 2 && isManual) {
+      scrollToCard(cardRef2);
+      setIsManual(false);
     }
-    if (currentCardSelected == 3) {
-      scrollToCard(cardRefMentor3);
+    if (currentCardSelected === 3 && isManual) {
+      scrollToCard(cardRef3);
+      setIsManual(false);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentCardSelected]);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const cardsRefs = [cardRef1, cardRef2, cardRef3];
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 1,
+    };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const index = cardsRefs.findIndex((ref) => ref.current === entry.target);
+        
+        if (index === 0 && (entry.isIntersecting && entry.intersectionRatio === 1.0)) {
+          setCurrentCardSelected(index + 1);
+        }
+
+        if (index === 1 && (entry.isIntersecting && entry.intersectionRatio >= 0.5)) {
+          setCurrentCardSelected(index + 1);
+        }
+
+        if (index === 2 && (entry.isIntersecting && entry.intersectionRatio >= 1.0)) {
+          setCurrentCardSelected(index + 1);
+        }
+      });
+    }, observerOptions);
+
+
+    cardsRefs.forEach(ref => {
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+    });
+
+    return () => { observer.disconnect(); };
+  }, [cardsRefs]);
+
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', position: 'relative', zIndex: 3 }}>
-      <Box sx={{ display: 'flex', overflow: 'hidden', zIndex: 2 }} >
-        <Box ref={cardRefMentor1} sx={{ display: 'flex' }}>
+      <Box
+        sx={{
+          display: 'flex',
+          zIndex: 2,
+          overflow: 'auto',
+          scrollbarColor: { xs: '#FFF #FFF', sm: '#FFA700 #FFF' },
+          pb: { xs: '4px', sm: '26px' },
+          mb: { xs: '0px', sm: '28px' },
+        }}
+      >
+        <Box ref={cardRef1} sx={{ display: 'flex' }}>
           <OurMentorMobileCard
             title='Дмитрий'
             subTitle='FullStack Dev, TeamLead'
@@ -56,7 +104,7 @@ export default function OurMentorMobileCards() {
             mr="16px"
           />
         </Box>
-        <Box ref={cardRefMentor2} sx={{ display: 'flex' }}>
+        <Box ref={cardRef2} sx={{ display: 'flex' }}>
           <OurMentorMobileCard
             title='Сергей'
             subTitle='TeamLead, Architect, FullStack Dev'
@@ -66,7 +114,7 @@ export default function OurMentorMobileCards() {
             ml="16px"
           />
         </Box>
-        <Box ref={cardRefMentor3} sx={{ display: 'flex' }}>
+        <Box ref={cardRef3} sx={{ display: 'flex' }}>
           <OurMentorMobileCard
             title='Марина'
             subTitle='C# Senior Dev, TeamLead'
@@ -78,9 +126,10 @@ export default function OurMentorMobileCards() {
         </Box>
       </Box>
 
-      <Box sx={{ display: 'flex', mb: '60px', justifyContent: 'center' }}>
+      {/* Нижние полосочки */}
+      <Box sx={{ display: { xs: 'flex', sm: 'none' }, mb: '60px', justifyContent: 'center' }}>
         <Box
-          onClick={() => setCurrentCardSelected(1)}
+          onClick={() => { setIsManual(true); setCurrentCardSelected(1); }}
           sx={{
             width: (currentCardSelected == 1 || !currentCardSelected) ? '75%' : '25%',
             transformOrigin: 'left',
@@ -97,7 +146,7 @@ export default function OurMentorMobileCards() {
         </Box>
 
         <Box
-          onClick={() => setCurrentCardSelected(2)}
+          onClick={() => { setIsManual(true); setCurrentCardSelected(2); }}
           sx={{
             width: currentCardSelected == 2 ? '75%' : '25%',
             display: 'flex',
@@ -112,7 +161,7 @@ export default function OurMentorMobileCards() {
         </Box>
 
         <Box
-          onClick={() => setCurrentCardSelected(3)}
+          onClick={() => { setIsManual(true); setCurrentCardSelected(3); }}
           sx={{
             width: currentCardSelected == 3 ? '75%' : '25%',
             transformOrigin: 'right',
@@ -129,12 +178,14 @@ export default function OurMentorMobileCards() {
         </Box>
       </Box>
 
+      {/* Стрелки */}
       <IconButton
         onClick={() => {
-          if (currentCardSelected == 2) { setCurrentCardSelected(1) }
-          if (currentCardSelected == 3) { setCurrentCardSelected(2) }
+          if (currentCardSelected == 2) { setIsManual(true); setCurrentCardSelected(1); }
+          if (currentCardSelected == 3) { setIsManual(true); setCurrentCardSelected(2); }
         }}
         sx={{
+          display: { xs: 'flex', sm: 'none' },
           position: 'absolute',
           zIndex: 3,
           width: '46px',
@@ -154,10 +205,11 @@ export default function OurMentorMobileCards() {
       </IconButton>
       <IconButton
         onClick={() => {
-          if (currentCardSelected == 1 || !currentCardSelected) { setCurrentCardSelected(2) }
-          if (currentCardSelected == 2) { setCurrentCardSelected(3) }
+          if (currentCardSelected == 1 || !currentCardSelected) { setIsManual(true); setCurrentCardSelected(2); }
+          if (currentCardSelected == 2) { setIsManual(true); setCurrentCardSelected(3); }
         }}
         sx={{
+          display: { xs: 'flex', sm: 'none' },
           position: 'absolute',
           zIndex: 3,
           width: '46px',
