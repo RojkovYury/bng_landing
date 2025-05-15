@@ -2,7 +2,7 @@
 
 import { Box } from "@mui/material";
 import Image from 'next/image';
-import dashboard from '../../../../public/images/where-is-it-used.svg'
+import dashboard from '../../../../public/images/where-is-it-used.png'
 import WhereIsItUsedTitle from "./components/where-is-it-used-title";
 import WhereIsItUsedTexts from "./components/where-is-it-used-texts";
 

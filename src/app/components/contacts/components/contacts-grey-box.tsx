@@ -9,9 +9,9 @@ interface ContactsGreyBoxProps {
   text: string;
   sx?: any;
   textSx?: any;
-  link?: string;
   email?: boolean;
   tel?: boolean;
+  link?: string;
 }
 
 export default async function ContactsGreyBox({ src, text, sx, textSx, email, tel, link }: ContactsGreyBoxProps) {
