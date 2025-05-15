@@ -1,3 +1,7 @@
+/**
+ * Компонент для тестирования адаптивности, в приложении не используется
+ */
+
 'use server'
 
 import { Box, Typography } from '@mui/material';

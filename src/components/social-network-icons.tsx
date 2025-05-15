@@ -22,7 +22,7 @@ export default function SocialNetworkIcons() {
         target='_blank'
         sx={{mr: '8px', ...iconButtonStyle}}
       >
-        <Image src={tg} alt="tg" fill/>
+        <Image src={tg} alt="tg" fill priority={true}/>
       </IconButton>
 
       <IconButton
@@ -30,7 +30,7 @@ export default function SocialNetworkIcons() {
         target='_blank'
         sx={{ ...iconButtonStyle }}
       >
-        <Image src={wa} alt="wa" fill/>
+        <Image src={wa} alt="wa" fill priority={true}/>
       </IconButton>
     </Box>
   )
