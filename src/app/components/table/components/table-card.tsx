@@ -1,4 +1,4 @@
-'use client';
+'use server';
 
 import { Box, Typography } from "@mui/material";
 import Image from 'next/image';
@@ -9,7 +9,7 @@ interface TableCardProps {
   sx?: any;
 }
 
-export default function TableCard({ text, src, sx }: TableCardProps) {
+export default async function TableCard({ text, src, sx }: TableCardProps) {
   return (   
     <Box
       sx={{
