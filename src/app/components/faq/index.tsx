@@ -25,7 +25,7 @@ export default async function Faq() {
           overflow: 'hidden',
           flexDirection: { xs: 'column', sm: 'column', md: 'row', lg: 'row', xl: 'row' },
           mb: { xs: '80px', sm: '80px', md: '180px', lg: '180px', xl: '180px' },
-          width: { xs: 'calc(100% - 32px)', sm: 'calc(100% - 32px)', md: 'calc(100% - 40px)', lg: 'calc(100% - 40px)', xl: 'calc(100% - 40px)' },
+          width: { xs: 'calc(100% - 32px)', sm: 'calc(100% - 32px)', md: 'calc(100% - 40px)', lg: 'calc(100% - 40px)', xl: '100%' },
           mx: { xs: '16px', sm: '16px', md: '20px', lg: '20px', xl: '0px' },
           bgcolor: '#F2F5F9',
           borderRadius: { xs: '20px', sm: '20px', md: '40px', lg: '40px', xl: '40px' },

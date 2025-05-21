@@ -16,7 +16,7 @@ import TableCard from "./components/table-card";
 
 export default async function Table() {
   return (
-    <>
+    <Box sx={{ overflow: 'hidden' }}>
       <TableTitle /> {/* id="advantages" */} 
       <Box
         sx={{
@@ -70,6 +70,6 @@ export default async function Table() {
           </Box>
         </Box>
       </Box>
-    </>
+    </Box>
   )
 }

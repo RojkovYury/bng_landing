@@ -42,9 +42,9 @@ export default async function Contacts() {
         />
         <ContactsGreyBox
           src={mail}
-          text="info@bng-it.ru"
+          text="academy@bng-it.ru"
           email
-          link="mailto:info@bng-it.ru"
+          link="mailto:academy@bng-it.ru"
           sx={{ 
             mr: { xs: '0px', sm: '0px', md: '0px', lg: '20px', xl: '40px' },
             mb: { xs: '20px', sm: '20px', md: '20px', lg: '0px', xl: '0px' }, 

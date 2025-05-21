@@ -20,8 +20,8 @@ export default async function ContactsGreyBox({ src, text, sx, textSx, email, te
       sx={{
         display: 'flex',
         alignItems: 'center',
-        pr: { xs: '16px', sm: '16px', md: '0px', lg: '15px', xl: '30px' },
-        pl: { xs: '12px', sm: '12px', md: '20px', lg: '15px', xl: '30px' },
+        pr: { xs: '16px', sm: '16px', md: '0px', lg: '15px', xl: '26px' },
+        pl: { xs: '12px', sm: '12px', md: '20px', lg: '15px', xl: '26px' },
         py: { xs: '16px', sm: '16px', md: '16px', lg: '16px', xl: '20px' },
         bgcolor: '#F2F5F9',
         borderRadius: '8px',
@@ -39,7 +39,7 @@ export default async function ContactsGreyBox({ src, text, sx, textSx, email, te
           height: { xs: '24px', sm: '24px', md: '24px', lg: '32px', xl: '40px' },
           minWidth: { xs: '24px', sm: '24px', md: '24px', lg: '32px', xl: '40px' },
           minHeight: { xs: '24px', sm: '24px', md: '24px', lg: '32px', xl: '40px' },
-          mr: { xs: '12px', sm: '12px', md: '20px', lg: '16px', xl: '20px' },
+          mr: { xs: '12px', sm: '12px', md: '20px', lg: '12px', xl: '12px' },
         }}
       >
         <Image src={src} alt="" fill />
@@ -48,7 +48,7 @@ export default async function ContactsGreyBox({ src, text, sx, textSx, email, te
         component={(email || tel) ? "a" : "div"}
         href={link}
         sx={{
-          fontSize: { xs: '14px', sm: '14px', md: '18px', lg: '16px', xl: '18px' },
+          fontSize: { xs: '14px', sm: '14px', md: '18px', lg: '15px', xl: '18px' },
           lineHeight: { xs: '20px', sm: '20px', md: '24px', lg: '22px', xl: '24px' },
           fontWeight: 500,
           textDecoration: 'none',

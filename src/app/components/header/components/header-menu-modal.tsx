@@ -134,8 +134,8 @@ export default function HeaderMenuModal() {
             </Typography>
             <Box sx={{ display: 'flex' }}>
               <Typography sx={{ fontSize: '14px', fontWeight: 400, lineHeight: '20px', mb: '28px', mr: '16px' }}>
-                <a href="mailto:info@bng-it.ru" style={{ textDecoration: 'none', color: 'inherit' }}>
-                  info@bng-it.ru
+                <a href="mailto:academy@bng-it.ru" style={{ textDecoration: 'none', color: 'inherit' }}>
+                  academy@bng-it.ru
                 </a>
               </Typography>
               <SocialNetworkIcons />

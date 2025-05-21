@@ -31,8 +31,8 @@ export default async function Header() {
               </Typography>
               
               <Typography sx={{ fontSize: '16px', fontWeight: 400, lineHeight: '20px', mr: '40px' }}>
-                <a href="mailto:info@bng-it.ru" style={{ textDecoration: 'none', color: 'inherit' }}>
-                  info@bng-it.ru
+                <a href="mailto:academy@bng-it.ru" style={{ textDecoration: 'none', color: 'inherit' }}>
+                  academy@bng-it.ru
                 </a>
               </Typography>
 
