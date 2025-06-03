@@ -33,6 +33,9 @@ export default function HeaderMenuModal() {
         const offsetTop = element.getBoundingClientRect().top + window.pageYOffset - indentation;
         // scrollIntoView не применять, сломает скролл на мобиле из-за глобального overflow: 'hidden'
         window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+      setTimeout(() => {
+        window.location.hash = id;
+      }, 500);
     }
   };
 

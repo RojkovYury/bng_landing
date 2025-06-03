@@ -56,7 +56,7 @@ export default async function Header() {
         sx={{
           display: { xs: 'flex', sm: 'flex', md: 'flex', lg: 'flex', xl: 'none' },
           alignItems: 'center',
-          mr: { xs: '8px', sm: '12px', md: '12px', lg: '12px', xl: '0px' }, // - IconButton padding (8px)
+          mr: { xs: '8px', sm: '12px', md: '12px', lg: '12px', xl: '0px' },
         }}
       >
         <HeaderMenuModal />

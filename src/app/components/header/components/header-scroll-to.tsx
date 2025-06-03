@@ -20,15 +20,19 @@ const typographyStyle = {
 export default function HeaderScrollTo() {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
-    const indentation = (id == 'program') || (id == 'faq') ? -120 : 50; 
+    const indentation = (id === 'program' || id === 'faq') ? -120 : 50; 
     if (element) {
       const offsetTop = element.getBoundingClientRect().top + window.pageYOffset - indentation;
       window.scrollTo({
         top: offsetTop,
         behavior: 'smooth'
-    });
-  }
+      });
+      setTimeout(() => {
+        window.location.hash = id;
+      }, 500);
+    }
   };
+
   return (
     <Box sx={{ display: 'flex' }}>
       <Typography sx={{ ...typographyStyle }} onClick={() => scrollToSection('advantages')}>
