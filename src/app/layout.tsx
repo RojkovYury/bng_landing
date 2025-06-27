@@ -15,8 +15,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Программирование в Туле</title>
-        <meta name="description" content="description" />
+        <title>Офлайн мастер-класс по программированию на C# в Туле. - Академия BNG</title>
+        <meta name="description" content="Освойте разработку сайтов, мобильных, серверных и настольных приложений с использованием языка программирования C# в Туле. ☎️ +7 (933) 028 35 25" />
         <meta name="keywords" content="keyword1, keyword2, keyword3" />
         <meta name="author" content="author name" />
         <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
