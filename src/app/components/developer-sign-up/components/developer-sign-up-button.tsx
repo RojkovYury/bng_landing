@@ -40,7 +40,12 @@ export default function DeveloperSignUpButton() {
         >
           Записаться
         </Button>
-        <Box sx={{ ml: '8px' }}>
+        <Box
+          sx={{
+            ml: '8px',
+            display: { xs: 'flex', sm: 'flex', md: 'flex', lg: 'flex', xl: 'none' }
+          }}
+        >
           <SocialNetworkIcons large />
         </Box>
       </Box>
