@@ -87,7 +87,7 @@ export default function SingUpInputPhone({ value, setValue, sx, errorInput, setE
                 : '1px solid #798EBC',
           },
 
-          mb: { xs: '32px', sm: '32px', md: '32px', lg: '32px', xl: '32px' },
+          mb: { xs: '8px', sm: '8px', md: '8px', lg: '8px', xl: '8px' },
           ...sx,
         }}
       />

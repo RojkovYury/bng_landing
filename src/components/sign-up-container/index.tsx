@@ -1,6 +1,6 @@
 'use client';
 
-import { Box, Typography } from "@mui/material";
+import { Box, SxProps, Typography } from "@mui/material";
 import { useState } from "react";
 import SingUpInputPhone from "./components/sign-up-input-phone";
 import SingUpInputName from "./components/sign-up-input-name";
@@ -11,10 +11,11 @@ import SingUpSnackbar from "./components/sign-up-snackbar";
 import handleMailer from "@/app/contracts";
 import PolicyModal from "../policy-modal";
 import SingUpProgress from "./components/sign-up-progress";
+import SingUpSocialNetwork from "./components/sign-up-social-network";
 
 interface SignUpContainerProps {
   text: string;
-  sx?: any;
+  sx?: SxProps;
   onClose?: any;
   drawer?: boolean;
   setOpenSuccessSnackbar: any;
@@ -82,11 +83,13 @@ export default function SignUpContainer({ text, sx, onClose, drawer, setOpenSucc
       <SingUpInputName value={name} setValue={setName} errorInput={errorInput} setErrorInput={setErrorInput} disabled={isLoading} />
       <SingUpInputPhone value={phone} setValue={setPhone} errorInput={errorInput}  setErrorInput={setErrorInput} disabled={isLoading} />
       
+      <SingUpSocialNetwork />
+
       <Box sx={{ display: 'flex', mb: { xs: '12px', sm: '12px', md: '20px', lg: '20px', xl: '20px' } }}>
         <SingUpInputCheckbox checked={check} setChecked={setCheck} sx={{ mr: '12px' }} errorInput={errorInput}  setErrorInput={setErrorInput} disabled={isLoading} />
         <Typography
           sx={{
-            fontSize: { xs: '12px', sm: '12px', md: '13px', lg: '13px', xl: '13px' }, // 14 !
+            fontSize: { xs: '12px', sm: '12px', md: '13px', lg: '13px', xl: '13px' },
             lineHeight: { xs: '16px', sm: '16px', md: '16px', lg: '16px', xl: '16px' },
             fontWeight: 400,
           }}
